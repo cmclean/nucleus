@@ -48,7 +48,7 @@ ranges held by the class.
 
 #### Methods:
 <a name="__init__"></a>
-#### `__init__(self, ranges=None, contigs=None)`
+##### `__init__(self, ranges=None, contigs=None)`
 ```
 Creates an RangeSet backed by ranges.
 
@@ -70,7 +70,7 @@ Raises:
 ```
 
 <a name="exclude_regions"></a>
-#### `exclude_regions(self, other)`
+##### `exclude_regions(self, other)`
 ```
 Chops out all of the intervals in other from this this RangeSet.
 
@@ -83,7 +83,7 @@ Args:
 ```
 
 <a name="from_bed"></a>
-#### `from_bed(cls, source, contigs=None)`
+##### `from_bed(cls, source, contigs=None)`
 ```
 Creates a RangeSet containing the intervals from source.
 
@@ -97,13 +97,13 @@ Returns:
 ```
 
 <a name="from_contigs"></a>
-#### `from_contigs(cls, contigs)`
+##### `from_contigs(cls, contigs)`
 ```
 Creates a RangeSet with an interval covering each base of each contig.
 ```
 
 <a name="from_regions"></a>
-#### `from_regions(cls, regions, contig_map=None)`
+##### `from_regions(cls, regions, contig_map=None)`
 ```
 Parses a command-line style literal regions flag into a RangeSet.
 
@@ -122,7 +122,7 @@ Returns:
 ```
 
 <a name="intersection"></a>
-#### `intersection(self, *others)`
+##### `intersection(self, *others)`
 ```
 Computes the intersection among this RangeSet and *others RangeSets.
 
@@ -156,7 +156,7 @@ Returns:
 ```
 
 <a name="overlaps"></a>
-#### `overlaps(self, chrom, pos)`
+##### `overlaps(self, chrom, pos)`
 ```
 Returns True if chr:pos overlaps with any range in this RangeSet.
 
@@ -171,7 +171,7 @@ Returns:
 ```
 
 <a name="partition"></a>
-#### `partition(self, max_size)`
+##### `partition(self, max_size)`
 ```
 Splits our intervals so that none are larger than max_size.
 
@@ -198,7 +198,7 @@ Raises:
 ```
 
 <a name="variant_overlaps"></a>
-#### `variant_overlaps(self, variant, empty_set_return_value=True)`
+##### `variant_overlaps(self, variant, empty_set_return_value=True)`
 ```
 Returns True if the variant's range overlaps with any in this set.
 ```

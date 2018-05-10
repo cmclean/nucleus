@@ -65,7 +65,7 @@ An enumeration of the types of genotypes.
 
 #### Methods:
 <a name="__init__"></a>
-#### `__init__(self, full_name, example_gt, class_id)`
+##### `__init__(self, full_name, example_gt, class_id)`
 ```
 Create a GenotypeType with the given name, GT and class_id.
 ```

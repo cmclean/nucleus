@@ -39,11 +39,11 @@ Attributes:
 
 #### Methods:
 <a name="__init__"></a>
-#### `__init__(self, reads, is_sorted=False)`
+##### `__init__(self, reads, is_sorted=False)`
 
 
 <a name="iterate"></a>
-#### `iterate(self)`
+##### `iterate(self)`
 ```
 Iterate over all records in the reads.
 
@@ -52,7 +52,7 @@ Returns:
 ```
 
 <a name="query"></a>
-#### `query(self, region)`
+##### `query(self, region)`
 ```
 Iterate over records overlapping a query region.
 
@@ -64,7 +64,7 @@ Returns:
 ```
 
 <a name="replace_reads"></a>
-#### `replace_reads(self, reads, is_sorted=False)`
+##### `replace_reads(self, reads, is_sorted=False)`
 ```
 Replace the reads stored by this reader.
 ```
@@ -80,7 +80,7 @@ on the filename's extensions.
 
 #### Methods:
 <a name="__init__"></a>
-#### `__init__(self, input_path, use_index=True, read_requirements=None, parse_aux_fields=False, hts_block_size=None, downsample_fraction=None, random_seed=None)`
+##### `__init__(self, input_path, use_index=True, read_requirements=None, parse_aux_fields=False, hts_block_size=None, downsample_fraction=None, random_seed=None)`
 ```
 Initializes a NativeSamReader.
 
@@ -117,11 +117,11 @@ Raises:
 ```
 
 <a name="iterate"></a>
-#### `iterate(self)`
+##### `iterate(self)`
 
 
 <a name="query"></a>
-#### `query(self, region)`
+##### `query(self, region)`
 
 
 ### NativeSamWriter
@@ -134,7 +134,7 @@ files or TFRecords files, based on the output filename's extensions.
 
 #### Methods:
 <a name="__init__"></a>
-#### `__init__(self, output_path, header)`
+##### `__init__(self, output_path, header)`
 ```
 Initializer for NativeSamWriter.
 
@@ -146,7 +146,7 @@ Args:
 ```
 
 <a name="write"></a>
-#### `write(self, proto)`
+##### `write(self, proto)`
 
 
 ### SamReader

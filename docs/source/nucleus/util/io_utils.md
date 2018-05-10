@@ -49,7 +49,7 @@ RawProtoWriterAdaptor.
 
 #### Methods:
 <a name="__init__"></a>
-#### `__init__(self, raw_writer, take_ownership=True)`
+##### `__init__(self, raw_writer, take_ownership=True)`
 ```
 Creates a new RawProtoWriterAdaptor.
 
@@ -63,7 +63,7 @@ Arguments:
 ```
 
 <a name="write"></a>
-#### `write(self, proto)`
+##### `write(self, proto)`
 ```
 Writes `proto.SerializeToString` to raw_writer.
 ```

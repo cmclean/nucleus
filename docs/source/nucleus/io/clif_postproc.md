@@ -21,7 +21,7 @@ This class gives Python iteration semantics on top of a C++ 'Iterable'.
 
 #### Methods:
 <a name="__init__"></a>
-#### `__init__(self, cc_iterable)`
+##### `__init__(self, cc_iterable)`
 
 
 ## Functions
