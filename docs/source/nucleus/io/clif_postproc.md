@@ -1,0 +1,34 @@
+# nucleus.io.clif_postproc -- CLIF postprocessors.
+
+## **Source code:** [nucleus/io/clif_postproc.py](https://github.com/google/nucleus/tree/master/nucleus/io/clif_postproc.py)
+
+## Classes overview
+
+| Name                                        | Description                   |
+| ------------------------------------------- | ----------------------------- |
+| [`WrappedCppIterable`](#wrappedcppiterable) | This class gives Python       |
+:                                             : iteration semantics on top of :
+:                                             : a C++ 'Iterable'.             :
+
+## Functions overview
+
+| Name                                           | Description          |
+| ---------------------------------------------- | -------------------- |
+| [`ValueErrorOnFalse`](#valueerroronfalse)`(ok, | Returns None / arg / |
+: *args)`                                        : (args,...) if ok.    :
+
+## Classes
+
+### WrappedCppIterable
+
+This class gives Python iteration semantics on top of a C++ 'Iterable'.
+
+`__init__(self, cc_iterable)`
+
+## Functions
+
+### ValueErrorOnFalse
+
+`ValueErrorOnFalse(ok, *args)`
+
+Returns None / arg / (args,...) if ok.
