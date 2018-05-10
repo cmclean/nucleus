@@ -18,9 +18,7 @@ Name | Description
 [`test_tmpfile`](#test_tmpfile)`(name, contents=None)` | Returns a path to a tempfile named name in the test_tmpdir.
 
 ## Functions
-### assert_called_once_workaround
-`assert_called_once_workaround(mock)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fe4f10>"></a> assert_called_once_workaround(mock)
 Asserts that a mock has been called exactly once.
 
 See assert_not_called_workaround for the backstory on why this function
@@ -36,9 +34,7 @@ exists.
 `AssertionError`: mock wasn't called exactly once.
 
 
-### assert_not_called_workaround
-`assert_not_called_workaround(mock)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fe4a10>"></a> assert_not_called_workaround(mock)
 Asserts that a mock has not been called.
 
 There's a bug in mock where some of the assert functions on a mock are being
@@ -71,9 +67,7 @@ incorporated into the backport.
 `AssertionError`: mock has been called.
 
 
-### cc_iterable_len
-`cc_iterable_len(cc_iterable)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fe4050>"></a> cc_iterable_len(cc_iterable)
 Count the number of elements in an Iterable object.
 
 **Args**:
@@ -85,9 +79,7 @@ Count the number of elements in an Iterable object.
 
   integer count
 
-### genomics_core_testdata
-`genomics_core_testdata(filename)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090ada90>"></a> genomics_core_testdata(filename)
 Gets the path to a testdata named filename in util/testdata.
 
 **Args**:
@@ -102,9 +94,7 @@ Gets the path to a testdata named filename in util/testdata.
 
   The absolute path to a testdata file.
 
-### genomics_testdata
-`genomics_testdata(path, datadir=DATADIR)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fce410>"></a> genomics_testdata(path, datadir=DATADIR)
 Gets the path to a testdata file in genomics at relative path.
 
 **Args**:
@@ -122,19 +112,13 @@ Gets the path to a testdata file in genomics at relative path.
 
   The absolute path to a testdata file.
 
-### iterable_len
-`iterable_len(iterable)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fe46d0>"></a> iterable_len(iterable)
 Returns the length of a Python iterable, by advancing it.
 
-### make_read
-`make_read(bases, quals=None, cigar=None, mapq=50, chrom='chr1', start=1, name=None)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fcdf10>"></a> make_read(bases, quals=None, cigar=None, mapq=50, chrom='chr1', start=1, name=None)
 Makes a nucleus.genomics.v1.Read for testing.
 
-### make_variant
-`make_variant(chrom='chr1', start=10, alleles=None, end=None, filters=None, qual=None, gt=None, gq=None, sample_name=None, gls=None)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090a8e10>"></a> make_variant(chrom='chr1', start=10, alleles=None, end=None, filters=None, qual=None, gt=None, gq=None, sample_name=None, gls=None)
 Creates a new Variant proto from args.
 
 **Args**:
@@ -176,14 +160,10 @@ Creates a new Variant proto from args.
 
   nucleus.genomics.v1.Variant proto.
 
-### set_list_values
-`set_list_values(list_value, values)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fd4c10>"></a> set_list_values(list_value, values)
 Sets a ListValue to have the values in values.
 
-### test_tmpfile
-`test_tmpfile(name, contents=None)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fd4a50>"></a> test_tmpfile(name, contents=None)
 Returns a path to a tempfile named name in the test_tmpdir.
 
 **Args**:

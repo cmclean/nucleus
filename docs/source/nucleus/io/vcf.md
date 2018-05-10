@@ -63,8 +63,8 @@ Implementation note:
   it may be worth considering if we want to use this functionality with a
   large number of variants.
 
-`__init__(self, variants, header=None)`
-
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x555808fecf50>"></a> __init__(self, variants, header=None)
 Creates a VCFReader backed by a collection of variants.
 
 **Args**:
@@ -77,12 +77,10 @@ Creates a VCFReader backed by a collection of variants.
     reader.
 
 
-`iterate(self)`
+####<a name="<_ast.FunctionDef object at 0x5558090b15d0>"></a> iterate(self)
 
 
-
-`query(self, region)`
-
+####<a name="<_ast.FunctionDef object at 0x5558090b17d0>"></a> query(self, region)
 
 
 ### NativeVcfReader
@@ -92,8 +90,8 @@ Most users will want to use VcfReader instead, because it dynamically
 dispatches between reading native VCF files and TFRecord files based
 on the filename's extensions.
 
-`__init__(self, input_path, use_index=True, excluded_info_fields=None, excluded_format_fields=None)`
-
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x555808fd4890>"></a> __init__(self, input_path, use_index=True, excluded_info_fields=None, excluded_format_fields=None)
 Initializer for NativeVcfReader.
 
 **Args**:
@@ -111,12 +109,10 @@ Initializer for NativeVcfReader.
     included.
 
 
-`iterate(self)`
+####<a name="<_ast.FunctionDef object at 0x555808ff3250>"></a> iterate(self)
 
 
-
-`query(self, region)`
-
+####<a name="<_ast.FunctionDef object at 0x555808ff38d0>"></a> query(self, region)
 
 
 ### NativeVcfWriter
@@ -125,8 +121,8 @@ Class for writing to native VCF files.
 Most users will want VcfWriter, which will write to either native VCF
 files or TFRecords files, based on the output filename's extensions.
 
-`__init__(self, output_path, header=None, round_qualities=False, excluded_info_fields=None, excluded_format_fields=None)`
-
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x5558090a8550>"></a> __init__(self, output_path, header=None, round_qualities=False, excluded_info_fields=None, excluded_format_fields=None)
 Initializer for NativeVcfWriter.
 
 **Args**:
@@ -148,8 +144,7 @@ Initializer for NativeVcfWriter.
     not be written to the output. If None, all FORMAT fields are included.
 
 
-`write(self, proto)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fd45d0>"></a> write(self, proto)
 
 
 ### VcfHeaderCache
@@ -165,8 +160,8 @@ Note: Users should not need to interact with this class at all. It is used
 by the variant_utils.{get,set}_info and variantcall_utils.{get,set}_format
 functions for interacting with the INFO and FORMAT fields in a Variant proto.
 
-`__init__(self, header)`
-
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x555808fcaa10>"></a> __init__(self, header)
 Constructor.
 
 **Args**:
@@ -175,16 +170,13 @@ Constructor.
     functions needed.
 
 
-`format_field_get_fn(self, field_name)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fd4fd0>"></a> format_field_get_fn(self, field_name)
 Returns a callable that gets the given FORMAT field based on its type.
 
-`format_field_set_fn(self, field_name)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fd4f50>"></a> format_field_set_fn(self, field_name)
 Returns a callable that sets the given FORMAT field based on its type.
 
-`info_field_get_fn(self, field_name)`
-
+####<a name="<_ast.FunctionDef object at 0x5558090add10>"></a> info_field_get_fn(self, field_name)
 Returns a callable that extracts the given INFO field based on its type.
 
 **Args**:
@@ -196,8 +188,7 @@ Returns a callable that extracts the given INFO field based on its type.
 
   A callable used to extract the given INFO field from a Variant proto.
 
-`info_field_set_fn(self, field_name)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fd4b10>"></a> info_field_set_fn(self, field_name)
 Returns a callable that sets the given INFO field based on its type.
 
 ### VcfReader

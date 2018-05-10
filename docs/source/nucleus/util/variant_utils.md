@@ -59,17 +59,15 @@ An enumeration of the types of allele mismatches we detect.
 ### GenotypeType
 An enumeration of the types of genotypes.
 
-`__init__(self, full_name, example_gt, class_id)`
-
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x5558090bca10>"></a> __init__(self, full_name, example_gt, class_id)
 Create a GenotypeType with the given name, GT and class_id.
 
 ### VariantType
 An enumeration of the types of variants.
 
 ## Functions
-### allele_indices_for_genotype_likelihood_index
-`allele_indices_for_genotype_likelihood_index(gl_index, ploidy=2)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090eca10>"></a> allele_indices_for_genotype_likelihood_index(gl_index, ploidy=2)
 Returns a tuple of allele_indices corresponding to the given GL index.
 
 This is the inverse function to `genotype_likelihood_index`.
@@ -91,9 +89,7 @@ This is the inverse function to `genotype_likelihood_index`.
 `NotImplementedError`: The requested allele indices are more than diploid.
 
 
-### allele_indices_with_num_alts
-`allele_indices_with_num_alts(variant, num_alts, ploidy=2)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090e9690>"></a> allele_indices_with_num_alts(variant, num_alts, ploidy=2)
 Returns a list of allele indices configurations with `num_alts` alternates.
 
 **Args**:
@@ -119,9 +115,7 @@ Returns: A list of tuples. Each tuple is of length `ploidy` and represents the
 `NotImplementedError`: `ploidy` is not diploid.
 
 
-### allele_mismatches
-`allele_mismatches(evalv, truev)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090fb4d0>"></a> allele_mismatches(evalv, truev)
 Determines the set of allele mismatch discordances between evalv and truev.
 
 Compares the alleles present in evalv and truev to determine if there are any
@@ -149,9 +143,7 @@ the reference genome than the C=>T allele.
 
   A set of AlleleMismatchType values.
 
-### decode_variants
-`decode_variants(encoded_iter)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090b11d0>"></a> decode_variants(encoded_iter)
 Yields a genomics.Variant from encoded_iter.
 
 **Args**:
@@ -165,9 +157,7 @@ Yields a genomics.Variant from encoded_iter.
   A parsed nucleus.genomics.v1.Variant for each encoded element of
   encoded_iter in order.
 
-### format_alleles
-`format_alleles(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fcad50>"></a> format_alleles(variant)
 Gets a string representation of the variant's alleles.
 
 **Args**:
@@ -179,9 +169,7 @@ Gets a string representation of the variant's alleles.
 
   A string ref_bases/alt1,alt2 etc.
 
-### format_filters
-`format_filters(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090bc4d0>"></a> format_filters(variant)
 Gets a human-readable string showing the filters applied to variant.
 
 Returns a string with the filter field values of variant separated by commas.
@@ -196,9 +184,7 @@ If the filter field isn't set, returns vcf_constants.MISSING_FIELD ('.').
 
   A string.
 
-### format_position
-`format_position(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fcaf10>"></a> format_position(variant)
 Gets a string representation of the variant's position.
 
 **Args**:
@@ -210,9 +196,7 @@ Gets a string representation of the variant's position.
 
   A string chr:start + 1 (as start is zero-based).
 
-### genotype_as_alleles
-`genotype_as_alleles(variant, call_ix=0)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090aa310>"></a> genotype_as_alleles(variant, call_ix=0)
 Gets genotype of the sample in variant as a list of actual alleles.
 
 Returns the alleles specified by the genotype indices of variant.calls[0].
@@ -238,9 +222,7 @@ For example, if variant.reference_bases = 'A' and variant.alternative_bases
 `ValueError`: If variant doesn't have a call at the specified index.
 
 
-### genotype_likelihood
-`genotype_likelihood(variant_call, allele_indices)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090fdad0>"></a> genotype_likelihood(variant_call, allele_indices)
 Returns the genotype likelihood for the given allele indices.
 
 **Args**:
@@ -256,9 +238,7 @@ Returns the genotype likelihood for the given allele indices.
 
   The float value of the genotype likelihood of this set of alleles.
 
-### genotype_likelihood_index
-`genotype_likelihood_index(allele_indices)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090fde50>"></a> genotype_likelihood_index(allele_indices)
 Returns the genotype likelihood index for the given allele indices.
 
 **Args**:
@@ -277,9 +257,7 @@ Returns the genotype likelihood index for the given allele indices.
 `NotImplementedError`: The allele_indices are more than diploid.
 
 
-### genotype_ordering_in_likelihoods
-`genotype_ordering_in_likelihoods(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090fd0d0>"></a> genotype_ordering_in_likelihoods(variant)
 Yields (i, j, allele_i, allele_j) for the genotypes ordering in GLs.
 
 https://samtools.github.io/hts-specs/VCFv4.1.pdf
@@ -303,9 +281,7 @@ Currently this function only implements for diploid cases.
 
   allele indices and strings (i, j, allele_i, allele_j) in the correct order.
 
-### genotype_type
-`genotype_type(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090c5390>"></a> genotype_type(variant)
 Gets the GenotypeType for variant.
 
 If variant doesn't have genotypes, returns no_call. Otherwise
@@ -326,9 +302,7 @@ status of the genotypes in the call field of variant.
 `ValueError`: If variant has more than one call (i.e., is multi-sample).
 
 
-### get_info
-`get_info(variant, field_name, vcf_object=None)`
-
+###<a name="<_ast.FunctionDef object at 0x55580910efd0>"></a> get_info(variant, field_name, vcf_object=None)
 Returns the value of the `field_name` INFO field.
 
 The `vcf_object` is used to determine the type of the resulting value. If it
@@ -347,9 +321,7 @@ the list of values is returned.
     field.
 
 
-### has_calls
-`has_calls(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090c5090>"></a> has_calls(variant)
 Does variant have any genotype calls?
 
 **Args**:
@@ -361,9 +333,7 @@ Does variant have any genotype calls?
 
   True if variant has one or more VariantCalls.
 
-### has_deletion
-`has_deletion(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fd4590>"></a> has_deletion(variant)
 Does variant have a deletion?
 
 **Args**:
@@ -376,9 +346,7 @@ Does variant have a deletion?
   True if the alleles in variant indicate an deletion event
   occurs at this site.
 
-### has_insertion
-`has_insertion(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090d6890>"></a> has_insertion(variant)
 Does variant have an insertion?
 
 **Args**:
@@ -391,13 +359,10 @@ Does variant have an insertion?
   True if the alleles in variant indicate an insertion event
   occurs at this site.
 
-### `is_biallelic(variant)`<a name="is_biallelic"></a>
-
+###<a name="<_ast.FunctionDef object at 0x5558090a8250>"></a> is_biallelic(variant)
 Returns True if variant has exactly one alternate allele.
 
-### is_deletion
-`is_deletion(ref, alt)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090d6150>"></a> is_deletion(ref, alt)
 Is alt a deletion w.r.t. ref?
 
 **Args**:
@@ -411,14 +376,10 @@ Is alt a deletion w.r.t. ref?
 
   True if alt is a deletion w.r.t. ref.
 
-### is_filtered
-`is_filtered(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090d3690>"></a> is_filtered(variant)
 Returns True if variant has a non-PASS filter field, or False otherwise.
 
-### is_gvcf
-`is_gvcf(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090de150>"></a> is_gvcf(variant)
 Returns true if variant encodes a standard gVCF reference block.
 
 This means in practice that variant has a single alternate allele that is the
@@ -433,9 +394,7 @@ canonical gVCF allele vcf_constants.GVCF_ALT_ALLELE.
 
   Boolean. True if variant is a gVCF record, False otherwise.
 
-### is_indel
-`is_indel(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fce3d0>"></a> is_indel(variant)
 Is variant an indel?
 
 An indel event is simply one where the size of at least one of the alleles
@@ -451,9 +410,7 @@ is > 1.
   True if the alleles in variant indicate an insertion/deletion event
   occurs at this site.
 
-### is_insertion
-`is_insertion(ref, alt)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090d6d50>"></a> is_insertion(ref, alt)
 Is alt an insertion w.r.t. ref?
 
 **Args**:
@@ -467,9 +424,7 @@ Is alt an insertion w.r.t. ref?
 
   True if alt is an insertion w.r.t. ref.
 
-### is_multiallelic
-`is_multiallelic(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090ad150>"></a> is_multiallelic(variant)
 Does variant have multiple alt alleles?
 
 **Args**:
@@ -481,9 +436,7 @@ Does variant have multiple alt alleles?
 
   True if variant has more than one alt allele.
 
-### is_ref
-`is_ref(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090a8590>"></a> is_ref(variant)
 Returns true if variant is a reference record.
 
 Variant protos can encode sites that aren't actually mutations in the
@@ -499,9 +452,7 @@ no mutation present (i.e., alt is the missing value).
 
   A boolean.
 
-### is_snp
-`is_snp(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fced90>"></a> is_snp(variant)
 Is variant a SNP?
 
 **Args**:
@@ -513,9 +464,7 @@ Is variant a SNP?
 
   True if all alleles of variant are 1 bp in length.
 
-### is_transition
-`is_transition(allele1, allele2)`
-
+###<a name="<_ast.FunctionDef object at 0x555808ff3450>"></a> is_transition(allele1, allele2)
 Is the pair of single bp alleles a transition?
 
 **Args**:
@@ -534,9 +483,7 @@ Is the pair of single bp alleles a transition?
 `ValueError`: if allele1 and allele2 are equal or aren't 1 bp in length.
 
 
-### is_variant_call
-`is_variant_call(variant, require_non_ref_genotype=True, no_calls_are_variant=False)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090d3c90>"></a> is_variant_call(variant, require_non_ref_genotype=True, no_calls_are_variant=False)
 Is variant a non-reference call?
 
 A Variant proto doesn't always imply that there's a variant present in the
@@ -574,9 +521,7 @@ a variant call.
 `ValueError`: If variant has more than one call (i.e., is multi-sample).
 
 
-### only_call
-`only_call(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fcd550>"></a> only_call(variant)
 Ensures the Variant has exactly one VariantCall, and returns it.
 
 **Args**:
@@ -593,9 +538,7 @@ Ensures the Variant has exactly one VariantCall, and returns it.
 `ValueError`: Not exactly one VariantCall is in the variant.
 
 
-### set_info
-`set_info(variant, field_name, value, vcf_object=None)`
-
+###<a name="<_ast.FunctionDef object at 0x55580910e790>"></a> set_info(variant, field_name, value, vcf_object=None)
 Sets a field of the info map of the `Variant` to the given value(s).
 
 `variant.info` is analogous to the INFO field of a VCF record.
@@ -616,9 +559,7 @@ Sets a field of the info map of the `Variant` to the given value(s).
     field.
 
 
-### simplify_alleles
-`simplify_alleles(*alleles)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090e0350>"></a> simplify_alleles(*alleles)
 Simplifies alleles by stripping off common postfix bases.
 
 For example, simplify("AC", "GC") would produce the tuple "A", "G" as the "C"
@@ -640,14 +581,10 @@ we produce ['CAC', 'C'].
   A tuple, one for each allele in alleles in order, with any common postfix
   bases stripped off.
 
-### sorted_variants
-`sorted_variants(variants)`
-
+###<a name="<_ast.FunctionDef object at 0x555809109850>"></a> sorted_variants(variants)
 Returns sorted(variants, key=variant_range_tuple).
 
-### variant_key
-`variant_key(variant, sort_alleles=True)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090e7f90>"></a> variant_key(variant, sort_alleles=True)
 Gets a human-readable string key that is almost unique for Variant.
 
 Gets a string key that contains key information about the variant, formatted
@@ -681,9 +618,7 @@ specification works.
 
   A str.
 
-### variant_position
-`variant_position(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090b12d0>"></a> variant_position(variant)
 Returns a new Range at the start position of variant.
 
 **Args**:
@@ -697,9 +632,7 @@ Returns a new Range at the start position of variant.
   that is start + 1. This produces a range that is the single basepair of the
   start of variant, hence the name position.
 
-### variant_range
-`variant_range(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090b1dd0>"></a> variant_range(variant)
 Returns a new Range covering variant.
 
 **Args**:
@@ -711,9 +644,7 @@ Returns a new Range covering variant.
 
   A new Range with the same reference_name, start, and end as variant.
 
-### variant_range_tuple
-`variant_range_tuple(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090b19d0>"></a> variant_range_tuple(variant)
 Returns a new tuple of (reference_name, start, end) for the variant.
 
 A common use case for this function is to sort variants by chromosomal
@@ -728,9 +659,7 @@ location, with usage like `sorted(variants, key=variant_range_tuple)`.
 
   A three-tuple with the same reference_name, start, and end as variant.
 
-### variant_type
-`variant_type(variant)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090a8550>"></a> variant_type(variant)
 Gets the VariantType of variant.
 
 **Args**:
@@ -742,9 +671,7 @@ Gets the VariantType of variant.
 
   VariantType indicating the type of this variant.
 
-### variants_are_sorted
-`variants_are_sorted(variants)`
-
+###<a name="<_ast.FunctionDef object at 0x555809109b10>"></a> variants_are_sorted(variants)
 Returns True if variants are sorted w.r.t. variant_range.
 
 **Args**:
@@ -757,9 +684,7 @@ Returns True if variants are sorted w.r.t. variant_range.
 
   True if variants are sorted, False otherwise.
 
-### variants_overlap
-`variants_overlap(variant1, variant2)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090e7b90>"></a> variants_overlap(variant1, variant2)
 Returns True if the range of variant1 and variant2 overlap.
 
 This is equivalent to:

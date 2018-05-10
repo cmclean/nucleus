@@ -38,20 +38,18 @@ Python interface class for in-memory sam reader.
 `is_sorted`: bool, if reads are sorted.
 
 
-`__init__(self, reads, is_sorted=False)`
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x555808fcad10>"></a> __init__(self, reads, is_sorted=False)
 
 
-
-`iterate(self)`
-
+####<a name="<_ast.FunctionDef object at 0x5558090a8790>"></a> iterate(self)
 Iterate over all records in the reads.
 
 **Returns**:
 
   An iterator over nucleus.genomics.v1.Read's.
 
-`query(self, region)`
-
+####<a name="<_ast.FunctionDef object at 0x5558090a8390>"></a> query(self, region)
 Iterate over records overlapping a query region.
 
 **Args**:
@@ -63,8 +61,7 @@ Iterate over records overlapping a query region.
 
   An iterator over nucleus.genomics.v1.Read's.
 
-`replace_reads(self, reads, is_sorted=False)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fca050>"></a> replace_reads(self, reads, is_sorted=False)
 Replace the reads stored by this reader.
 
 ### NativeSamReader
@@ -74,8 +71,8 @@ Most users will want to use SamReader instead, because it dynamically
 dispatches between reading native SAM files and TFRecord files based
 on the filename's extensions.
 
-`__init__(self, input_path, use_index=True, read_requirements=None, parse_aux_fields=False, hts_block_size=None, downsample_fraction=None, random_seed=None)`
-
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x555808fcedd0>"></a> __init__(self, input_path, use_index=True, read_requirements=None, parse_aux_fields=False, hts_block_size=None, downsample_fraction=None, random_seed=None)
 Initializes a NativeSamReader.
 
 **Args**:
@@ -120,12 +117,10 @@ Initializes a NativeSamReader.
 `ImportError`: If someone tries to load a tfbam file.
 
 
-`iterate(self)`
+####<a name="<_ast.FunctionDef object at 0x555808ff3850>"></a> iterate(self)
 
 
-
-`query(self, region)`
-
+####<a name="<_ast.FunctionDef object at 0x555808ff3b50>"></a> query(self, region)
 
 
 ### NativeSamWriter
@@ -134,8 +129,8 @@ Class for writing to native SAM files.
 Most users will want SamWriter, which will write to either native SAM
 files or TFRecords files, based on the output filename's extensions.
 
-`__init__(self, output_path, header)`
-
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x5558090ad690>"></a> __init__(self, output_path, header)
 Initializer for NativeSamWriter.
 
 **Args**:
@@ -147,8 +142,7 @@ Initializer for NativeSamWriter.
     the rest of the file.
 
 
-`write(self, proto)`
-
+####<a name="<_ast.FunctionDef object at 0x5558090ad750>"></a> write(self, proto)
 
 
 ### SamReader

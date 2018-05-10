@@ -23,9 +23,7 @@ Exception class related to invalid command-line flags.
 Base class for core error types.
 
 ## Functions
-### clean_commandline_error_exit
-`clean_commandline_error_exit(allowed_exceptions=(Error, CommandLineError), exit_value=errno.ENOENT)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090a8790>"></a> clean_commandline_error_exit(allowed_exceptions=(Error, CommandLineError), exit_value=errno.ENOENT)
 Wraps commands to capture certain exceptions and exit without stacktraces.
 
 This function is intended to wrap all code within main() of Python binaries
@@ -49,9 +47,7 @@ as a context manager and its usage should be limited to main().
   The yield in this function is used to allow the block nested in the with
   statement to be executed.
 
-### log_and_raise
-`log_and_raise(msg, exception_class=Error)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090a8190>"></a> log_and_raise(msg, exception_class=Error)
 Logs the given message at ERROR level and raises exception.
 
 **Args**:

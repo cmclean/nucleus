@@ -25,12 +25,11 @@ Otherwise, a native writer is.
 Sub-classes of DispatchingGenomicsWriter must define a _native_writer()
 method.
 
-`__init__(self, output_path, **kwargs)`
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x555808fd4690>"></a> __init__(self, output_path, **kwargs)
 
 
-
-`write(self, proto)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fcea10>"></a> write(self, proto)
 
 
 ### GenomicsWriter
@@ -39,8 +38,8 @@ Abstract base class for writing genomics data.
 A GenomicsWriter only has one method, write, which writes a single
 protocol buffer to a file.
 
-`write(self, proto)`
-
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x555808ff3710>"></a> write(self, proto)
 Writes proto to the file.
 
 **Args**:
@@ -51,11 +50,10 @@ Writes proto to the file.
 ### TFRecordWriter
 A GenomicsWriter that writes to a TFRecord file.
 
-`__init__(self, output_path, header=None)`
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x555808fcd890>"></a> __init__(self, output_path, header=None)
 
 
-
-`write(self, proto)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fcd910>"></a> write(self, proto)
 
 

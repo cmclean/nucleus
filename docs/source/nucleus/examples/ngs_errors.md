@@ -88,9 +88,7 @@ Name | Description
 [`make_ngs_error_examples`](#make_ngs_error_examples)`(ref_path, vcf_path, bam_path, examples_out_path, max_reads=None)` | Driver program for ngs_errors.
 
 ## Functions
-### is_usable_training_example
-`is_usable_training_example(read, variants, ref_bases)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fd4990>"></a> is_usable_training_example(read, variants, ref_bases)
 Returns True if we can use read to make a training example.
 
 **Args**:
@@ -107,14 +105,10 @@ Returns True if we can use read to make a training example.
   True if read can be used to construct a high-quality training example, False
   otherwise.
 
-### main
-`main(argv)`
+###<a name="<_ast.FunctionDef object at 0x555808ff8610>"></a> main(argv)
 
 
-
-### make_example
-`make_example(read, ref_bases)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fce250>"></a> make_example(read, ref_bases)
 Create a tf.Example for read and ref_bases.
 
 **Args**:
@@ -135,9 +129,7 @@ Create a tf.Example for read and ref_bases.
     true_sequence - the "true" bases that should have been observed for this
                     read, as extracted from the reference genome.
 
-### make_ngs_error_examples
-`make_ngs_error_examples(ref_path, vcf_path, bam_path, examples_out_path, max_reads=None)`
-
+###<a name="<_ast.FunctionDef object at 0x555808febad0>"></a> make_ngs_error_examples(ref_path, vcf_path, bam_path, examples_out_path, max_reads=None)
 Driver program for ngs_errors.
 
 See module description for details.

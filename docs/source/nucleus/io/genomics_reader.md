@@ -26,16 +26,14 @@ Sub-classes of DispatchingGenomicsReader must define the following methods:
   * _native_reader()
   * _record_proto()
 
-`__init__(self, input_path, **kwargs)`
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x555808fce110>"></a> __init__(self, input_path, **kwargs)
 
 
-
-`iterate(self)`
-
+####<a name="<_ast.FunctionDef object at 0x555808ff3890>"></a> iterate(self)
 
 
-`query(self, region)`
-
+####<a name="<_ast.FunctionDef object at 0x555808ff3a90>"></a> query(self, region)
 
 
 ### GenomicsReader
@@ -44,16 +42,14 @@ Abstract base class for reading genomics data.
 In addition to the abstractmethods defined below, sub-classes should
 also set a .header member variable in their objects.
 
-`__init__(self)`
-
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x555808fcdf90>"></a> __init__(self)
 Allows users to use the object as an iterator.
 
-`iterate(self)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fcd990>"></a> iterate(self)
 Returns an iterator for going through the file's records.
 
-`query(self, region)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fcdd10>"></a> query(self, region)
 Returns an iterator for going through the records in the region.
 
 **Args**:
@@ -77,8 +73,8 @@ Example usage:
 Note that TFRecord files do not have headers, and do not need
 to be wrapped in a "with" block.
 
-`__init__(self, input_path, proto, tf_options=None)`
-
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x5558090ada50>"></a> __init__(self, input_path, proto, tf_options=None)
 Initializes the TFRecordReader.
 
 **Args**:
@@ -93,11 +89,9 @@ Initializes the TFRecordReader.
     whether input_path ends in '.gz' or not.
 
 
-`iterate(self)`
+####<a name="<_ast.FunctionDef object at 0x555808fd49d0>"></a> iterate(self)
 
 
-
-`query(self, region)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fd4c10>"></a> query(self, region)
 
 

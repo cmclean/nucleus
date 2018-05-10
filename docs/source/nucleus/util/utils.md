@@ -10,9 +10,7 @@ Name | Description
 [`reservoir_sample`](#reservoir_sample)`(iterable, k, random=None)` | Samples k elements with uniform probability from an iterable.
 
 ## Functions
-### read_range
-`read_range(read)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090b1c90>"></a> read_range(read)
 Creates a Range proto from the alignment of Read.
 
 **Args**:
@@ -24,9 +22,7 @@ Creates a Range proto from the alignment of Read.
 
   A nucleus.genomics.v1.Range for read.
 
-### reservoir_sample
-`reservoir_sample(iterable, k, random=None)`
-
+###<a name="<_ast.FunctionDef object at 0x5558090b1e50>"></a> reservoir_sample(iterable, k, random=None)
 Samples k elements with uniform probability from an iterable.
 
 Selects a subset of k elements from n input elements with uniform probability

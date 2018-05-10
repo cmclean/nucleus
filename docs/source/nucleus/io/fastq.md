@@ -39,8 +39,8 @@ Most users will want to use FastqReader instead, because it dynamically
 dispatches between reading native FASTQ files and TFRecord files based on the
 filename's extension.
 
-`__init__(self, input_path)`
-
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x5558090adfd0>"></a> __init__(self, input_path)
 Initializes a NativeFastqReader.
 
 **Args**:
@@ -48,12 +48,10 @@ Initializes a NativeFastqReader.
 `input_path`: string. A path to a resource containing FASTQ records.
 
 
-`iterate(self)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fcaf10>"></a> iterate(self)
 Returns an iterable of FastqRecord protos in the file.
 
-`query(self)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fcad10>"></a> query(self)
 
 
 ### NativeFastqWriter
@@ -62,8 +60,8 @@ Class for writing to native FASTQ files.
 Most users will want FastqWriter, which will write to either native FASTQ
 files or TFRecord files, based on the output filename's extension.
 
-`__init__(self, output_path)`
-
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x555808fcd950>"></a> __init__(self, output_path)
 Initializer for NativeFastqWriter.
 
 **Args**:
@@ -71,7 +69,6 @@ Initializer for NativeFastqWriter.
 `output_path`: str. The path to which to write the FASTQ file.
 
 
-`write(self, proto)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fd47d0>"></a> write(self, proto)
 
 

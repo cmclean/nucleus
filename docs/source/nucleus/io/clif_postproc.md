@@ -17,13 +17,11 @@ Name | Description
 ### WrappedCppIterable
 This class gives Python iteration semantics on top of a C++ 'Iterable'.
 
-`__init__(self, cc_iterable)`
-
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x555808fcee90>"></a> __init__(self, cc_iterable)
 
 
 ## Functions
-### ValueErrorOnFalse
-`ValueErrorOnFalse(ok, *args)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fcad90>"></a> ValueErrorOnFalse(ok, *args)
 Returns None / arg / (args,...) if ok.
 

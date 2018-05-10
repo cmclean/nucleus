@@ -9,8 +9,6 @@ Name | Description
 [`main`](#main)`(argv)` | 
 
 ## Functions
-### main
-`main(argv)`
-
+###<a name="<_ast.FunctionDef object at 0x555808fca250>"></a> main(argv)
 
 

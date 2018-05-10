@@ -33,8 +33,8 @@ will return the base 'C', as the 'A' base is at position 10. This makes it
 straightforward to cache a small region of a full chromosome without having to
 store the entire chromosome sequence in memory (potentially big!).
 
-`__init__(self, chromosomes)`
-
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x555808fd4610>"></a> __init__(self, chromosomes)
 Initializes an InMemoryRefReader using data from chromosomes.
 
 **Args**:
@@ -49,31 +49,26 @@ Initializes an InMemoryRefReader using data from chromosomes.
 `ValueError`: If any of the InMemoryChromosome are invalid.
 
 
-`c_reader(self)`
-
+####<a name="<_ast.FunctionDef object at 0x555808ff3690>"></a> c_reader(self)
 Returns the underlying C++ reader.
 
-`contig(self, contig_name)`
-
+####<a name="<_ast.FunctionDef object at 0x555808ff3390>"></a> contig(self, contig_name)
 Returns a ContigInfo proto for contig_name.
 
-`is_valid(self, region)`
-
+####<a name="<_ast.FunctionDef object at 0x555808ff3090>"></a> is_valid(self, region)
 Returns whether the region is contained in this FASTA file.
 
-`iterate(self)`
+####<a name="<_ast.FunctionDef object at 0x555808fefb90>"></a> iterate(self)
 
 
-
-`query(self, region)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fefd50>"></a> query(self, region)
 Returns the base pairs (as a string) in the given region.
 
 ### RefFastaReader
 Class for reading from FASTA files containing a reference genome.
 
-`__init__(self, input_path, cache_size=None)`
-
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x555808fce110>"></a> __init__(self, input_path, cache_size=None)
 Initializes a RefFastaReader.
 
 **Args**:
@@ -85,23 +80,18 @@ Initializes a RefFastaReader.
     Defaults to 64K.  The cache can be disabled using cache_size=0.
 
 
-`c_reader(self)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fcdcd0>"></a> c_reader(self)
 Returns the underlying C++ reader.
 
-`contig(self, contig_name)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fcdfd0>"></a> contig(self, contig_name)
 Returns a ContigInfo proto for contig_name.
 
-`is_valid(self, region)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fcd790>"></a> is_valid(self, region)
 Returns whether the region is contained in this FASTA file.
 
-`iterate(self)`
+####<a name="<_ast.FunctionDef object at 0x555808fcd590>"></a> iterate(self)
 
 
-
-`query(self, region)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fcd390>"></a> query(self, region)
 Returns the base pairs (as a string) in the given region.
 

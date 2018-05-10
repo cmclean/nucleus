@@ -34,8 +34,8 @@ Most users will want to use BedReader instead, because it dynamically
 dispatches between reading native BED files and TFRecord files based on the
 filename's extension.
 
-`__init__(self, input_path, num_fields=0)`
-
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x555808fd4290>"></a> __init__(self, input_path, num_fields=0)
 Initializes a NativeBedReader.
 
 **Args**:
@@ -46,12 +46,10 @@ Initializes a NativeBedReader.
     to zero, all fields in the input are read.
 
 
-`iterate(self)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fca110>"></a> iterate(self)
 Returns an iterable of BedRecord protos in the file.
 
-`query(self)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fca3d0>"></a> query(self)
 
 
 ### NativeBedWriter
@@ -60,8 +58,8 @@ Class for writing to native BED files.
 Most users will want BedWriter, which will write to either native BED
 files or TFRecord files, based on the output filename's extension.
 
-`__init__(self, output_path, header=None)`
-
+#### Methods:
+####<a name="<_ast.FunctionDef object at 0x555808fcd250>"></a> __init__(self, output_path, header=None)
 Initializer for NativeBedWriter.
 
 **Args**:
@@ -72,7 +70,6 @@ Initializer for NativeBedWriter.
     information germane to the constituent BED records.
 
 
-`write(self, proto)`
-
+####<a name="<_ast.FunctionDef object at 0x555808fcec50>"></a> write(self, proto)
 
 
