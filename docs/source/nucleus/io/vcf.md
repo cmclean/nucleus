@@ -66,8 +66,8 @@ Implementation note:
 ```
 
 #### Methods:
-#### `__init__(self, variants, header=None)`<a name="__init__"></a>
-```
+<a name="__init__"></a>
+#### `__init__(self, variants, header=None)````
 Creates a VCFReader backed by a collection of variants.
 
 Args:
@@ -78,11 +78,11 @@ Args:
     reader.
 ```
 
-#### `iterate(self)`<a name="iterate"></a>
+<a name="iterate"></a>
+#### `iterate(self)`
 
-
-#### `query(self, region)`<a name="query"></a>
-
+<a name="query"></a>
+#### `query(self, region)`
 
 ### NativeVcfReader
 ```
@@ -94,8 +94,8 @@ on the filename's extensions.
 ```
 
 #### Methods:
-#### `__init__(self, input_path, use_index=True, excluded_info_fields=None, excluded_format_fields=None)`<a name="__init__"></a>
-```
+<a name="__init__"></a>
+#### `__init__(self, input_path, use_index=True, excluded_info_fields=None, excluded_format_fields=None)````
 Initializer for NativeVcfReader.
 
 Args:
@@ -109,11 +109,11 @@ Args:
     included.
 ```
 
-#### `iterate(self)`<a name="iterate"></a>
+<a name="iterate"></a>
+#### `iterate(self)`
 
-
-#### `query(self, region)`<a name="query"></a>
-
+<a name="query"></a>
+#### `query(self, region)`
 
 ### NativeVcfWriter
 ```
@@ -124,8 +124,8 @@ files or TFRecords files, based on the output filename's extensions.
 ```
 
 #### Methods:
-#### `__init__(self, output_path, header=None, round_qualities=False, excluded_info_fields=None, excluded_format_fields=None)`<a name="__init__"></a>
-```
+<a name="__init__"></a>
+#### `__init__(self, output_path, header=None, round_qualities=False, excluded_info_fields=None, excluded_format_fields=None)````
 Initializer for NativeVcfWriter.
 
 Args:
@@ -142,8 +142,8 @@ Args:
     not be written to the output. If None, all FORMAT fields are included.
 ```
 
-#### `write(self, proto)`<a name="write"></a>
-
+<a name="write"></a>
+#### `write(self, proto)`
 
 ### VcfHeaderCache
 ```
@@ -161,8 +161,8 @@ functions for interacting with the INFO and FORMAT fields in a Variant proto.
 ```
 
 #### Methods:
-#### `__init__(self, header)`<a name="__init__"></a>
-```
+<a name="__init__"></a>
+#### `__init__(self, header)````
 Constructor.
 
 Args:
@@ -170,18 +170,18 @@ Args:
     functions needed.
 ```
 
-#### `format_field_get_fn(self, field_name)`<a name="format_field_get_fn"></a>
-```
+<a name="format_field_get_fn"></a>
+#### `format_field_get_fn(self, field_name)````
 Returns a callable that gets the given FORMAT field based on its type.
 ```
 
-#### `format_field_set_fn(self, field_name)`<a name="format_field_set_fn"></a>
-```
+<a name="format_field_set_fn"></a>
+#### `format_field_set_fn(self, field_name)````
 Returns a callable that sets the given FORMAT field based on its type.
 ```
 
-#### `info_field_get_fn(self, field_name)`<a name="info_field_get_fn"></a>
-```
+<a name="info_field_get_fn"></a>
+#### `info_field_get_fn(self, field_name)````
 Returns a callable that extracts the given INFO field based on its type.
 
 Args:
@@ -191,8 +191,8 @@ Returns:
   A callable used to extract the given INFO field from a Variant proto.
 ```
 
-#### `info_field_set_fn(self, field_name)`<a name="info_field_set_fn"></a>
-```
+<a name="info_field_set_fn"></a>
+#### `info_field_set_fn(self, field_name)````
 Returns a callable that sets the given INFO field based on its type.
 ```
 

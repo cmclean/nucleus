@@ -14,11 +14,11 @@ Name | Description
 [`main`](#main)`(argv)` | 
 
 ## Functions
-### `get_variant_ad(variant)`<a name="get_variant_ad"></a>
-```
+<a name="get_variant_ad"></a>
+### `get_variant_ad(variant)````
 Returns the allele depth for the Variant, calculated across its calls.
 ```
 
-### `main(argv)`<a name="main"></a>
-
+<a name="main"></a>
+### `main(argv)`
 

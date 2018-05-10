@@ -27,8 +27,8 @@ Base class for core error types.
 ```
 
 ## Functions
-### `clean_commandline_error_exit(allowed_exceptions=(Error, CommandLineError), exit_value=errno.ENOENT)`<a name="clean_commandline_error_exit"></a>
-```
+<a name="clean_commandline_error_exit"></a>
+### `clean_commandline_error_exit(allowed_exceptions=(Error, CommandLineError), exit_value=errno.ENOENT)````
 Wraps commands to capture certain exceptions and exit without stacktraces.
 
 This function is intended to wrap all code within main() of Python binaries
@@ -49,8 +49,8 @@ Yields:
   statement to be executed.
 ```
 
-### `log_and_raise(msg, exception_class=Error)`<a name="log_and_raise"></a>
-```
+<a name="log_and_raise"></a>
+### `log_and_raise(msg, exception_class=Error)````
 Logs the given message at ERROR level and raises exception.
 
 Args:

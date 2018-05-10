@@ -41,8 +41,8 @@ filename's extension.
 ```
 
 #### Methods:
-#### `__init__(self, input_path, num_fields=0)`<a name="__init__"></a>
-```
+<a name="__init__"></a>
+#### `__init__(self, input_path, num_fields=0)````
 Initializes a NativeBedReader.
 
 Args:
@@ -51,13 +51,13 @@ Args:
     to zero, all fields in the input are read.
 ```
 
-#### `iterate(self)`<a name="iterate"></a>
-```
+<a name="iterate"></a>
+#### `iterate(self)````
 Returns an iterable of BedRecord protos in the file.
 ```
 
-#### `query(self)`<a name="query"></a>
-
+<a name="query"></a>
+#### `query(self)`
 
 ### NativeBedWriter
 ```
@@ -68,8 +68,8 @@ files or TFRecord files, based on the output filename's extension.
 ```
 
 #### Methods:
-#### `__init__(self, output_path, header=None)`<a name="__init__"></a>
-```
+<a name="__init__"></a>
+#### `__init__(self, output_path, header=None)````
 Initializer for NativeBedWriter.
 
 Args:
@@ -78,6 +78,6 @@ Args:
     information germane to the constituent BED records.
 ```
 
-#### `write(self, proto)`<a name="write"></a>
-
+<a name="write"></a>
+#### `write(self, proto)`
 

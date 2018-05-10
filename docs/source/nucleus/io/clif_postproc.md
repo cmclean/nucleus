@@ -20,12 +20,12 @@ This class gives Python iteration semantics on top of a C++ 'Iterable'.
 ```
 
 #### Methods:
-#### `__init__(self, cc_iterable)`<a name="__init__"></a>
-
+<a name="__init__"></a>
+#### `__init__(self, cc_iterable)`
 
 ## Functions
-### `ValueErrorOnFalse(ok, *args)`<a name="ValueErrorOnFalse"></a>
-```
+<a name="ValueErrorOnFalse"></a>
+### `ValueErrorOnFalse(ok, *args)````
 Returns None / arg / (args,...) if ok.
 ```
 

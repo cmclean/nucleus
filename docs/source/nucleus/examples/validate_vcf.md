@@ -14,16 +14,16 @@ Name | Description
 [`validate_variant`](#validate_variant)`(ref_reader, variant)` | Validate that variant is covered by the reference and agrees with it.
 
 ## Functions
-### `main(argv)`<a name="main"></a>
+<a name="main"></a>
+### `main(argv)`
 
-
-### `validate_contigs(ref_contigs, vcf_contigs)`<a name="validate_contigs"></a>
-```
+<a name="validate_contigs"></a>
+### `validate_contigs(ref_contigs, vcf_contigs)````
 Validate that the two lists of ContigInfos have the same set of names.
 ```
 
-### `validate_variant(ref_reader, variant)`<a name="validate_variant"></a>
-```
+<a name="validate_variant"></a>
+### `validate_variant(ref_reader, variant)````
 Validate that variant is covered by the reference and agrees with it.
 ```
 

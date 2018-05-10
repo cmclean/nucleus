@@ -18,8 +18,8 @@ Name | Description
 [`test_tmpfile`](#test_tmpfile)`(name, contents=None)` | Returns a path to a tempfile named name in the test_tmpdir.
 
 ## Functions
-### `assert_called_once_workaround(mock)`<a name="assert_called_once_workaround"></a>
-```
+<a name="assert_called_once_workaround"></a>
+### `assert_called_once_workaround(mock)````
 Asserts that a mock has been called exactly once.
 
 See assert_not_called_workaround for the backstory on why this function
@@ -32,8 +32,8 @@ Raises:
   AssertionError: mock wasn't called exactly once.
 ```
 
-### `assert_not_called_workaround(mock)`<a name="assert_not_called_workaround"></a>
-```
+<a name="assert_not_called_workaround"></a>
+### `assert_not_called_workaround(mock)````
 Asserts that a mock has not been called.
 
 There's a bug in mock where some of the assert functions on a mock are being
@@ -63,8 +63,8 @@ Raises:
   AssertionError: mock has been called.
 ```
 
-### `cc_iterable_len(cc_iterable)`<a name="cc_iterable_len"></a>
-```
+<a name="cc_iterable_len"></a>
+### `cc_iterable_len(cc_iterable)````
 Count the number of elements in an Iterable object.
 
 Args:
@@ -74,8 +74,8 @@ Returns:
   integer count
 ```
 
-### `genomics_core_testdata(filename)`<a name="genomics_core_testdata"></a>
-```
+<a name="genomics_core_testdata"></a>
+### `genomics_core_testdata(filename)````
 Gets the path to a testdata named filename in util/testdata.
 
 Args:
@@ -88,8 +88,8 @@ Returns:
   The absolute path to a testdata file.
 ```
 
-### `genomics_testdata(path, datadir=DATADIR)`<a name="genomics_testdata"></a>
-```
+<a name="genomics_testdata"></a>
+### `genomics_testdata(path, datadir=DATADIR)````
 Gets the path to a testdata file in genomics at relative path.
 
 Args:
@@ -104,18 +104,18 @@ Returns:
   The absolute path to a testdata file.
 ```
 
-### `iterable_len(iterable)`<a name="iterable_len"></a>
-```
+<a name="iterable_len"></a>
+### `iterable_len(iterable)````
 Returns the length of a Python iterable, by advancing it.
 ```
 
-### `make_read(bases, quals=None, cigar=None, mapq=50, chrom='chr1', start=1, name=None)`<a name="make_read"></a>
-```
+<a name="make_read"></a>
+### `make_read(bases, quals=None, cigar=None, mapq=50, chrom='chr1', start=1, name=None)````
 Makes a nucleus.genomics.v1.Read for testing.
 ```
 
-### `make_variant(chrom='chr1', start=10, alleles=None, end=None, filters=None, qual=None, gt=None, gq=None, sample_name=None, gls=None)`<a name="make_variant"></a>
-```
+<a name="make_variant"></a>
+### `make_variant(chrom='chr1', start=10, alleles=None, end=None, filters=None, qual=None, gt=None, gq=None, sample_name=None, gls=None)````
 Creates a new Variant proto from args.
 
 Args:
@@ -146,13 +146,13 @@ Returns:
   nucleus.genomics.v1.Variant proto.
 ```
 
-### `set_list_values(list_value, values)`<a name="set_list_values"></a>
-```
+<a name="set_list_values"></a>
+### `set_list_values(list_value, values)````
 Sets a ListValue to have the values in values.
 ```
 
-### `test_tmpfile(name, contents=None)`<a name="test_tmpfile"></a>
-```
+<a name="test_tmpfile"></a>
+### `test_tmpfile(name, contents=None)````
 Returns a path to a tempfile named name in the test_tmpdir.
 
 Args:

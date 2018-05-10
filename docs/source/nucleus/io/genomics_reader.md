@@ -29,14 +29,14 @@ Sub-classes of DispatchingGenomicsReader must define the following methods:
 ```
 
 #### Methods:
-#### `__init__(self, input_path, **kwargs)`<a name="__init__"></a>
+<a name="__init__"></a>
+#### `__init__(self, input_path, **kwargs)`
 
+<a name="iterate"></a>
+#### `iterate(self)`
 
-#### `iterate(self)`<a name="iterate"></a>
-
-
-#### `query(self, region)`<a name="query"></a>
-
+<a name="query"></a>
+#### `query(self, region)`
 
 ### GenomicsReader
 ```
@@ -47,18 +47,18 @@ also set a .header member variable in their objects.
 ```
 
 #### Methods:
-#### `__init__(self)`<a name="__init__"></a>
-```
+<a name="__init__"></a>
+#### `__init__(self)````
 Allows users to use the object as an iterator.
 ```
 
-#### `iterate(self)`<a name="iterate"></a>
-```
+<a name="iterate"></a>
+#### `iterate(self)````
 Returns an iterator for going through the file's records.
 ```
 
-#### `query(self, region)`<a name="query"></a>
-```
+<a name="query"></a>
+#### `query(self, region)````
 Returns an iterator for going through the records in the region.
 
 Args:
@@ -83,8 +83,8 @@ to be wrapped in a "with" block.
 ```
 
 #### Methods:
-#### `__init__(self, input_path, proto, tf_options=None)`<a name="__init__"></a>
-```
+<a name="__init__"></a>
+#### `__init__(self, input_path, proto, tf_options=None)````
 Initializes the TFRecordReader.
 
 Args:
@@ -96,9 +96,9 @@ Args:
     whether input_path ends in '.gz' or not.
 ```
 
-#### `iterate(self)`<a name="iterate"></a>
+<a name="iterate"></a>
+#### `iterate(self)`
 
-
-#### `query(self, region)`<a name="query"></a>
-
+<a name="query"></a>
+#### `query(self, region)`
 

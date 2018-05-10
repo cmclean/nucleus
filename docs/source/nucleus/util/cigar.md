@@ -13,8 +13,8 @@ Name | Description
 [`to_cigar_units`](#to_cigar_units)`(source)` | Converts object to a list of CigarUnit.
 
 ## Functions
-### `alignment_length(cigar_units)`<a name="alignment_length"></a>
-```
+<a name="alignment_length"></a>
+### `alignment_length(cigar_units)````
 Computes the span in basepairs of the cigar units.
 
 Args:
@@ -24,8 +24,8 @@ Returns:
   The number of basepairs spanned by the cigar_units.
 ```
 
-### `format_cigar_units(cigar_units)`<a name="format_cigar_units"></a>
-```
+<a name="format_cigar_units"></a>
+### `format_cigar_units(cigar_units)````
 Returns the string version of an iterable of CigarUnit protos.
 
 Args:
@@ -35,8 +35,8 @@ Returns:
   A nucleus.genomics.v1.Range for read.
 ```
 
-### `parse_cigar_string(cigar_str)`<a name="parse_cigar_string"></a>
-```
+<a name="parse_cigar_string"></a>
+### `parse_cigar_string(cigar_str)````
 Parse a cigar string into a list of cigar units.
 
 For example, if cigar_str is 150M2S, this function will return:
@@ -56,8 +56,8 @@ Raises:
   ValueError: If cigar_str isn't a well-formed CIGAR.
 ```
 
-### `to_cigar_unit(source)`<a name="to_cigar_unit"></a>
-```
+<a name="to_cigar_unit"></a>
+### `to_cigar_unit(source)````
 Creates a cigar_pb2 CigarUnit from source.
 
 This function attempts to convert source into a CigarUnit protobuf. If
@@ -79,8 +79,8 @@ Raises:
   ValueError: if source cannot be converted or is malformed.
 ```
 
-### `to_cigar_units(source)`<a name="to_cigar_units"></a>
-```
+<a name="to_cigar_units"></a>
+### `to_cigar_units(source)````
 Converts object to a list of CigarUnit.
 
 This function attempts to convert source into a list of CigarUnit protos.

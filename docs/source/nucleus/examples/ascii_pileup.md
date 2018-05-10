@@ -10,9 +10,9 @@ Name | Description
 [`print_read`](#print_read)`(left_pos, start, highlight_position, seq)` | 
 
 ## Functions
-### `main(argv)`<a name="main"></a>
+<a name="main"></a>
+### `main(argv)`
 
-
-### `print_read(left_pos, start, highlight_position, seq)`<a name="print_read"></a>
-
+<a name="print_read"></a>
+### `print_read(left_pos, start, highlight_position, seq)`
 

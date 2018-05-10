@@ -36,8 +36,8 @@ store the entire chromosome sequence in memory (potentially big!).
 ```
 
 #### Methods:
-#### `__init__(self, chromosomes)`<a name="__init__"></a>
-```
+<a name="__init__"></a>
+#### `__init__(self, chromosomes)````
 Initializes an InMemoryRefReader using data from chromosomes.
 
 Args:
@@ -49,26 +49,26 @@ Raises:
   ValueError: If any of the InMemoryChromosome are invalid.
 ```
 
-#### `c_reader(self)`<a name="c_reader"></a>
-```
+<a name="c_reader"></a>
+#### `c_reader(self)````
 Returns the underlying C++ reader.
 ```
 
-#### `contig(self, contig_name)`<a name="contig"></a>
-```
+<a name="contig"></a>
+#### `contig(self, contig_name)````
 Returns a ContigInfo proto for contig_name.
 ```
 
-#### `is_valid(self, region)`<a name="is_valid"></a>
-```
+<a name="is_valid"></a>
+#### `is_valid(self, region)````
 Returns whether the region is contained in this FASTA file.
 ```
 
-#### `iterate(self)`<a name="iterate"></a>
+<a name="iterate"></a>
+#### `iterate(self)`
 
-
-#### `query(self, region)`<a name="query"></a>
-```
+<a name="query"></a>
+#### `query(self, region)````
 Returns the base pairs (as a string) in the given region.
 ```
 
@@ -78,8 +78,8 @@ Class for reading from FASTA files containing a reference genome.
 ```
 
 #### Methods:
-#### `__init__(self, input_path, cache_size=None)`<a name="__init__"></a>
-```
+<a name="__init__"></a>
+#### `__init__(self, input_path, cache_size=None)````
 Initializes a RefFastaReader.
 
 Args:
@@ -89,26 +89,26 @@ Args:
     Defaults to 64K.  The cache can be disabled using cache_size=0.
 ```
 
-#### `c_reader(self)`<a name="c_reader"></a>
-```
+<a name="c_reader"></a>
+#### `c_reader(self)````
 Returns the underlying C++ reader.
 ```
 
-#### `contig(self, contig_name)`<a name="contig"></a>
-```
+<a name="contig"></a>
+#### `contig(self, contig_name)````
 Returns a ContigInfo proto for contig_name.
 ```
 
-#### `is_valid(self, region)`<a name="is_valid"></a>
-```
+<a name="is_valid"></a>
+#### `is_valid(self, region)````
 Returns whether the region is contained in this FASTA file.
 ```
 
-#### `iterate(self)`<a name="iterate"></a>
+<a name="iterate"></a>
+#### `iterate(self)`
 
-
-#### `query(self, region)`<a name="query"></a>
-```
+<a name="query"></a>
+#### `query(self, region)````
 Returns the base pairs (as a string) in the given region.
 ```
 

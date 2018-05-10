@@ -10,8 +10,8 @@ Name | Description
 [`reservoir_sample`](#reservoir_sample)`(iterable, k, random=None)` | Samples k elements with uniform probability from an iterable.
 
 ## Functions
-### `read_range(read)`<a name="read_range"></a>
-```
+<a name="read_range"></a>
+### `read_range(read)````
 Creates a Range proto from the alignment of Read.
 
 Args:
@@ -21,8 +21,8 @@ Returns:
   A nucleus.genomics.v1.Range for read.
 ```
 
-### `reservoir_sample(iterable, k, random=None)`<a name="reservoir_sample"></a>
-```
+<a name="reservoir_sample"></a>
+### `reservoir_sample(iterable, k, random=None)````
 Samples k elements with uniform probability from an iterable.
 
 Selects a subset of k elements from n input elements with uniform probability

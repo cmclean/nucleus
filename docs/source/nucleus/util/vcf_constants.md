@@ -17,8 +17,8 @@ Name | Description
 [`reserved_info_field_set_fn`](#reserved_info_field_set_fn)`(field_name)` | Returns the callable that sets the proper field for the given field_name.
 
 ## Functions
-### `create_get_fn(value_type, number)`<a name="create_get_fn"></a>
-```
+<a name="create_get_fn"></a>
+### `create_get_fn(value_type, number)````
 Returns a callable that extracts the typed information from a ListValue.
 
 Args:
@@ -32,18 +32,18 @@ Returns:
   number of values returned.
 ```
 
-### `reserved_filter_field(field_id)`<a name="reserved_filter_field"></a>
-```
+<a name="reserved_filter_field"></a>
+### `reserved_filter_field(field_id)````
 Returns the reserved FILTER field with the given ID.
 ```
 
-### `reserved_format_field(field_id)`<a name="reserved_format_field"></a>
-```
+<a name="reserved_format_field"></a>
+### `reserved_format_field(field_id)````
 Returns the reserved FORMAT field with the given ID.
 ```
 
-### `reserved_format_field_get_fn(field_name)`<a name="reserved_format_field_get_fn"></a>
-```
+<a name="reserved_format_field_get_fn"></a>
+### `reserved_format_field_get_fn(field_name)````
 Returns the callable that gets the proper field for the given field_name.
 
 Args:
@@ -57,8 +57,8 @@ Raises:
   ValueError: The field_name is not a known reserved FORMAT field.
 ```
 
-### `reserved_format_field_set_fn(field_name)`<a name="reserved_format_field_set_fn"></a>
-```
+<a name="reserved_format_field_set_fn"></a>
+### `reserved_format_field_set_fn(field_name)````
 Returns the callable that sets the proper field for the given field_name.
 
 Args:
@@ -72,13 +72,13 @@ Raises:
   ValueError: The field_name is not a known reserved FORMAT field.
 ```
 
-### `reserved_info_field(field_id)`<a name="reserved_info_field"></a>
-```
+<a name="reserved_info_field"></a>
+### `reserved_info_field(field_id)````
 Returns the reserved INFO field with the given ID.
 ```
 
-### `reserved_info_field_get_fn(field_name)`<a name="reserved_info_field_get_fn"></a>
-```
+<a name="reserved_info_field_get_fn"></a>
+### `reserved_info_field_get_fn(field_name)````
 Returns the callable that gets the proper field for the given field_name.
 
 Args:
@@ -92,8 +92,8 @@ Raises:
   ValueError: The field_name is not a known reserved INFO field.
 ```
 
-### `reserved_info_field_set_fn(field_name)`<a name="reserved_info_field_set_fn"></a>
-```
+<a name="reserved_info_field_set_fn"></a>
+### `reserved_info_field_set_fn(field_name)````
 Returns the callable that sets the proper field for the given field_name.
 
 Args:

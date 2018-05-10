@@ -46,21 +46,21 @@ filename's extension.
 ```
 
 #### Methods:
-#### `__init__(self, input_path)`<a name="__init__"></a>
-```
+<a name="__init__"></a>
+#### `__init__(self, input_path)````
 Initializes a NativeFastqReader.
 
 Args:
   input_path: string. A path to a resource containing FASTQ records.
 ```
 
-#### `iterate(self)`<a name="iterate"></a>
-```
+<a name="iterate"></a>
+#### `iterate(self)````
 Returns an iterable of FastqRecord protos in the file.
 ```
 
-#### `query(self)`<a name="query"></a>
-
+<a name="query"></a>
+#### `query(self)`
 
 ### NativeFastqWriter
 ```
@@ -71,14 +71,14 @@ files or TFRecord files, based on the output filename's extension.
 ```
 
 #### Methods:
-#### `__init__(self, output_path)`<a name="__init__"></a>
-```
+<a name="__init__"></a>
+#### `__init__(self, output_path)````
 Initializer for NativeFastqWriter.
 
 Args:
   output_path: str. The path to which to write the FASTQ file.
 ```
 
-#### `write(self, proto)`<a name="write"></a>
-
+<a name="write"></a>
+#### `write(self, proto)`
 

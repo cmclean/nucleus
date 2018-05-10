@@ -38,19 +38,19 @@ Attributes:
 ```
 
 #### Methods:
-#### `__init__(self, reads, is_sorted=False)`<a name="__init__"></a>
+<a name="__init__"></a>
+#### `__init__(self, reads, is_sorted=False)`
 
-
-#### `iterate(self)`<a name="iterate"></a>
-```
+<a name="iterate"></a>
+#### `iterate(self)````
 Iterate over all records in the reads.
 
 Returns:
   An iterator over nucleus.genomics.v1.Read's.
 ```
 
-#### `query(self, region)`<a name="query"></a>
-```
+<a name="query"></a>
+#### `query(self, region)````
 Iterate over records overlapping a query region.
 
 Args:
@@ -60,8 +60,8 @@ Returns:
   An iterator over nucleus.genomics.v1.Read's.
 ```
 
-#### `replace_reads(self, reads, is_sorted=False)`<a name="replace_reads"></a>
-```
+<a name="replace_reads"></a>
+#### `replace_reads(self, reads, is_sorted=False)````
 Replace the reads stored by this reader.
 ```
 
@@ -75,8 +75,8 @@ on the filename's extensions.
 ```
 
 #### Methods:
-#### `__init__(self, input_path, use_index=True, read_requirements=None, parse_aux_fields=False, hts_block_size=None, downsample_fraction=None, random_seed=None)`<a name="__init__"></a>
-```
+<a name="__init__"></a>
+#### `__init__(self, input_path, use_index=True, read_requirements=None, parse_aux_fields=False, hts_block_size=None, downsample_fraction=None, random_seed=None)````
 Initializes a NativeSamReader.
 
 Args:
@@ -111,11 +111,11 @@ Raises:
   ImportError: If someone tries to load a tfbam file.
 ```
 
-#### `iterate(self)`<a name="iterate"></a>
+<a name="iterate"></a>
+#### `iterate(self)`
 
-
-#### `query(self, region)`<a name="query"></a>
-
+<a name="query"></a>
+#### `query(self, region)`
 
 ### NativeSamWriter
 ```
@@ -126,8 +126,8 @@ files or TFRecords files, based on the output filename's extensions.
 ```
 
 #### Methods:
-#### `__init__(self, output_path, header)`<a name="__init__"></a>
-```
+<a name="__init__"></a>
+#### `__init__(self, output_path, header)````
 Initializer for NativeSamWriter.
 
 Args:
@@ -137,8 +137,8 @@ Args:
     the rest of the file.
 ```
 
-#### `write(self, proto)`<a name="write"></a>
-
+<a name="write"></a>
+#### `write(self, proto)`
 
 ### SamReader
 ```
