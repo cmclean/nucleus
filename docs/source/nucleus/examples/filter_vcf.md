@@ -1,15 +1,16 @@
 # nucleus.examples.filter_vcf -- Writes all the variants in a VCF file with a quality greater than 3.01.
+**Source code:** [nucleus/examples/filter_vcf.py](https://github.com/google/nucleus/tree/master/nucleus/examples/filter_vcf.py)
+---
 
-## **Source code:** [nucleus/examples/filter_vcf.py](https://github.com/google/nucleus/tree/master/nucleus/examples/filter_vcf.py)
 
 ## Functions overview
-
-Name                    | Description
------------------------ | -----------
-[`main`](#main)`(argv)` |
+Name | Description
+-----|------------
+[`main`](#main)`(argv)` | 
 
 ## Functions
-
 ### main
-
 `main(argv)`
+
+
+

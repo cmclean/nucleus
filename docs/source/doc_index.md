@@ -1,7 +1,5 @@
 # Documentation Index
-
 ## nucleus.examples
-
 [`nucleus.examples.add_ad_to_vcf`](nucleus/examples/add_ad_to_vcf.md)
 
 [`nucleus.examples.ascii_pileup`](nucleus/examples/ascii_pileup.md)
@@ -15,7 +13,6 @@
 [`nucleus.examples.validate_vcf`](nucleus/examples/validate_vcf.md)
 
 ## nucleus.io
-
 [`nucleus.io.bed`](nucleus/io/bed.md)
 
 [`nucleus.io.clif_postproc`](nucleus/io/clif_postproc.md)
@@ -33,11 +30,9 @@
 [`nucleus.io.vcf`](nucleus/io/vcf.md)
 
 ## nucleus.testing
-
 [`nucleus.testing.test_utils`](nucleus/testing/test_utils.md)
 
 ## nucleus.util
-
 [`nucleus.util.cigar`](nucleus/util/cigar.md)
 
 [`nucleus.util.errors`](nucleus/util/errors.md)
@@ -61,3 +56,4 @@
 [`nucleus.util.variantcall_utils`](nucleus/util/variantcall_utils.md)
 
 [`nucleus.util.vcf_constants`](nucleus/util/vcf_constants.md)
+

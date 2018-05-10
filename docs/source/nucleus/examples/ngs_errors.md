@@ -1,14 +1,15 @@
 # nucleus.examples.ngs_errors -- Creates tf.Example protos for learning the error process of a sequencer.
-
-## **Source code:** [nucleus/examples/ngs_errors.py](https://github.com/google/nucleus/tree/master/nucleus/examples/ngs_errors.py)
-
+**Source code:** [nucleus/examples/ngs_errors.py](https://github.com/google/nucleus/tree/master/nucleus/examples/ngs_errors.py)
+---
 This program reads in aligned NGS reads from --bam and emits TFRecord of
 tf.Examples containing the observed bases and quality scores for each read as
 well as the true genome sequence for that read, which are determined from the
 reference genome (--ref) and the known variants for the sample sequenced in the
 BAM (--vcf). For example, suppose we have a read in --bam:
 
-sequence: ACGT aligned at: chr20:10-15 cigar: 4M
+  sequence: ACGT
+  aligned at: chr20:10-15
+  cigar: 4M
 
 And that the reference genome at chr20:10-15 is ACCT. This program first checks
 that --vcf file doesn't have any genetic variants in the region chr20:10-15. If
@@ -45,26 +46,24 @@ user.
 ## Prerequisites
 
 a) Grab a slice of the BAM file via samtools. We don't need to index it because
-we are only iterating over the records, and don't need the query()
-functionality.
+   we are only iterating over the records, and don't need the query()
+   functionality.
 
 samtools view -h \
-ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/NA12878/NIST_NA12878_HG001_HiSeq_300x/RMNISTHS_30xdownsample.bam
-\
-20:10,000,000-10,100,000 \
--o /tmp/NA12878_sliced.bam
+  ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/NA12878/NIST_NA12878_HG001_HiSeq_300x/RMNISTHS_30xdownsample.bam \
+  20:10,000,000-10,100,000 \
+  -o /tmp/NA12878_sliced.bam
 
 b) Get the Genome in a Bottle truth set for NA12878 and index it with tabix.
 
 wget \
-ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/release/NA12878_HG001/latest/GRCh37/HG001_GRCh37_GIAB_highconf_CG-IllFB-IllGATKHC-Ion-10X-SOLID_CHROM1-X_v.3.3.2_highconf_PGandRTGphasetransfer.vcf.gz
-\
--O /tmp/NA12878_calls.vcf.gz
+  ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/release/NA12878_HG001/latest/GRCh37/HG001_GRCh37_GIAB_highconf_CG-IllFB-IllGATKHC-Ion-10X-SOLID_CHROM1-X_v.3.3.2_highconf_PGandRTGphasetransfer.vcf.gz \
+  -O /tmp/NA12878_calls.vcf.gz
 
 tabix /tmp/NA12878_calls.vcf.gz
 
 c) Get the reference genome FASTA file from the DeepVariant testdata GCP bucket
-and index it with samtools.
+   and index it with samtools.
 
 gsutil cp gs://deepvariant/case-study-testdata/hs37d5.fa.gz /tmp/hs37d5.fa.gz
 samtools faidx /tmp/hs37d5.fa.gz
@@ -74,25 +73,22 @@ samtools faidx /tmp/hs37d5.fa.gz
 bazel build -c opt $COPT_FLAGS nucleus/examples:ngs_errors
 
 bazel-bin/nucleus/examples/ngs_errors \
---alsologtostderr \
---ref /tmp/hs37d5.fa.gz \
---vcf /tmp/NA12878_calls.vcf.gz \
---bam /tmp/NA12878_sliced.bam \
---examples_out /tmp/examples.tfrecord
+  --alsologtostderr \
+  --ref /tmp/hs37d5.fa.gz \
+  --vcf /tmp/NA12878_calls.vcf.gz \
+  --bam /tmp/NA12878_sliced.bam \
+  --examples_out /tmp/examples.tfrecord
 
 ## Functions overview
-
-Name                                                                                                                     | Description
------------------------------------------------------------------------------------------------------------------------- | -----------
-[`is_usable_training_example`](#is_usable_training_example)`(read, variants, ref_bases)`                                 | Returns True if we can use read to make a training example.
-[`main`](#main)`(argv)`                                                                                                  |
-[`make_example`](#make_example)`(read, ref_bases)`                                                                       | Create a tf.Example for read and ref_bases.
+Name | Description
+-----|------------
+[`is_usable_training_example`](#is_usable_training_example)`(read, variants, ref_bases)` | Returns True if we can use read to make a training example.
+[`main`](#main)`(argv)` | 
+[`make_example`](#make_example)`(read, ref_bases)` | Create a tf.Example for read and ref_bases.
 [`make_ngs_error_examples`](#make_ngs_error_examples)`(ref_path, vcf_path, bam_path, examples_out_path, max_reads=None)` | Driver program for ngs_errors.
 
 ## Functions
-
 ### is_usable_training_example
-
 `is_usable_training_example(read, variants, ref_bases)`
 
 Returns True if we can use read to make a training example.
@@ -105,17 +101,18 @@ Returns True if we can use read to make a training example.
 
 `ref_bases`: str. The reference bases for read.
 
+
 **Returns**:
 
-True if read can be used to construct a high-quality training example, False
-otherwise.
+  True if read can be used to construct a high-quality training example, False
+  otherwise.
 
 ### main
-
 `main(argv)`
 
-### make_example
 
+
+### make_example
 `make_example(read, ref_bases)`
 
 Create a tf.Example for read and ref_bases.
@@ -126,19 +123,20 @@ Create a tf.Example for read and ref_bases.
 
 `ref_bases`: str. The reference bases for read.
 
+
 **Returns**:
 
-A tf.Example protobuf with the following features: read_name - for debugging
-convenience cigar - the cigar string of the read read_sequence - the bases
-observed by the instrument read_qualities - the quality scores emitted by the
-instrument, as phred-scaled integer values. true_sequence - the "true" bases
-that should have been observed for this read, as extracted from the reference
-genome.
+  A tf.Example protobuf with the following features:
+    read_name - for debugging convenience
+    cigar - the cigar string of the read
+    read_sequence - the bases observed by the instrument
+    read_qualities - the quality scores emitted by the instrument, as
+                     phred-scaled integer values.
+    true_sequence - the "true" bases that should have been observed for this
+                    read, as extracted from the reference genome.
 
 ### make_ngs_error_examples
-
-`make_ngs_error_examples(ref_path, vcf_path, bam_path, examples_out_path,
-max_reads=None)`
+`make_ngs_error_examples(ref_path, vcf_path, bam_path, examples_out_path, max_reads=None)`
 
 Driver program for ngs_errors.
 
@@ -155,4 +153,6 @@ See module description for details.
 `examples_out_path`: str. A path where we will write out examples.
 
 `max_reads`: int or None. If not None, we will emit at most max_reads examples
-to examples_out_path.
+    to examples_out_path.
+
+
