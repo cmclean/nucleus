@@ -19,7 +19,8 @@ Name | Description
 
 ## Functions
 <a name="reverse_complement"></a>
-### `reverse_complement(sequence, complement_dict=None)````
+### `reverse_complement(sequence, complement_dict=None)`
+```
 Returns the reverse complement of a DNA sequence.
 
 By default this will successfully reverse complement sequences comprised

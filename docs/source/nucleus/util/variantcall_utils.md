@@ -23,12 +23,14 @@ Name | Description
 
 ## Functions
 <a name="get_ad"></a>
-### `get_ad(variant_call)````
+### `get_ad(variant_call)`
+```
 Gets the allele depth of the VariantCall.
 ```
 
 <a name="get_format"></a>
-### `get_format(variant_call, field_name, vcf_object=None)````
+### `get_format(variant_call, field_name, vcf_object=None)`
+```
 Returns the value of the `field_name` FORMAT field.
 
 The `vcf_object` is used to determine the type of the resulting value. If it
@@ -45,7 +47,8 @@ Args:
 ```
 
 <a name="get_gl"></a>
-### `get_gl(variant_call)````
+### `get_gl(variant_call)`
+```
 Returns the genotype likelihoods of the VariantCall.
 
 Args:
@@ -56,12 +59,14 @@ Returns:
 ```
 
 <a name="get_gq"></a>
-### `get_gq(variant_call)````
+### `get_gq(variant_call)`
+```
 Gets the genotype quality of the VariantCall.
 ```
 
 <a name="get_gt"></a>
-### `get_gt(variant_call)````
+### `get_gt(variant_call)`
+```
 Returns the genotypes of the VariantCall.
 
 Args:
@@ -72,12 +77,14 @@ Returns:
 ```
 
 <a name="get_min_dp"></a>
-### `get_min_dp(variant_call)````
+### `get_min_dp(variant_call)`
+```
 Gets the 'MIN_DP' field of the VariantCall.
 ```
 
 <a name="has_genotypes"></a>
-### `has_genotypes(variant_call)````
+### `has_genotypes(variant_call)`
+```
 Returns True iff the VariantCall has one or more called genotypes.
 
 Args:
@@ -88,7 +95,8 @@ Returns:
 ```
 
 <a name="ploidy"></a>
-### `ploidy(variant_call)````
+### `ploidy(variant_call)`
+```
 Returns the ploidy of the VariantCall.
 
 Args:
@@ -99,12 +107,14 @@ Returns:
 ```
 
 <a name="set_ad"></a>
-### `set_ad(variant_call, ad)````
+### `set_ad(variant_call, ad)`
+```
 Sets the allele depth of the VariantCall.
 ```
 
 <a name="set_format"></a>
-### `set_format(variant_call, field_name, value, vcf_object=None)````
+### `set_format(variant_call, field_name, value, vcf_object=None)`
+```
 Sets a field of the info map of the `VariantCall` to the given value(s).
 
 `variant_call.info` is analogous to the FORMAT field of a VCF call.
@@ -132,7 +142,8 @@ Args:
 ```
 
 <a name="set_gl"></a>
-### `set_gl(variant_call, gl)````
+### `set_gl(variant_call, gl)`
+```
 Sets the genotype likelihoods of the VariantCall.
 
 Args:
@@ -141,12 +152,14 @@ Args:
 ```
 
 <a name="set_gq"></a>
-### `set_gq(variant_call, gq)````
+### `set_gq(variant_call, gq)`
+```
 Sets the genotype quality of the VariantCall.
 ```
 
 <a name="set_gt"></a>
-### `set_gt(variant_call, gt)````
+### `set_gt(variant_call, gt)`
+```
 Sets the genotypes of the VariantCall.
 
 Args:
@@ -155,7 +168,8 @@ Args:
 ```
 
 <a name="set_min_dp"></a>
-### `set_min_dp(variant_call, min_dp)````
+### `set_min_dp(variant_call, min_dp)`
+```
 Sets the 'MIN_DP' field of the VariantCall.
 ```
 

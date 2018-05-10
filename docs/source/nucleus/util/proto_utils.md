@@ -10,7 +10,8 @@ Name | Description
 
 ## Functions
 <a name="uses_fast_cpp_protos_or_die"></a>
-### `uses_fast_cpp_protos_or_die()````
+### `uses_fast_cpp_protos_or_die()`
+```
 Raises an error if a slow protobuf implementation is being used.
 ```
 

@@ -47,7 +47,8 @@ filename's extension.
 
 #### Methods:
 <a name="__init__"></a>
-#### `__init__(self, input_path)````
+#### `__init__(self, input_path)`
+```
 Initializes a NativeFastqReader.
 
 Args:
@@ -55,12 +56,14 @@ Args:
 ```
 
 <a name="iterate"></a>
-#### `iterate(self)````
+#### `iterate(self)`
+```
 Returns an iterable of FastqRecord protos in the file.
 ```
 
 <a name="query"></a>
 #### `query(self)`
+
 
 ### NativeFastqWriter
 ```
@@ -72,7 +75,8 @@ files or TFRecord files, based on the output filename's extension.
 
 #### Methods:
 <a name="__init__"></a>
-#### `__init__(self, output_path)````
+#### `__init__(self, output_path)`
+```
 Initializer for NativeFastqWriter.
 
 Args:
@@ -81,4 +85,5 @@ Args:
 
 <a name="write"></a>
 #### `write(self, proto)`
+
 

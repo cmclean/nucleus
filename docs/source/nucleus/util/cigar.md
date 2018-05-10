@@ -14,7 +14,8 @@ Name | Description
 
 ## Functions
 <a name="alignment_length"></a>
-### `alignment_length(cigar_units)````
+### `alignment_length(cigar_units)`
+```
 Computes the span in basepairs of the cigar units.
 
 Args:
@@ -25,7 +26,8 @@ Returns:
 ```
 
 <a name="format_cigar_units"></a>
-### `format_cigar_units(cigar_units)````
+### `format_cigar_units(cigar_units)`
+```
 Returns the string version of an iterable of CigarUnit protos.
 
 Args:
@@ -36,7 +38,8 @@ Returns:
 ```
 
 <a name="parse_cigar_string"></a>
-### `parse_cigar_string(cigar_str)````
+### `parse_cigar_string(cigar_str)`
+```
 Parse a cigar string into a list of cigar units.
 
 For example, if cigar_str is 150M2S, this function will return:
@@ -57,7 +60,8 @@ Raises:
 ```
 
 <a name="to_cigar_unit"></a>
-### `to_cigar_unit(source)````
+### `to_cigar_unit(source)`
+```
 Creates a cigar_pb2 CigarUnit from source.
 
 This function attempts to convert source into a CigarUnit protobuf. If
@@ -80,7 +84,8 @@ Raises:
 ```
 
 <a name="to_cigar_units"></a>
-### `to_cigar_units(source)````
+### `to_cigar_units(source)`
+```
 Converts object to a list of CigarUnit.
 
 This function attempts to convert source into a list of CigarUnit protos.

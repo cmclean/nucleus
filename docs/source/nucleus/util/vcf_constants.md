@@ -18,7 +18,8 @@ Name | Description
 
 ## Functions
 <a name="create_get_fn"></a>
-### `create_get_fn(value_type, number)````
+### `create_get_fn(value_type, number)`
+```
 Returns a callable that extracts the typed information from a ListValue.
 
 Args:
@@ -33,17 +34,20 @@ Returns:
 ```
 
 <a name="reserved_filter_field"></a>
-### `reserved_filter_field(field_id)````
+### `reserved_filter_field(field_id)`
+```
 Returns the reserved FILTER field with the given ID.
 ```
 
 <a name="reserved_format_field"></a>
-### `reserved_format_field(field_id)````
+### `reserved_format_field(field_id)`
+```
 Returns the reserved FORMAT field with the given ID.
 ```
 
 <a name="reserved_format_field_get_fn"></a>
-### `reserved_format_field_get_fn(field_name)````
+### `reserved_format_field_get_fn(field_name)`
+```
 Returns the callable that gets the proper field for the given field_name.
 
 Args:
@@ -58,7 +62,8 @@ Raises:
 ```
 
 <a name="reserved_format_field_set_fn"></a>
-### `reserved_format_field_set_fn(field_name)````
+### `reserved_format_field_set_fn(field_name)`
+```
 Returns the callable that sets the proper field for the given field_name.
 
 Args:
@@ -73,12 +78,14 @@ Raises:
 ```
 
 <a name="reserved_info_field"></a>
-### `reserved_info_field(field_id)````
+### `reserved_info_field(field_id)`
+```
 Returns the reserved INFO field with the given ID.
 ```
 
 <a name="reserved_info_field_get_fn"></a>
-### `reserved_info_field_get_fn(field_name)````
+### `reserved_info_field_get_fn(field_name)`
+```
 Returns the callable that gets the proper field for the given field_name.
 
 Args:
@@ -93,7 +100,8 @@ Raises:
 ```
 
 <a name="reserved_info_field_set_fn"></a>
-### `reserved_info_field_set_fn(field_name)````
+### `reserved_info_field_set_fn(field_name)`
+```
 Returns the callable that sets the proper field for the given field_name.
 
 Args:

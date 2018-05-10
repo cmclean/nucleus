@@ -48,7 +48,8 @@ ranges held by the class.
 
 #### Methods:
 <a name="__init__"></a>
-#### `__init__(self, ranges=None, contigs=None)````
+#### `__init__(self, ranges=None, contigs=None)`
+```
 Creates an RangeSet backed by ranges.
 
 Note that the Range objects in ranges are *not* stored directly here, so
@@ -69,7 +70,8 @@ Raises:
 ```
 
 <a name="exclude_regions"></a>
-#### `exclude_regions(self, other)````
+#### `exclude_regions(self, other)`
+```
 Chops out all of the intervals in other from this this RangeSet.
 
 This is a *MUTATING* operation for performance reasons. Make a copy of self
@@ -81,7 +83,8 @@ Args:
 ```
 
 <a name="from_bed"></a>
-#### `from_bed(cls, source, contigs=None)````
+#### `from_bed(cls, source, contigs=None)`
+```
 Creates a RangeSet containing the intervals from source.
 
 Args:
@@ -94,12 +97,14 @@ Returns:
 ```
 
 <a name="from_contigs"></a>
-#### `from_contigs(cls, contigs)````
+#### `from_contigs(cls, contigs)`
+```
 Creates a RangeSet with an interval covering each base of each contig.
 ```
 
 <a name="from_regions"></a>
-#### `from_regions(cls, regions, contig_map=None)````
+#### `from_regions(cls, regions, contig_map=None)`
+```
 Parses a command-line style literal regions flag into a RangeSet.
 
 Args:
@@ -117,7 +122,8 @@ Returns:
 ```
 
 <a name="intersection"></a>
-#### `intersection(self, *others)````
+#### `intersection(self, *others)`
+```
 Computes the intersection among this RangeSet and *others RangeSets.
 
 This function computes the intersection of all of the intervals in self and
@@ -150,7 +156,8 @@ Returns:
 ```
 
 <a name="overlaps"></a>
-#### `overlaps(self, chrom, pos)````
+#### `overlaps(self, chrom, pos)`
+```
 Returns True if chr:pos overlaps with any range in this RangeSet.
 
 Uses a fast bisection algorithm to determine the overlap in O(log n) time.
@@ -164,7 +171,8 @@ Returns:
 ```
 
 <a name="partition"></a>
-#### `partition(self, max_size)````
+#### `partition(self, max_size)`
+```
 Splits our intervals so that none are larger than max_size.
 
 Slices up the intervals in this RangeSet into a equivalent set of interval (
@@ -190,18 +198,21 @@ Raises:
 ```
 
 <a name="variant_overlaps"></a>
-#### `variant_overlaps(self, variant, empty_set_return_value=True)````
+#### `variant_overlaps(self, variant, empty_set_return_value=True)`
+```
 Returns True if the variant's range overlaps with any in this set.
 ```
 
 ## Functions
 <a name="as_tuple"></a>
-### `as_tuple(range_)````
+### `as_tuple(range_)`
+```
 Returns a Python tuple (reference_name, start, end).
 ```
 
 <a name="bed_parser"></a>
-### `bed_parser(filename)````
+### `bed_parser(filename)`
+```
 Parses Range objects from a BED-formatted file object.
 
 See http://bedtools.readthedocs.org/en/latest/content/general-usage.html
@@ -215,7 +226,8 @@ Yields:
 ```
 
 <a name="bedpe_parser"></a>
-### `bedpe_parser(filename)````
+### `bedpe_parser(filename)`
+```
 Parses Range objects from a BEDPE-formatted file object.
 
 See http://bedtools.readthedocs.org/en/latest/content/general-usage.html
@@ -233,7 +245,8 @@ Yields:
 ```
 
 <a name="contigs_dict"></a>
-### `contigs_dict(contigs)````
+### `contigs_dict(contigs)`
+```
 Creates a dictionary for contigs.
 
 Args:
@@ -244,12 +257,14 @@ Returns:
 ```
 
 <a name="contigs_n_bases"></a>
-### `contigs_n_bases(contigs)````
+### `contigs_n_bases(contigs)`
+```
 Returns the sum of all n_bases of contigs.
 ```
 
 <a name="expand"></a>
-### `expand(region, n_bp, contig_map=None)````
+### `expand(region, n_bp, contig_map=None)`
+```
 Expands region by n_bp in both directions.
 
 Takes a Range(chrom, start, stop) and returns a new
@@ -275,7 +290,8 @@ Raises:
 ```
 
 <a name="find_max_overlapping"></a>
-### `find_max_overlapping(query_range, search_ranges)````
+### `find_max_overlapping(query_range, search_ranges)`
+```
 Gets the index of the element in search_ranges with max overlap with query.
 
 In case of ties, selects the lowest index range in search_ranges.
@@ -293,7 +309,8 @@ Returns:
 ```
 
 <a name="from_regions"></a>
-### `from_regions(regions, contig_map=None)````
+### `from_regions(regions, contig_map=None)`
+```
 Parses each region of `regions` into a Range proto.
 
 This function provides a super high-level interface for
@@ -322,17 +339,20 @@ Yields:
 ```
 
 <a name="length"></a>
-### `length(region)````
+### `length(region)`
+```
 Returns the length in basepairs of region.
 ```
 
 <a name="make_position"></a>
-### `make_position(chrom, position, reverse_strand=False)````
+### `make_position(chrom, position, reverse_strand=False)`
+```
 Makes a nucleus.genomics.v1.Position.
 ```
 
 <a name="make_range"></a>
-### `make_range(chrom, start, end)````
+### `make_range(chrom, start, end)`
+```
 Creates a genomics.Range object chr:start-end.
 
 Args:
@@ -345,7 +365,8 @@ Returns:
 ```
 
 <a name="overlap_len"></a>
-### `overlap_len(range1, range2)````
+### `overlap_len(range1, range2)`
+```
 Computes the number of overlapping bases of range1 and range2.
 
 Args:
@@ -358,7 +379,8 @@ Returns:
 ```
 
 <a name="parse_literal"></a>
-### `parse_literal(region_literal, contig_map=None)````
+### `parse_literal(region_literal, contig_map=None)`
+```
 Parses a Range from a string representation like chr:start-end.
 
 The region literal must conform to the following pattern:
@@ -391,12 +413,14 @@ Raises:
 ```
 
 <a name="parse_literals"></a>
-### `parse_literals(region_literals, contig_map=None)````
+### `parse_literals(region_literals, contig_map=None)`
+```
 Parses each literal of region_literals in order.
 ```
 
 <a name="position_overlaps"></a>
-### `position_overlaps(chrom, pos, interval)````
+### `position_overlaps(chrom, pos, interval)`
+```
 Does interval overlap the position chr:pos?
 
 Args:
@@ -409,7 +433,8 @@ Returns:
 ```
 
 <a name="ranges_overlap"></a>
-### `ranges_overlap(i1, i2)````
+### `ranges_overlap(i1, i2)`
+```
 Checks whether ranges i1 and i2 overlap.
 
 Args:
@@ -421,7 +446,8 @@ Returns:
 ```
 
 <a name="sorted_ranges"></a>
-### `sorted_ranges(ranges, contigs=None)````
+### `sorted_ranges(ranges, contigs=None)`
+```
 Sorts ranges by reference_name, start, and end.
 
 Args:
@@ -435,7 +461,8 @@ Returns:
 ```
 
 <a name="span"></a>
-### `span(regions)````
+### `span(regions)`
+```
 Returns a region that spans all of the bases in regions.
 
 This function returns a Range(chrom, start, stop), where start is the min
@@ -454,7 +481,8 @@ Raises:
 ```
 
 <a name="to_literal"></a>
-### `to_literal(range_pb)````
+### `to_literal(range_pb)`
+```
 Converts Range protobuf into string literal form.
 
 The string literal form looks like:

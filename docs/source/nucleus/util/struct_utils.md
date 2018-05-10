@@ -23,7 +23,8 @@ Name | Description
 
 ## Functions
 <a name="add_bool_field"></a>
-### `add_bool_field(field_map, field_name, value)````
+### `add_bool_field(field_map, field_name, value)`
+```
 Appends the given boolean value(s) to field_map[field_name].
 
 Args:
@@ -34,7 +35,8 @@ Args:
 ```
 
 <a name="add_int_field"></a>
-### `add_int_field(field_map, field_name, value)````
+### `add_int_field(field_map, field_name, value)`
+```
 Appends the given int value(s) to field_map[field_name].
 
 Args:
@@ -45,7 +47,8 @@ Args:
 ```
 
 <a name="add_number_field"></a>
-### `add_number_field(field_map, field_name, value)````
+### `add_number_field(field_map, field_name, value)`
+```
 Appends the given number value(s) to field_map[field_name].
 
 Args:
@@ -56,7 +59,8 @@ Args:
 ```
 
 <a name="add_string_field"></a>
-### `add_string_field(field_map, field_name, value)````
+### `add_string_field(field_map, field_name, value)`
+```
 Appends the given string value(s) to field_map[field_name].
 
 Args:
@@ -67,7 +71,8 @@ Args:
 ```
 
 <a name="get_bool_field"></a>
-### `get_bool_field(field_map, field_name, is_single_field=False)````
+### `get_bool_field(field_map, field_name, is_single_field=False)`
+```
 Returns the bool value(s) stored in `field_map[field_name]`.
 
 If the field_name is not present in field_map, the empty list is returned.
@@ -84,7 +89,8 @@ Returns:
 ```
 
 <a name="get_int_field"></a>
-### `get_int_field(field_map, field_name, is_single_field=False)````
+### `get_int_field(field_map, field_name, is_single_field=False)`
+```
 Returns the int value(s) stored in `field_map[field_name]`.
 
 If the field_name is not present in field_map, the empty list is returned.
@@ -101,7 +107,8 @@ Returns:
 ```
 
 <a name="get_number_field"></a>
-### `get_number_field(field_map, field_name, is_single_field=False)````
+### `get_number_field(field_map, field_name, is_single_field=False)`
+```
 Returns the number value(s) stored in `field_map[field_name]`.
 
 If the field_name is not present in field_map, the empty list is returned.
@@ -118,7 +125,8 @@ Returns:
 ```
 
 <a name="get_string_field"></a>
-### `get_string_field(field_map, field_name, is_single_field=False)````
+### `get_string_field(field_map, field_name, is_single_field=False)`
+```
 Returns the string value(s) stored in `field_map[field_name]`.
 
 If the field_name is not present in field_map, the empty list is returned.
@@ -135,7 +143,8 @@ Returns:
 ```
 
 <a name="set_bool_field"></a>
-### `set_bool_field(field_map, field_name, value)````
+### `set_bool_field(field_map, field_name, value)`
+```
 Sets field_map[field_name] with the given boolean value(s).
 
 Args:
@@ -146,7 +155,8 @@ Args:
 ```
 
 <a name="set_int_field"></a>
-### `set_int_field(field_map, field_name, value)````
+### `set_int_field(field_map, field_name, value)`
+```
 Sets field_map[field_name] with the given int value(s).
 
 Args:
@@ -157,7 +167,8 @@ Args:
 ```
 
 <a name="set_number_field"></a>
-### `set_number_field(field_map, field_name, value)````
+### `set_number_field(field_map, field_name, value)`
+```
 Sets field_map[field_name] with the given number value(s).
 
 Args:
@@ -168,7 +179,8 @@ Args:
 ```
 
 <a name="set_string_field"></a>
-### `set_string_field(field_map, field_name, value)````
+### `set_string_field(field_map, field_name, value)`
+```
 Sets field_map[field_name] with the given string value(s).
 
 Args:

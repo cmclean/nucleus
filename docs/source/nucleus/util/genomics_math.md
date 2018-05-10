@@ -53,7 +53,8 @@ Name | Description
 
 ## Functions
 <a name="log10_binomial"></a>
-### `log10_binomial(k, n, p)````
+### `log10_binomial(k, n, p)`
+```
 Calculates numerically-stable value of log10(binomial(k, n, p)).
 
 Returns the log10 of the binomial density for k successes in n trials where
@@ -83,7 +84,8 @@ Returns:
 ```
 
 <a name="log10sumexp"></a>
-### `log10sumexp(log10_probs)````
+### `log10sumexp(log10_probs)`
+```
 Returns log10(sum(10^log10_probs)) computed in a numerically-stable way.
 
 Args:
@@ -94,7 +96,8 @@ Returns:
 ```
 
 <a name="normalize_log10_probs"></a>
-### `normalize_log10_probs(log10_probs)````
+### `normalize_log10_probs(log10_probs)`
+```
 Approximately normalizes log10 probabilities.
 
 This function normalizes log10 probabilities. What this means is that we
@@ -149,7 +152,8 @@ Raises:
 ```
 
 <a name="perror_to_bounded_log10_perror"></a>
-### `perror_to_bounded_log10_perror(perror, min_prob=1.0 - _MAX_CONFIDENCE)````
+### `perror_to_bounded_log10_perror(perror, min_prob=1.0 - _MAX_CONFIDENCE)`
+```
 Computes log10(p) for the given probability.
 
 The log10 probability is capped by -_MAX_CONFIDENCE.
@@ -166,7 +170,8 @@ Raises:
 ```
 
 <a name="ptrue_to_bounded_phred"></a>
-### `ptrue_to_bounded_phred(ptrue, max_prob=_MAX_CONFIDENCE)````
+### `ptrue_to_bounded_phred(ptrue, max_prob=_MAX_CONFIDENCE)`
+```
 Computes the phred scaled confidence from the given ptrue probability.
 
 See https://en.wikipedia.org/wiki/Phred_quality_score for more information.

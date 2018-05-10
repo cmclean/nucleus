@@ -49,7 +49,8 @@ RawProtoWriterAdaptor.
 
 #### Methods:
 <a name="__init__"></a>
-#### `__init__(self, raw_writer, take_ownership=True)````
+#### `__init__(self, raw_writer, take_ownership=True)`
+```
 Creates a new RawProtoWriterAdaptor.
 
 Arguments:
@@ -62,7 +63,8 @@ Arguments:
 ```
 
 <a name="write"></a>
-#### `write(self, proto)````
+#### `write(self, proto)`
+```
 Writes `proto.SerializeToString` to raw_writer.
 ```
 
@@ -73,7 +75,8 @@ An IO error.
 
 ## Functions
 <a name="GenerateShardedFilePattern"></a>
-### `GenerateShardedFilePattern(basename, num_shards, suffix)````
+### `GenerateShardedFilePattern(basename, num_shards, suffix)`
+```
 Generate a sharded file pattern.
 
 Args:
@@ -85,7 +88,8 @@ Returns:
 ```
 
 <a name="GenerateShardedFilenames"></a>
-### `GenerateShardedFilenames(spec)````
+### `GenerateShardedFilenames(spec)`
+```
 Generate the list of filenames corresponding to the sharding path.
 
 Args:
@@ -99,12 +103,14 @@ Raises:
 ```
 
 <a name="IsShardedFileSpec"></a>
-### `IsShardedFileSpec(spec)````
+### `IsShardedFileSpec(spec)`
+```
 Returns true if spec is a sharded file specification.
 ```
 
 <a name="NormalizeToShardedFilePattern"></a>
-### `NormalizeToShardedFilePattern(spec_or_pattern)````
+### `NormalizeToShardedFilePattern(spec_or_pattern)`
+```
 Take a sharding spec or sharding file pattern and return a sharded pattern.
 
 The input can be a sharding spec(e.g '/some/file@10') or a sharded file
@@ -118,7 +124,8 @@ Returns:
 ```
 
 <a name="ParseShardedFileSpec"></a>
-### `ParseShardedFileSpec(spec)````
+### `ParseShardedFileSpec(spec)`
+```
 Parse a sharded file specification.
 
 Args:
@@ -134,7 +141,8 @@ Raises:
 ```
 
 <a name="make_proto_writer"></a>
-### `make_proto_writer(outfile)````
+### `make_proto_writer(outfile)`
+```
 Creates a write to outfile writing general Protos.
 
 Args:
@@ -145,7 +153,8 @@ Returns:
 ```
 
 <a name="make_tfrecord_options"></a>
-### `make_tfrecord_options(filenames)````
+### `make_tfrecord_options(filenames)`
+```
 Creates a python_io.TFRecordOptions for the specified filename.
 
 Args:
@@ -158,7 +167,8 @@ Raises:
 ```
 
 <a name="make_tfrecord_writer"></a>
-### `make_tfrecord_writer(outfile, options=None)````
+### `make_tfrecord_writer(outfile, options=None)`
+```
 Creates a python_io.TFRecordWriter for the specified outfile.
 
 Args:
@@ -170,7 +180,8 @@ Returns:
 ```
 
 <a name="maybe_generate_sharded_filenames"></a>
-### `maybe_generate_sharded_filenames(filespec)````
+### `maybe_generate_sharded_filenames(filespec)`
+```
 Potentially expands sharded filespec into a list of paths.
 
 This function takes in a potentially sharded filespec and expands it into a
@@ -190,7 +201,8 @@ Raises:
 ```
 
 <a name="read_shard_sorted_tfrecords"></a>
-### `read_shard_sorted_tfrecords(path, key, proto=None, max_records=None, options=None)````
+### `read_shard_sorted_tfrecords(path, key, proto=None, max_records=None, options=None)`
+```
 Yields the parsed records in TFRecord-formatted file path in sorted order.
 
 The input TFRecord file must have each shard already in sorted order when
@@ -214,7 +226,8 @@ Yields:
 ```
 
 <a name="read_tfrecords"></a>
-### `read_tfrecords(path, proto=None, max_records=None, options=None)````
+### `read_tfrecords(path, proto=None, max_records=None, options=None)`
+```
 Yields the parsed records in tfrecord formatted file path.
 
 Note that path can be sharded filespec (path@N) in which case this function
@@ -233,7 +246,8 @@ Yields:
 ```
 
 <a name="resolve_filespecs"></a>
-### `resolve_filespecs(shard, *filespecs)````
+### `resolve_filespecs(shard, *filespecs)`
+```
 Transforms potentially sharded filespecs into their paths for single shard.
 
 This function takes a shard number and a varargs potentially sharded
@@ -264,12 +278,14 @@ Raises:
 ```
 
 <a name="sharded_filename"></a>
-### `sharded_filename(spec, i)````
+### `sharded_filename(spec, i)`
+```
 Gets a path appropriate for writing the ith file of a sharded spec.
 ```
 
 <a name="write_tfrecords"></a>
-### `write_tfrecords(protos, output_path, options=None)````
+### `write_tfrecords(protos, output_path, options=None)`
+```
 Writes protos to output_path.
 
 This function writes serialized strings of each proto in protos to output_path

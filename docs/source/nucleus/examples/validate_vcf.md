@@ -17,13 +17,16 @@ Name | Description
 <a name="main"></a>
 ### `main(argv)`
 
+
 <a name="validate_contigs"></a>
-### `validate_contigs(ref_contigs, vcf_contigs)````
+### `validate_contigs(ref_contigs, vcf_contigs)`
+```
 Validate that the two lists of ContigInfos have the same set of names.
 ```
 
 <a name="validate_variant"></a>
-### `validate_variant(ref_reader, variant)````
+### `validate_variant(ref_reader, variant)`
+```
 Validate that variant is covered by the reference and agrees with it.
 ```
 

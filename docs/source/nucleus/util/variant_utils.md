@@ -65,7 +65,8 @@ An enumeration of the types of genotypes.
 
 #### Methods:
 <a name="__init__"></a>
-#### `__init__(self, full_name, example_gt, class_id)````
+#### `__init__(self, full_name, example_gt, class_id)`
+```
 Create a GenotypeType with the given name, GT and class_id.
 ```
 
@@ -76,7 +77,8 @@ An enumeration of the types of variants.
 
 ## Functions
 <a name="allele_indices_for_genotype_likelihood_index"></a>
-### `allele_indices_for_genotype_likelihood_index(gl_index, ploidy=2)````
+### `allele_indices_for_genotype_likelihood_index(gl_index, ploidy=2)`
+```
 Returns a tuple of allele_indices corresponding to the given GL index.
 
 This is the inverse function to `genotype_likelihood_index`.
@@ -94,7 +96,8 @@ Raises:
 ```
 
 <a name="allele_indices_with_num_alts"></a>
-### `allele_indices_with_num_alts(variant, num_alts, ploidy=2)````
+### `allele_indices_with_num_alts(variant, num_alts, ploidy=2)`
+```
 Returns a list of allele indices configurations with `num_alts` alternates.
 
 Args:
@@ -115,7 +118,8 @@ Raises:
 ```
 
 <a name="allele_mismatches"></a>
-### `allele_mismatches(evalv, truev)````
+### `allele_mismatches(evalv, truev)`
+```
 Determines the set of allele mismatch discordances between evalv and truev.
 
 Compares the alleles present in evalv and truev to determine if there are any
@@ -141,7 +145,8 @@ Returns:
 ```
 
 <a name="decode_variants"></a>
-### `decode_variants(encoded_iter)````
+### `decode_variants(encoded_iter)`
+```
 Yields a genomics.Variant from encoded_iter.
 
 Args:
@@ -154,7 +159,8 @@ Yields:
 ```
 
 <a name="format_alleles"></a>
-### `format_alleles(variant)````
+### `format_alleles(variant)`
+```
 Gets a string representation of the variant's alleles.
 
 Args:
@@ -165,7 +171,8 @@ Returns:
 ```
 
 <a name="format_filters"></a>
-### `format_filters(variant)````
+### `format_filters(variant)`
+```
 Gets a human-readable string showing the filters applied to variant.
 
 Returns a string with the filter field values of variant separated by commas.
@@ -179,7 +186,8 @@ Returns:
 ```
 
 <a name="format_position"></a>
-### `format_position(variant)````
+### `format_position(variant)`
+```
 Gets a string representation of the variant's position.
 
 Args:
@@ -190,7 +198,8 @@ Returns:
 ```
 
 <a name="genotype_as_alleles"></a>
-### `genotype_as_alleles(variant, call_ix=0)````
+### `genotype_as_alleles(variant, call_ix=0)`
+```
 Gets genotype of the sample in variant as a list of actual alleles.
 
 Returns the alleles specified by the genotype indices of variant.calls[0].
@@ -212,7 +221,8 @@ Raises:
 ```
 
 <a name="genotype_likelihood"></a>
-### `genotype_likelihood(variant_call, allele_indices)````
+### `genotype_likelihood(variant_call, allele_indices)`
+```
 Returns the genotype likelihood for the given allele indices.
 
 Args:
@@ -226,7 +236,8 @@ Returns:
 ```
 
 <a name="genotype_likelihood_index"></a>
-### `genotype_likelihood_index(allele_indices)````
+### `genotype_likelihood_index(allele_indices)`
+```
 Returns the genotype likelihood index for the given allele indices.
 
 Args:
@@ -242,7 +253,8 @@ Raises:
 ```
 
 <a name="genotype_ordering_in_likelihoods"></a>
-### `genotype_ordering_in_likelihoods(variant)````
+### `genotype_ordering_in_likelihoods(variant)`
+```
 Yields (i, j, allele_i, allele_j) for the genotypes ordering in GLs.
 
 https://samtools.github.io/hts-specs/VCFv4.1.pdf
@@ -265,7 +277,8 @@ Yields:
 ```
 
 <a name="genotype_type"></a>
-### `genotype_type(variant)````
+### `genotype_type(variant)`
+```
 Gets the GenotypeType for variant.
 
 If variant doesn't have genotypes, returns no_call. Otherwise
@@ -283,7 +296,8 @@ Raises:
 ```
 
 <a name="get_info"></a>
-### `get_info(variant, field_name, vcf_object=None)````
+### `get_info(variant, field_name, vcf_object=None)`
+```
 Returns the value of the `field_name` INFO field.
 
 The `vcf_object` is used to determine the type of the resulting value. If it
@@ -300,7 +314,8 @@ Args:
 ```
 
 <a name="has_calls"></a>
-### `has_calls(variant)````
+### `has_calls(variant)`
+```
 Does variant have any genotype calls?
 
 Args:
@@ -311,7 +326,8 @@ Returns:
 ```
 
 <a name="has_deletion"></a>
-### `has_deletion(variant)````
+### `has_deletion(variant)`
+```
 Does variant have a deletion?
 
 Args:
@@ -323,7 +339,8 @@ Returns:
 ```
 
 <a name="has_insertion"></a>
-### `has_insertion(variant)````
+### `has_insertion(variant)`
+```
 Does variant have an insertion?
 
 Args:
@@ -335,12 +352,14 @@ Returns:
 ```
 
 <a name="is_biallelic"></a>
-### `is_biallelic(variant)````
+### `is_biallelic(variant)`
+```
 Returns True if variant has exactly one alternate allele.
 ```
 
 <a name="is_deletion"></a>
-### `is_deletion(ref, alt)````
+### `is_deletion(ref, alt)`
+```
 Is alt a deletion w.r.t. ref?
 
 Args:
@@ -352,12 +371,14 @@ Returns:
 ```
 
 <a name="is_filtered"></a>
-### `is_filtered(variant)````
+### `is_filtered(variant)`
+```
 Returns True if variant has a non-PASS filter field, or False otherwise.
 ```
 
 <a name="is_gvcf"></a>
-### `is_gvcf(variant)````
+### `is_gvcf(variant)`
+```
 Returns true if variant encodes a standard gVCF reference block.
 
 This means in practice that variant has a single alternate allele that is the
@@ -371,7 +392,8 @@ Returns:
 ```
 
 <a name="is_indel"></a>
-### `is_indel(variant)````
+### `is_indel(variant)`
+```
 Is variant an indel?
 
 An indel event is simply one where the size of at least one of the alleles
@@ -386,7 +408,8 @@ Returns:
 ```
 
 <a name="is_insertion"></a>
-### `is_insertion(ref, alt)````
+### `is_insertion(ref, alt)`
+```
 Is alt an insertion w.r.t. ref?
 
 Args:
@@ -398,7 +421,8 @@ Returns:
 ```
 
 <a name="is_multiallelic"></a>
-### `is_multiallelic(variant)````
+### `is_multiallelic(variant)`
+```
 Does variant have multiple alt alleles?
 
 Args:
@@ -409,7 +433,8 @@ Returns:
 ```
 
 <a name="is_ref"></a>
-### `is_ref(variant)````
+### `is_ref(variant)`
+```
 Returns true if variant is a reference record.
 
 Variant protos can encode sites that aren't actually mutations in the
@@ -424,7 +449,8 @@ Returns:
 ```
 
 <a name="is_snp"></a>
-### `is_snp(variant)````
+### `is_snp(variant)`
+```
 Is variant a SNP?
 
 Args:
@@ -435,7 +461,8 @@ Returns:
 ```
 
 <a name="is_transition"></a>
-### `is_transition(allele1, allele2)````
+### `is_transition(allele1, allele2)`
+```
 Is the pair of single bp alleles a transition?
 
 Args:
@@ -450,7 +477,8 @@ Raises:
 ```
 
 <a name="is_variant_call"></a>
-### `is_variant_call(variant, require_non_ref_genotype=True, no_calls_are_variant=False)````
+### `is_variant_call(variant, require_non_ref_genotype=True, no_calls_are_variant=False)`
+```
 Is variant a non-reference call?
 
 A Variant proto doesn't always imply that there's a variant present in the
@@ -483,7 +511,8 @@ Raises:
 ```
 
 <a name="only_call"></a>
-### `only_call(variant)````
+### `only_call(variant)`
+```
 Ensures the Variant has exactly one VariantCall, and returns it.
 
 Args:
@@ -497,7 +526,8 @@ Raises:
 ```
 
 <a name="set_info"></a>
-### `set_info(variant, field_name, value, vcf_object=None)````
+### `set_info(variant, field_name, value, vcf_object=None)`
+```
 Sets a field of the info map of the `Variant` to the given value(s).
 
 `variant.info` is analogous to the INFO field of a VCF record.
@@ -515,7 +545,8 @@ Args:
 ```
 
 <a name="simplify_alleles"></a>
-### `simplify_alleles(*alleles)````
+### `simplify_alleles(*alleles)`
+```
 Simplifies alleles by stripping off common postfix bases.
 
 For example, simplify("AC", "GC") would produce the tuple "A", "G" as the "C"
@@ -536,12 +567,14 @@ Returns:
 ```
 
 <a name="sorted_variants"></a>
-### `sorted_variants(variants)````
+### `sorted_variants(variants)`
+```
 Returns sorted(variants, key=variant_range_tuple).
 ```
 
 <a name="variant_key"></a>
-### `variant_key(variant, sort_alleles=True)````
+### `variant_key(variant, sort_alleles=True)`
+```
 Gets a human-readable string key that is almost unique for Variant.
 
 Gets a string key that contains key information about the variant, formatted
@@ -573,7 +606,8 @@ Returns:
 ```
 
 <a name="variant_position"></a>
-### `variant_position(variant)````
+### `variant_position(variant)`
+```
 Returns a new Range at the start position of variant.
 
 Args:
@@ -586,7 +620,8 @@ Returns:
 ```
 
 <a name="variant_range"></a>
-### `variant_range(variant)````
+### `variant_range(variant)`
+```
 Returns a new Range covering variant.
 
 Args:
@@ -597,7 +632,8 @@ Returns:
 ```
 
 <a name="variant_range_tuple"></a>
-### `variant_range_tuple(variant)````
+### `variant_range_tuple(variant)`
+```
 Returns a new tuple of (reference_name, start, end) for the variant.
 
 A common use case for this function is to sort variants by chromosomal
@@ -611,7 +647,8 @@ Returns:
 ```
 
 <a name="variant_type"></a>
-### `variant_type(variant)````
+### `variant_type(variant)`
+```
 Gets the VariantType of variant.
 
 Args:
@@ -622,7 +659,8 @@ Returns:
 ```
 
 <a name="variants_are_sorted"></a>
-### `variants_are_sorted(variants)````
+### `variants_are_sorted(variants)`
+```
 Returns True if variants are sorted w.r.t. variant_range.
 
 Args:
@@ -634,7 +672,8 @@ Returns:
 ```
 
 <a name="variants_overlap"></a>
-### `variants_overlap(variant1, variant2)````
+### `variants_overlap(variant1, variant2)`
+```
 Returns True if the range of variant1 and variant2 overlap.
 
 This is equivalent to:

@@ -67,7 +67,8 @@ Implementation note:
 
 #### Methods:
 <a name="__init__"></a>
-#### `__init__(self, variants, header=None)````
+#### `__init__(self, variants, header=None)`
+```
 Creates a VCFReader backed by a collection of variants.
 
 Args:
@@ -81,8 +82,10 @@ Args:
 <a name="iterate"></a>
 #### `iterate(self)`
 
+
 <a name="query"></a>
 #### `query(self, region)`
+
 
 ### NativeVcfReader
 ```
@@ -95,7 +98,8 @@ on the filename's extensions.
 
 #### Methods:
 <a name="__init__"></a>
-#### `__init__(self, input_path, use_index=True, excluded_info_fields=None, excluded_format_fields=None)````
+#### `__init__(self, input_path, use_index=True, excluded_info_fields=None, excluded_format_fields=None)`
+```
 Initializer for NativeVcfReader.
 
 Args:
@@ -112,8 +116,10 @@ Args:
 <a name="iterate"></a>
 #### `iterate(self)`
 
+
 <a name="query"></a>
 #### `query(self, region)`
+
 
 ### NativeVcfWriter
 ```
@@ -125,7 +131,8 @@ files or TFRecords files, based on the output filename's extensions.
 
 #### Methods:
 <a name="__init__"></a>
-#### `__init__(self, output_path, header=None, round_qualities=False, excluded_info_fields=None, excluded_format_fields=None)````
+#### `__init__(self, output_path, header=None, round_qualities=False, excluded_info_fields=None, excluded_format_fields=None)`
+```
 Initializer for NativeVcfWriter.
 
 Args:
@@ -145,6 +152,7 @@ Args:
 <a name="write"></a>
 #### `write(self, proto)`
 
+
 ### VcfHeaderCache
 ```
 This class creates a cache of accessors to structured fields in Variants.
@@ -162,7 +170,8 @@ functions for interacting with the INFO and FORMAT fields in a Variant proto.
 
 #### Methods:
 <a name="__init__"></a>
-#### `__init__(self, header)````
+#### `__init__(self, header)`
+```
 Constructor.
 
 Args:
@@ -171,17 +180,20 @@ Args:
 ```
 
 <a name="format_field_get_fn"></a>
-#### `format_field_get_fn(self, field_name)````
+#### `format_field_get_fn(self, field_name)`
+```
 Returns a callable that gets the given FORMAT field based on its type.
 ```
 
 <a name="format_field_set_fn"></a>
-#### `format_field_set_fn(self, field_name)````
+#### `format_field_set_fn(self, field_name)`
+```
 Returns a callable that sets the given FORMAT field based on its type.
 ```
 
 <a name="info_field_get_fn"></a>
-#### `info_field_get_fn(self, field_name)````
+#### `info_field_get_fn(self, field_name)`
+```
 Returns a callable that extracts the given INFO field based on its type.
 
 Args:
@@ -192,7 +204,8 @@ Returns:
 ```
 
 <a name="info_field_set_fn"></a>
-#### `info_field_set_fn(self, field_name)````
+#### `info_field_set_fn(self, field_name)`
+```
 Returns a callable that sets the given INFO field based on its type.
 ```
 

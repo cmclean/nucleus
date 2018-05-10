@@ -89,7 +89,8 @@ Name | Description
 
 ## Functions
 <a name="is_usable_training_example"></a>
-### `is_usable_training_example(read, variants, ref_bases)````
+### `is_usable_training_example(read, variants, ref_bases)`
+```
 Returns True if we can use read to make a training example.
 
 Args:
@@ -105,8 +106,10 @@ Returns:
 <a name="main"></a>
 ### `main(argv)`
 
+
 <a name="make_example"></a>
-### `make_example(read, ref_bases)````
+### `make_example(read, ref_bases)`
+```
 Create a tf.Example for read and ref_bases.
 
 Args:
@@ -125,7 +128,8 @@ Returns:
 ```
 
 <a name="make_ngs_error_examples"></a>
-### `make_ngs_error_examples(ref_path, vcf_path, bam_path, examples_out_path, max_reads=None)````
+### `make_ngs_error_examples(ref_path, vcf_path, bam_path, examples_out_path, max_reads=None)`
+```
 Driver program for ngs_errors.
 
 See module description for details.

@@ -31,8 +31,10 @@ method.
 <a name="__init__"></a>
 #### `__init__(self, output_path, **kwargs)`
 
+
 <a name="write"></a>
 #### `write(self, proto)`
+
 
 ### GenomicsWriter
 ```
@@ -44,7 +46,8 @@ protocol buffer to a file.
 
 #### Methods:
 <a name="write"></a>
-#### `write(self, proto)````
+#### `write(self, proto)`
+```
 Writes proto to the file.
 
 Args:
@@ -60,6 +63,8 @@ A GenomicsWriter that writes to a TFRecord file.
 <a name="__init__"></a>
 #### `__init__(self, output_path, header=None)`
 
+
 <a name="write"></a>
 #### `write(self, proto)`
+
 

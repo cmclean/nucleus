@@ -23,9 +23,11 @@ This class gives Python iteration semantics on top of a C++ 'Iterable'.
 <a name="__init__"></a>
 #### `__init__(self, cc_iterable)`
 
+
 ## Functions
 <a name="ValueErrorOnFalse"></a>
-### `ValueErrorOnFalse(ok, *args)````
+### `ValueErrorOnFalse(ok, *args)`
+```
 Returns None / arg / (args,...) if ok.
 ```
 
