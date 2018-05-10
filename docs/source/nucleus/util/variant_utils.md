@@ -54,68 +54,68 @@ Name | Description
 
 ## Classes
 ### AlleleMismatchType
+```python
 An enumeration of the types of allele mismatches we detect.
+```
 
 ### GenotypeType
+```python
 An enumeration of the types of genotypes.
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d0ea310>"></a> __init__(self, full_name, example_gt, class_id)
+#### `__init__(self, full_name, example_gt, class_id)`<a name="__init__"></a>
+```python
 Create a GenotypeType with the given name, GT and class_id.
+```
 
 ### VariantType
+```python
 An enumeration of the types of variants.
+```
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x55f78d1f9a10>"></a> allele_indices_for_genotype_likelihood_index(gl_index, ploidy=2)
+### `allele_indices_for_genotype_likelihood_index(gl_index, ploidy=2)`<a name="allele_indices_for_genotype_likelihood_index"></a>
+```python
 Returns a tuple of allele_indices corresponding to the given GL index.
 
 This is the inverse function to `genotype_likelihood_index`.
 
-**Args**:
-
-`gl_index`: int. The index within a genotype likelihood array for which to
+Args:
+  gl_index: int. The index within a genotype likelihood array for which to
     determine the associated alleles.
+  ploidy: int. The ploidy of the result.
 
-`ploidy`: int. The ploidy of the result.
-
-
-**Returns**:
-
+Returns:
   A tuple of `ploidy` ints representing the allele indices at this GL index.
 
-**Raises**:
+Raises:
+  NotImplementedError: The requested allele indices are more than diploid.
+```
 
-`NotImplementedError`: The requested allele indices are more than diploid.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1f6690>"></a> allele_indices_with_num_alts(variant, num_alts, ploidy=2)
+### `allele_indices_with_num_alts(variant, num_alts, ploidy=2)`<a name="allele_indices_with_num_alts"></a>
+```python
 Returns a list of allele indices configurations with `num_alts` alternates.
 
-**Args**:
-
-`variant`: nucleus.genomics.v1.Variant. The variant of interest, which
+Args:
+  variant: nucleus.genomics.v1.Variant. The variant of interest, which
     defines the candidate alternate alleles that can be used to generate
     allele indices configurations.
-
-`num_alts`: int in [0, `ploidy`]. The number of non-reference alleles for
+  num_alts: int in [0, `ploidy`]. The number of non-reference alleles for
     which to create the allele indices configurations.
-
-`ploidy`: int. The ploidy for which to return allele indices configurations.
-
+  ploidy: int. The ploidy for which to return allele indices configurations.
 
 Returns: A list of tuples. Each tuple is of length `ploidy` and represents the
   allele indices of all `ploidy` genotypes that contain `num_alts`
   non-reference alleles.
 
-**Raises**:
+Raises:
+  ValueError: The domain of `num_alts` is invalid.
+  NotImplementedError: `ploidy` is not diploid.
+```
 
-`ValueError`: The domain of `num_alts` is invalid.
-
-`NotImplementedError`: `ploidy` is not diploid.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1ec150>"></a> allele_mismatches(evalv, truev)
+### `allele_mismatches(evalv, truev)`<a name="allele_mismatches"></a>
+```python
 Determines the set of allele mismatch discordances between evalv and truev.
 
 Compares the alleles present in evalv and truev to determine if there are any
@@ -132,71 +132,65 @@ as C=>T (position is the same, replacing A by A is a noop) but AC=>AT isn't
 the same as C=>T because the former event changes bases 1 bp further along in
 the reference genome than the C=>T allele.
 
-**Args**:
+Args:
+  evalv: A nucleus.genomics.v1.Variant.
+  truev: A nucleus.genomics.v1.Variant.
 
-`evalv`: A nucleus.genomics.v1.Variant.
-
-`truev`: A nucleus.genomics.v1.Variant.
-
-
-**Returns**:
-
+Returns:
   A set of AlleleMismatchType values.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b9dd0>"></a> decode_variants(encoded_iter)
+### `decode_variants(encoded_iter)`<a name="decode_variants"></a>
+```python
 Yields a genomics.Variant from encoded_iter.
 
-**Args**:
-
-`encoded_iter`: An iterable that produces binary encoded
+Args:
+  encoded_iter: An iterable that produces binary encoded
     nucleus.genomics.v1.Variant strings.
 
-
-**Yields**:
-
+Yields:
   A parsed nucleus.genomics.v1.Variant for each encoded element of
   encoded_iter in order.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b66d0>"></a> format_alleles(variant)
+### `format_alleles(variant)`<a name="format_alleles"></a>
+```python
 Gets a string representation of the variant's alleles.
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant.
 
-`variant`: nucleus.genomics.v1.Variant.
-
-
-**Returns**:
-
+Returns:
   A string ref_bases/alt1,alt2 etc.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d0d63d0>"></a> format_filters(variant)
+### `format_filters(variant)`<a name="format_filters"></a>
+```python
 Gets a human-readable string showing the filters applied to variant.
 
 Returns a string with the filter field values of variant separated by commas.
 If the filter field isn't set, returns vcf_constants.MISSING_FIELD ('.').
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant.
 
-`variant`: nucleus.genomics.v1.Variant.
-
-
-**Returns**:
-
+Returns:
   A string.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b69d0>"></a> format_position(variant)
+### `format_position(variant)`<a name="format_position"></a>
+```python
 Gets a string representation of the variant's position.
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant.
 
-`variant`: nucleus.genomics.v1.Variant.
-
-
-**Returns**:
-
+Returns:
   A string chr:start + 1 (as start is zero-based).
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b5310>"></a> genotype_as_alleles(variant, call_ix=0)
+### `genotype_as_alleles(variant, call_ix=0)`<a name="genotype_as_alleles"></a>
+```python
 Gets genotype of the sample in variant as a list of actual alleles.
 
 Returns the alleles specified by the genotype indices of variant.calls[0].
@@ -204,60 +198,51 @@ For example, if variant.reference_bases = 'A' and variant.alternative_bases
 = ['C'] and the genotypes are [0, 1], this function will return
 ['A', 'C'].
 
-**Args**:
-
-`variant`: nucleus.genomics.v1.Variant.
-
-`call_ix`: int. The index into the calls attribute indicating which
+Args:
+  variant: nucleus.genomics.v1.Variant.
+  call_ix: int. The index into the calls attribute indicating which
     VariantCall to return alleles for.
 
-
-**Returns**:
-
+Returns:
   A list of allele (string) from variant, one for each genotype in
   variant.calls[call_ix], in order.
 
-**Raises**:
+Raises:
+  ValueError: If variant doesn't have a call at the specified index.
+```
 
-`ValueError`: If variant doesn't have a call at the specified index.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d209ad0>"></a> genotype_likelihood(variant_call, allele_indices)
+### `genotype_likelihood(variant_call, allele_indices)`<a name="genotype_likelihood"></a>
+```python
 Returns the genotype likelihood for the given allele indices.
 
-**Args**:
-
-`variant_call`: nucleus.genomics.v1.VariantCall. The VariantCall from
+Args:
+  variant_call: nucleus.genomics.v1.VariantCall. The VariantCall from
     which to extract the genotype likelihood of the allele indices.
-
-`allele_indices`: list(int). The list of allele indices for a given genotype.
+  allele_indices: list(int). The list of allele indices for a given genotype.
     E.g. diploid heterozygous alternate can be represented as [0, 1].
 
-
-**Returns**:
-
+Returns:
   The float value of the genotype likelihood of this set of alleles.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d209e50>"></a> genotype_likelihood_index(allele_indices)
+### `genotype_likelihood_index(allele_indices)`<a name="genotype_likelihood_index"></a>
+```python
 Returns the genotype likelihood index for the given allele indices.
 
-**Args**:
-
-`allele_indices`: list(int). The list of allele indices for a given genotype.
+Args:
+  allele_indices: list(int). The list of allele indices for a given genotype.
     E.g. diploid homozygous reference is represented as [0, 0].
 
-
-**Returns**:
-
+Returns:
   The index into the associated genotype likelihood array corresponding to
   the likelihood of this list of alleles.
 
-**Raises**:
+Raises:
+  NotImplementedError: The allele_indices are more than diploid.
+```
 
-`NotImplementedError`: The allele_indices are more than diploid.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d2090d0>"></a> genotype_ordering_in_likelihoods(variant)
+### `genotype_ordering_in_likelihoods(variant)`<a name="genotype_ordering_in_likelihoods"></a>
+```python
 Yields (i, j, allele_i, allele_j) for the genotypes ordering in GLs.
 
 https://samtools.github.io/hts-specs/VCFv4.1.pdf
@@ -272,218 +257,200 @@ http://genome.sph.umich.edu/wiki/Relationship_between_Ploidy,_Alleles_and_Genoty
 
 Currently this function only implements for diploid cases.
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant.
 
-`variant`: nucleus.genomics.v1.Variant.
-
-
-**Yields**:
-
+Yields:
   allele indices and strings (i, j, allele_i, allele_j) in the correct order.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1cd390>"></a> genotype_type(variant)
+### `genotype_type(variant)`<a name="genotype_type"></a>
+```python
 Gets the GenotypeType for variant.
 
 If variant doesn't have genotypes, returns no_call. Otherwise
 returns one of no_call, hom_ref, het, or hom_var depending on the
 status of the genotypes in the call field of variant.
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant.
 
-`variant`: nucleus.genomics.v1.Variant.
-
-
-**Returns**:
-
+Returns:
   A GenotypeType.
 
-**Raises**:
+Raises:
+  ValueError: If variant has more than one call (i.e., is multi-sample).
+```
 
-`ValueError`: If variant has more than one call (i.e., is multi-sample).
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d21bfd0>"></a> get_info(variant, field_name, vcf_object=None)
+### `get_info(variant, field_name, vcf_object=None)`<a name="get_info"></a>
+```python
 Returns the value of the `field_name` INFO field.
 
 The `vcf_object` is used to determine the type of the resulting value. If it
 is a single value or a Flag, that single value will be returned. Otherwise,
 the list of values is returned.
 
-**Args**:
-
-`variant`: Variant proto. The Variant of interest.
-
-`field_name`: str. The name of the field to retrieve values from.
-
-`vcf_object`: (Optional) A VcfReader or VcfWriter object. If not None, the
+Args:
+  variant: Variant proto. The Variant of interest.
+  field_name: str. The name of the field to retrieve values from.
+  vcf_object: (Optional) A VcfReader or VcfWriter object. If not None, the
     type of the field is inferred from the associated VcfReader or VcfWriter
     based on its name. Otherwise, the type is inferred if it is a reserved
     field.
+```
 
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1cd090>"></a> has_calls(variant)
+### `has_calls(variant)`<a name="has_calls"></a>
+```python
 Does variant have any genotype calls?
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant.
 
-`variant`: nucleus.genomics.v1.Variant.
-
-
-**Returns**:
-
+Returns:
   True if variant has one or more VariantCalls.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d207910>"></a> has_deletion(variant)
+### `has_deletion(variant)`<a name="has_deletion"></a>
+```python
 Does variant have a deletion?
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant.
 
-`variant`: nucleus.genomics.v1.Variant.
-
-
-**Returns**:
-
+Returns:
   True if the alleles in variant indicate an deletion event
   occurs at this site.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b7f10>"></a> has_insertion(variant)
+### `has_insertion(variant)`<a name="has_insertion"></a>
+```python
 Does variant have an insertion?
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant.
 
-`variant`: nucleus.genomics.v1.Variant.
-
-
-**Returns**:
-
+Returns:
   True if the alleles in variant indicate an insertion event
   occurs at this site.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1ba3d0>"></a> is_biallelic(variant)
+### `is_biallelic(variant)`<a name="is_biallelic"></a>
+```python
 Returns True if variant has exactly one alternate allele.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b7890>"></a> is_deletion(ref, alt)
+### `is_deletion(ref, alt)`<a name="is_deletion"></a>
+```python
 Is alt a deletion w.r.t. ref?
 
-**Args**:
+Args:
+  ref: A string of the reference allele.
+  alt: A string of the alternative allele.
 
-`ref`: A string of the reference allele.
-
-`alt`: A string of the alternative allele.
-
-
-**Returns**:
-
+Returns:
   True if alt is a deletion w.r.t. ref.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1dc690>"></a> is_filtered(variant)
+### `is_filtered(variant)`<a name="is_filtered"></a>
+```python
 Returns True if variant has a non-PASS filter field, or False otherwise.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1eb150>"></a> is_gvcf(variant)
+### `is_gvcf(variant)`<a name="is_gvcf"></a>
+```python
 Returns true if variant encodes a standard gVCF reference block.
 
 This means in practice that variant has a single alternate allele that is the
 canonical gVCF allele vcf_constants.GVCF_ALT_ALLELE.
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant.
 
-`variant`: nucleus.genomics.v1.Variant.
-
-
-**Returns**:
-
+Returns:
   Boolean. True if variant is a gVCF record, False otherwise.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1baf90>"></a> is_indel(variant)
+### `is_indel(variant)`<a name="is_indel"></a>
+```python
 Is variant an indel?
 
 An indel event is simply one where the size of at least one of the alleles
 is > 1.
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant.
 
-`variant`: nucleus.genomics.v1.Variant.
-
-
-**Returns**:
-
+Returns:
   True if the alleles in variant indicate an insertion/deletion event
   occurs at this site.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b7e90>"></a> is_insertion(ref, alt)
+### `is_insertion(ref, alt)`<a name="is_insertion"></a>
+```python
 Is alt an insertion w.r.t. ref?
 
-**Args**:
+Args:
+  ref: A string of the reference allele.
+  alt: A string of the alternative allele.
 
-`ref`: A string of the reference allele.
-
-`alt`: A string of the alternative allele.
-
-
-**Returns**:
-
+Returns:
   True if alt is an insertion w.r.t. ref.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78cd8ef90>"></a> is_multiallelic(variant)
+### `is_multiallelic(variant)`<a name="is_multiallelic"></a>
+```python
 Does variant have multiple alt alleles?
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant.
 
-`variant`: nucleus.genomics.v1.Variant.
-
-
-**Returns**:
-
+Returns:
   True if variant has more than one alt allele.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1ba8d0>"></a> is_ref(variant)
+### `is_ref(variant)`<a name="is_ref"></a>
+```python
 Returns true if variant is a reference record.
 
 Variant protos can encode sites that aren't actually mutations in the
 sample.  For example, the record ref='A', alt='.' indicates that there is
 no mutation present (i.e., alt is the missing value).
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant.
 
-`variant`: nucleus.genomics.v1.Variant.
-
-
-**Returns**:
-
+Returns:
   A boolean.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b6310>"></a> is_snp(variant)
+### `is_snp(variant)`<a name="is_snp"></a>
+```python
 Is variant a SNP?
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant.
 
-`variant`: nucleus.genomics.v1.Variant.
-
-
-**Returns**:
-
+Returns:
   True if all alleles of variant are 1 bp in length.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1e2150>"></a> is_transition(allele1, allele2)
+### `is_transition(allele1, allele2)`<a name="is_transition"></a>
+```python
 Is the pair of single bp alleles a transition?
 
-**Args**:
+Args:
+  allele1: A string of the first allele, must be 1 bp in length.
+  allele2: A string of the second allele, must be 1 bp in length.
 
-`allele1`: A string of the first allele, must be 1 bp in length.
-
-`allele2`: A string of the second allele, must be 1 bp in length.
-
-
-**Returns**:
-
+Returns:
   True if allele1/allele2 are a transition SNP.
 
-**Raises**:
+Raises:
+  ValueError: if allele1 and allele2 are equal or aren't 1 bp in length.
+```
 
-`ValueError`: if allele1 and allele2 are equal or aren't 1 bp in length.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1dcc90>"></a> is_variant_call(variant, require_non_ref_genotype=True, no_calls_are_variant=False)
+### `is_variant_call(variant, require_non_ref_genotype=True, no_calls_are_variant=False)`<a name="is_variant_call"></a>
+```python
 Is variant a non-reference call?
 
 A Variant proto doesn't always imply that there's a variant present in the
@@ -500,66 +467,55 @@ a variant_call will return a True value, regardless of the genotypes, which
 means that we'll consider a site with a sample with a hom-ref or no-call site
 a variant call.
 
-**Args**:
-
-`variant`: nucleus.genomics.v1.Variant.
-
-`require_non_ref_genotype`: Should we require a site with a genotype call to
+Args:
+  variant: nucleus.genomics.v1.Variant.
+  require_non_ref_genotype: Should we require a site with a genotype call to
     have a non-reference (het, hom-var) genotype for the site to be considered
     a variant call?
-
-`no_calls_are_variant`: If a site has genotypes, should we consider no_call
+  no_calls_are_variant: If a site has genotypes, should we consider no_call
     genotypes as being variant or not?
 
-
-**Returns**:
-
+Returns:
   True if variant is really a mutation call.
 
-**Raises**:
+Raises:
+  ValueError: If variant has more than one call (i.e., is multi-sample).
+```
 
-`ValueError`: If variant has more than one call (i.e., is multi-sample).
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d0f1210>"></a> only_call(variant)
+### `only_call(variant)`<a name="only_call"></a>
+```python
 Ensures the Variant has exactly one VariantCall, and returns it.
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant. The variant of interest.
 
-`variant`: nucleus.genomics.v1.Variant. The variant of interest.
-
-
-**Returns**:
-
+Returns:
   The single nucleus.genomics.v1.VariantCall in the variant.
 
-**Raises**:
+Raises:
+  ValueError: Not exactly one VariantCall is in the variant.
+```
 
-`ValueError`: Not exactly one VariantCall is in the variant.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d21b790>"></a> set_info(variant, field_name, value, vcf_object=None)
+### `set_info(variant, field_name, value, vcf_object=None)`<a name="set_info"></a>
+```python
 Sets a field of the info map of the `Variant` to the given value(s).
 
 `variant.info` is analogous to the INFO field of a VCF record.
 
-**Args**:
-
-`variant`: Variant proto. The Variant to modify.
-
-`field_name`: str. The name of the field to set.
-
-`value`: A single value or list of values to update the Variant with. The type
+Args:
+  variant: Variant proto. The Variant to modify.
+  field_name: str. The name of the field to set.
+  value: A single value or list of values to update the Variant with. The type
     of the value is determined by the `vcf_object` if one is given, otherwise
     is looked up based on the reserved INFO fields in the VCF specification.
-
-`vcf_object`: (Optional) A VcfReader or VcfWriter object. If not None, the
+  vcf_object: (Optional) A VcfReader or VcfWriter object. If not None, the
     type of the field is inferred from the associated VcfReader or VcfWriter
     based on its name. Otherwise, the type is inferred if it is a reserved
     field.
+```
 
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1e9350>"></a> simplify_alleles(*alleles)
+### `simplify_alleles(*alleles)`<a name="simplify_alleles"></a>
+```python
 Simplifies alleles by stripping off common postfix bases.
 
 For example, simplify("AC", "GC") would produce the tuple "A", "G" as the "C"
@@ -571,20 +527,21 @@ if alleles = ['CACA', 'CA'], the longest common postfix is 'CA' but we will
 not produce ['CA', ''] as this is an invalid Variant allele encoding. Instead
 we produce ['CAC', 'C'].
 
-**Args**:
+Args:
+  *alleles: A tuple of bases, each as a string, to simplify.
 
-`*alleles`: A tuple of bases, each as a string, to simplify.
-
-
-**Returns**:
-
+Returns:
   A tuple, one for each allele in alleles in order, with any common postfix
   bases stripped off.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d215850>"></a> sorted_variants(variants)
+### `sorted_variants(variants)`<a name="sorted_variants"></a>
+```python
 Returns sorted(variants, key=variant_range_tuple).
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1f3f90>"></a> variant_key(variant, sort_alleles=True)
+### `variant_key(variant, sort_alleles=True)`<a name="variant_key"></a>
+```python
 Gets a human-readable string key that is almost unique for Variant.
 
 Gets a string key that contains key information about the variant, formatted
@@ -605,100 +562,90 @@ The key is 'almost unique' in that the reference_name + start + alleles should
 generally occur once within a single VCF file, given the way the VCF
 specification works.
 
-**Args**:
-
-`variant`: nucleus.genomics.v1.Variant to make into a key.
-
-`sort_alleles`: bool. If True, the alternative_bases of variant will be sorted
+Args:
+  variant: nucleus.genomics.v1.Variant to make into a key.
+  sort_alleles: bool. If True, the alternative_bases of variant will be sorted
     according to their lexicographic order. If False, the alternative_bases
     will be displayed in their order in the Variant.
 
-
-**Returns**:
-
+Returns:
   A str.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b9390>"></a> variant_position(variant)
+### `variant_position(variant)`<a name="variant_position"></a>
+```python
 Returns a new Range at the start position of variant.
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant.
 
-`variant`: nucleus.genomics.v1.Variant.
-
-
-**Returns**:
-
+Returns:
   A new Range with the same reference_name as variant and start but an end
   that is start + 1. This produces a range that is the single basepair of the
   start of variant, hence the name position.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d0d9050>"></a> variant_range(variant)
+### `variant_range(variant)`<a name="variant_range"></a>
+```python
 Returns a new Range covering variant.
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant.
 
-`variant`: nucleus.genomics.v1.Variant.
-
-
-**Returns**:
-
+Returns:
   A new Range with the same reference_name, start, and end as variant.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d0d9810>"></a> variant_range_tuple(variant)
+### `variant_range_tuple(variant)`<a name="variant_range_tuple"></a>
+```python
 Returns a new tuple of (reference_name, start, end) for the variant.
 
 A common use case for this function is to sort variants by chromosomal
 location, with usage like `sorted(variants, key=variant_range_tuple)`.
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant.
 
-`variant`: nucleus.genomics.v1.Variant.
-
-
-**Returns**:
-
+Returns:
   A three-tuple with the same reference_name, start, and end as variant.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1e2c10>"></a> variant_type(variant)
+### `variant_type(variant)`<a name="variant_type"></a>
+```python
 Gets the VariantType of variant.
 
-**Args**:
+Args:
+  variant: nucleus.genomics.v1.Variant.
 
-`variant`: nucleus.genomics.v1.Variant.
-
-
-**Returns**:
-
+Returns:
   VariantType indicating the type of this variant.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d215b10>"></a> variants_are_sorted(variants)
+### `variants_are_sorted(variants)`<a name="variants_are_sorted"></a>
+```python
 Returns True if variants are sorted w.r.t. variant_range.
 
-**Args**:
-
-`variants`: list[nucleus.genomics.v1.Variant]. A list of Variant
+Args:
+  variants: list[nucleus.genomics.v1.Variant]. A list of Variant
     protos that may or may not be sorted.
 
-
-**Returns**:
-
+Returns:
   True if variants are sorted, False otherwise.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1f3b90>"></a> variants_overlap(variant1, variant2)
+### `variants_overlap(variant1, variant2)`<a name="variants_overlap"></a>
+```python
 Returns True if the range of variant1 and variant2 overlap.
 
 This is equivalent to:
 
   ranges_overlap(variant_range(variant1), variant_range(variant2))
 
-**Args**:
+Args:
+  variant1: nucleus.genomics.v1.Variant we want to compare for overlap.
+  variant2: nucleus.genomics.v1.Variant we want to compare for overlap.
 
-`variant1`: nucleus.genomics.v1.Variant we want to compare for overlap.
-
-`variant2`: nucleus.genomics.v1.Variant we want to compare for overlap.
-
-
-**Returns**:
-
+Returns:
   True if the variants overlap, False otherwise.
+```
 

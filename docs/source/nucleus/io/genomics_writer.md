@@ -17,6 +17,7 @@ Name | Description
 
 ## Classes
 ### DispatchingGenomicsWriter
+```python
 A GenomicsWriter that dispatches based on the file extension.
 
 If '.tfrecord' is present in the filename, a TFRecordWriter is used.
@@ -24,36 +25,41 @@ Otherwise, a native writer is.
 
 Sub-classes of DispatchingGenomicsWriter must define a _native_writer()
 method.
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d0f1190>"></a> __init__(self, output_path, **kwargs)
+#### `__init__(self, output_path, **kwargs)`<a name="__init__"></a>
 
 
-####<a name="<_ast.FunctionDef object at 0x55f78d1b9dd0>"></a> write(self, proto)
+#### `write(self, proto)`<a name="write"></a>
 
 
 ### GenomicsWriter
+```python
 Abstract base class for writing genomics data.
 
 A GenomicsWriter only has one method, write, which writes a single
 protocol buffer to a file.
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d0fd0d0>"></a> write(self, proto)
+#### `write(self, proto)`<a name="write"></a>
+```python
 Writes proto to the file.
 
-**Args**:
-
-`proto`:  A protocol buffer.
-
+Args:
+  proto:  A protocol buffer.
+```
 
 ### TFRecordWriter
+```python
 A GenomicsWriter that writes to a TFRecord file.
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d0fd8d0>"></a> __init__(self, output_path, header=None)
+#### `__init__(self, output_path, header=None)`<a name="__init__"></a>
 
 
-####<a name="<_ast.FunctionDef object at 0x55f78d0f1550>"></a> write(self, proto)
+#### `write(self, proto)`<a name="write"></a>
 
 

@@ -22,187 +22,159 @@ Name | Description
 [`set_string_field`](#set_string_field)`(field_map, field_name, value)` | Sets field_map[field_name] with the given string value(s).
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x55f78d0d99d0>"></a> add_bool_field(field_map, field_name, value)
+### `add_bool_field(field_map, field_name, value)`<a name="add_bool_field"></a>
+```python
 Appends the given boolean value(s) to field_map[field_name].
 
-**Args**:
-
-`field_map`: Map(str --> ListValue) to modify.
-
-`field_name`: str. The name of the field to append value to.
-
-`value`: The boolean value(s) to append to the field. This can be a single
+Args:
+  field_map: Map(str --> ListValue) to modify.
+  field_name: str. The name of the field to append value to.
+  value: The boolean value(s) to append to the field. This can be a single
     boolean or a list of booleans.
+```
 
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1b9490>"></a> add_int_field(field_map, field_name, value)
+### `add_int_field(field_map, field_name, value)`<a name="add_int_field"></a>
+```python
 Appends the given int value(s) to field_map[field_name].
 
-**Args**:
-
-`field_map`: Map(str --> ListValue) to modify.
-
-`field_name`: str. The name of the field to append value to.
-
-`value`: The int value(s) to append to the field. This can be a single
+Args:
+  field_map: Map(str --> ListValue) to modify.
+  field_name: str. The name of the field to append value to.
+  value: The int value(s) to append to the field. This can be a single
     int or a list of ints.
+```
 
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1b6ed0>"></a> add_number_field(field_map, field_name, value)
+### `add_number_field(field_map, field_name, value)`<a name="add_number_field"></a>
+```python
 Appends the given number value(s) to field_map[field_name].
 
-**Args**:
-
-`field_map`: Map(str --> ListValue) to modify.
-
-`field_name`: str. The name of the field to append value to.
-
-`value`: The number value(s) to append to the field. This can be a single
+Args:
+  field_map: Map(str --> ListValue) to modify.
+  field_name: str. The name of the field to append value to.
+  value: The number value(s) to append to the field. This can be a single
     number or a list of numbers.
+```
 
-
-###<a name="<_ast.FunctionDef object at 0x55f78d0f1190>"></a> add_string_field(field_map, field_name, value)
+### `add_string_field(field_map, field_name, value)`<a name="add_string_field"></a>
+```python
 Appends the given string value(s) to field_map[field_name].
 
-**Args**:
-
-`field_map`: Map(str --> ListValue) to modify.
-
-`field_name`: str. The name of the field to append value to.
-
-`value`: The string value(s) to append to the field. This can be a single
+Args:
+  field_map: Map(str --> ListValue) to modify.
+  field_name: str. The name of the field to append value to.
+  value: The string value(s) to append to the field. This can be a single
     string or a list of strings.
+```
 
-
-###<a name="<_ast.FunctionDef object at 0x55f78d0d9550>"></a> get_bool_field(field_map, field_name, is_single_field=False)
+### `get_bool_field(field_map, field_name, is_single_field=False)`<a name="get_bool_field"></a>
+```python
 Returns the bool value(s) stored in `field_map[field_name]`.
 
 If the field_name is not present in field_map, the empty list is returned.
 
-**Args**:
-
-`field_map`: Map(str --> ListValue) of interest.
-
-`field_name`: str. The name of the field to extract bool values from.
-
-`is_single_field`: bool. If True, return the first bool value stored (it
+Args:
+  field_map: Map(str --> ListValue) of interest.
+  field_name: str. The name of the field to extract bool values from.
+  is_single_field: bool. If True, return the first bool value stored (it
     should be the only one in the field). Otherwise, return the list of
     bools.
 
-
-**Returns**:
-
+Returns:
   The bool value(s) stored in the field_map under this field_name.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d0f1310>"></a> get_int_field(field_map, field_name, is_single_field=False)
+### `get_int_field(field_map, field_name, is_single_field=False)`<a name="get_int_field"></a>
+```python
 Returns the int value(s) stored in `field_map[field_name]`.
 
 If the field_name is not present in field_map, the empty list is returned.
 
-**Args**:
-
-`field_map`: Map(str --> ListValue) of interest.
-
-`field_name`: str. The name of the field to extract int values from.
-
-`is_single_field`: bool. If True, return the first int value stored (it
+Args:
+  field_map: Map(str --> ListValue) of interest.
+  field_name: str. The name of the field to extract int values from.
+  is_single_field: bool. If True, return the first int value stored (it
     should be the only one in the field). Otherwise, return the list of
     ints.
 
-
-**Returns**:
-
+Returns:
   The int value(s) stored in the field_map under this field_name.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b9d90>"></a> get_number_field(field_map, field_name, is_single_field=False)
+### `get_number_field(field_map, field_name, is_single_field=False)`<a name="get_number_field"></a>
+```python
 Returns the number value(s) stored in `field_map[field_name]`.
 
 If the field_name is not present in field_map, the empty list is returned.
 
-**Args**:
-
-`field_map`: Map(str --> ListValue) of interest.
-
-`field_name`: str. The name of the field to extract number values from.
-
-`is_single_field`: bool. If True, return the first number value stored (it
+Args:
+  field_map: Map(str --> ListValue) of interest.
+  field_name: str. The name of the field to extract number values from.
+  is_single_field: bool. If True, return the first number value stored (it
     should be the only one in the field). Otherwise, return the list of
     numbers.
 
-
-**Returns**:
-
+Returns:
   The number value(s) stored in the field_map under this field_name.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d0d9a90>"></a> get_string_field(field_map, field_name, is_single_field=False)
+### `get_string_field(field_map, field_name, is_single_field=False)`<a name="get_string_field"></a>
+```python
 Returns the string value(s) stored in `field_map[field_name]`.
 
 If the field_name is not present in field_map, the empty list is returned.
 
-**Args**:
-
-`field_map`: Map(str --> ListValue) of interest.
-
-`field_name`: str. The name of the field to extract string values from.
-
-`is_single_field`: bool. If True, return the first string value stored (it
+Args:
+  field_map: Map(str --> ListValue) of interest.
+  field_name: str. The name of the field to extract string values from.
+  is_single_field: bool. If True, return the first string value stored (it
     should be the only one in the field). Otherwise, return the list of
     strings.
 
-
-**Returns**:
-
+Returns:
   The string value(s) stored in the field_map under this field_name.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d0d9410>"></a> set_bool_field(field_map, field_name, value)
+### `set_bool_field(field_map, field_name, value)`<a name="set_bool_field"></a>
+```python
 Sets field_map[field_name] with the given boolean value(s).
 
-**Args**:
-
-`field_map`: Map(str --> ListValue) to modify.
-
-`field_name`: str. The name of the field to set.
-
-`value`: The boolean value(s) to set the field to. This can be a single
+Args:
+  field_map: Map(str --> ListValue) to modify.
+  field_name: str. The name of the field to set.
+  value: The boolean value(s) to set the field to. This can be a single
     boolean or a list of booleans.
+```
 
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1b9cd0>"></a> set_int_field(field_map, field_name, value)
+### `set_int_field(field_map, field_name, value)`<a name="set_int_field"></a>
+```python
 Sets field_map[field_name] with the given int value(s).
 
-**Args**:
-
-`field_map`: Map(str --> ListValue) to modify.
-
-`field_name`: str. The name of the field to set.
-
-`value`: The int value(s) to set the field to. This can be a single int
+Args:
+  field_map: Map(str --> ListValue) to modify.
+  field_name: str. The name of the field to set.
+  value: The int value(s) to set the field to. This can be a single int
     or a list of ints.
+```
 
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1b9550>"></a> set_number_field(field_map, field_name, value)
+### `set_number_field(field_map, field_name, value)`<a name="set_number_field"></a>
+```python
 Sets field_map[field_name] with the given number value(s).
 
-**Args**:
-
-`field_map`: Map(str --> ListValue) to modify.
-
-`field_name`: str. The name of the field to set.
-
-`value`: The number value(s) to set the field to. This can be a single number
+Args:
+  field_map: Map(str --> ListValue) to modify.
+  field_name: str. The name of the field to set.
+  value: The number value(s) to set the field to. This can be a single number
     or a list of numbers.
+```
 
-
-###<a name="<_ast.FunctionDef object at 0x55f78d0f1b50>"></a> set_string_field(field_map, field_name, value)
+### `set_string_field(field_map, field_name, value)`<a name="set_string_field"></a>
+```python
 Sets field_map[field_name] with the given string value(s).
 
-**Args**:
-
-`field_map`: Map(str --> ListValue) to modify.
-
-`field_name`: str. The name of the field to set.
-
-`value`: The int value(s) to set the field to. This can be a single string or
+Args:
+  field_map: Map(str --> ListValue) to modify.
+  field_name: str. The name of the field to set.
+  value: The int value(s) to set the field to. This can be a single string or
     a list of strings.
-
+```
 

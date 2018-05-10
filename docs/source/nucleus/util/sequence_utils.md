@@ -18,26 +18,22 @@ Name | Description
 
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x55f78d1b9950>"></a> reverse_complement(sequence, complement_dict=None)
+### `reverse_complement(sequence, complement_dict=None)`<a name="reverse_complement"></a>
+```python
 Returns the reverse complement of a DNA sequence.
 
 By default this will successfully reverse complement sequences comprised
 solely of A, C, G, and T letters. Other complement dictionaries can be
 passed in for more permissive matching.
 
-**Args**:
+Args:
+  sequence: The input sequence to reverse complement.
+  complement_dict: The lookup dictionary holding the complement base pairs.
 
-`sequence`: The input sequence to reverse complement.
-
-`complement_dict`: The lookup dictionary holding the complement base pairs.
-
-
-**Returns**:
-
+Returns:
   The reverse complement DNA sequence.
 
-**Raises**:
-
-`Error`: The sequence contains letters not present in complement_dict.
-
+Raises:
+  Error: The sequence contains letters not present in complement_dict.
+```
 

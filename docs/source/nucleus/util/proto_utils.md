@@ -9,6 +9,8 @@ Name | Description
 [`uses_fast_cpp_protos_or_die`](#uses_fast_cpp_protos_or_die)`()` | Raises an error if a slow protobuf implementation is being used.
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x55f78d1b7450>"></a> uses_fast_cpp_protos_or_die()
+### `uses_fast_cpp_protos_or_die()`<a name="uses_fast_cpp_protos_or_die"></a>
+```python
 Raises an error if a slow protobuf implementation is being used.
+```
 

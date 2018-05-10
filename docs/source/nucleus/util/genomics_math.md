@@ -52,7 +52,8 @@ Name | Description
 [`ptrue_to_bounded_phred`](#ptrue_to_bounded_phred)`(ptrue, max_prob=_MAX_CONFIDENCE)` | Computes the phred scaled confidence from the given ptrue probability.
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x55f78d0f1e10>"></a> log10_binomial(k, n, p)
+### `log10_binomial(k, n, p)`<a name="log10_binomial"></a>
+```python
 Calculates numerically-stable value of log10(binomial(k, n, p)).
 
 Returns the log10 of the binomial density for k successes in n trials where
@@ -72,32 +73,28 @@ This is equivalent to invoking the R function:
 See https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Binomial.html
 for more details on the binomial.
 
-**Args**:
+Args:
+  k: int >= 0. Number of successes.
+  n: int >= 0. Number of trials.
+  p: 0.0 <= float <= 1.0. Probability of success.
 
-`k`: int >= 0. Number of successes.
-
-`n`: int >= 0. Number of trials.
-
-`p`: 0.0 <= float <= 1.0. Probability of success.
-
-
-**Returns**:
-
+Returns:
   log10 probability of seeing k successes in n trials with p.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b7c90>"></a> log10sumexp(log10_probs)
+### `log10sumexp(log10_probs)`<a name="log10sumexp"></a>
+```python
 Returns log10(sum(10^log10_probs)) computed in a numerically-stable way.
 
-**Args**:
+Args:
+  log10_probs: array-like of floats. An array of log10 probabilties.
 
-`log10_probs`: array-like of floats. An array of log10 probabilties.
-
-
-**Returns**:
-
+Returns:
   Float.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b71d0>"></a> normalize_log10_probs(log10_probs)
+### `normalize_log10_probs(log10_probs)`<a name="normalize_log10_probs"></a>
+```python
 Approximately normalizes log10 probabilities.
 
 This function normalizes log10 probabilities. What this means is that we
@@ -141,60 +138,48 @@ for an exact calculation of the sum. This function ensures that the
 normalization is numerically safe at the expense of the sum not being exactly
 equal to 1 but rather just close.
 
-**Args**:
+Args:
+  log10_probs: array-like of floats. An array of log10 probabilties.
 
-`log10_probs`: array-like of floats. An array of log10 probabilties.
-
-
-**Returns**:
-
+Returns:
   np.array with the same shape as log10_probs but where sum(10^result) ~= 1.0.
 
-**Raises**:
+Raises:
+  ValueError: if any log10_probs > 0.0
+```
 
-`ValueError`: if any log10_probs > 0.0
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d0d9450>"></a> perror_to_bounded_log10_perror(perror, min_prob=1.0 - _MAX_CONFIDENCE)
+### `perror_to_bounded_log10_perror(perror, min_prob=1.0 - _MAX_CONFIDENCE)`<a name="perror_to_bounded_log10_perror"></a>
+```python
 Computes log10(p) for the given probability.
 
 The log10 probability is capped by -_MAX_CONFIDENCE.
 
-**Args**:
+Args:
+  perror: the probability to log10
+  min_prob: minimum allowed probability
 
-`perror`: the probability to log10
-
-`min_prob`: minimum allowed probability
-
-
-**Returns**:
-
+Returns:
   log10(p).
 
-**Raises**:
+Raises:
+  ValueError: If probability is outside of [0.0, 1.0].
+```
 
-`ValueError`: If probability is outside of [0.0, 1.0].
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d0f1090>"></a> ptrue_to_bounded_phred(ptrue, max_prob=_MAX_CONFIDENCE)
+### `ptrue_to_bounded_phred(ptrue, max_prob=_MAX_CONFIDENCE)`<a name="ptrue_to_bounded_phred"></a>
+```python
 Computes the phred scaled confidence from the given ptrue probability.
 
 See https://en.wikipedia.org/wiki/Phred_quality_score for more information.
 The quality score is capped by _MAX_CONFIDENCE.
 
-**Args**:
+Args:
+  ptrue: the ptrue probability to phred scale.
+  max_prob: maximum allowed probability
 
-`ptrue`: the ptrue probability to phred scale.
-
-`max_prob`: maximum allowed probability
-
-
-**Returns**:
-
+Returns:
   Phred scaled version of the 1 - ptrue.
 
-**Raises**:
-
-`ValueError`: If ptrue is outside of [0.0, 1.0].
-
+Raises:
+  ValueError: If ptrue is outside of [0.0, 1.0].
+```
 

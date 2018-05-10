@@ -33,6 +33,7 @@ Name | Description
 
 ## Classes
 ### RangeSet
+```python
 Fast overlap detection of a genomic position against a db of Ranges.
 
 Enables very fast O(log n) computation of whether a point chr:pos falls within
@@ -43,82 +44,80 @@ intervals will be automatically merged together in the constructor.
 
 This class is immutable. No methods should be added that directly modify the
 ranges held by the class.
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d1b73d0>"></a> __init__(self, ranges=None, contigs=None)
+#### `__init__(self, ranges=None, contigs=None)`<a name="__init__"></a>
+```python
 Creates an RangeSet backed by ranges.
 
 Note that the Range objects in ranges are *not* stored directly here, so
 they can safely be modified after they are passed to this RangeSet.
 
-**Args**:
-
-`ranges`: A list of genomics.Range objects (or anything with
+Args:
+  ranges: A list of genomics.Range objects (or anything with
     reference_name, start, and end properties following the
     genomics.Range convention). If None, no ranges will be used,
     and overlaps() will always return False.
-
-`contigs`: a list of ContigInfo protos, used to define the iteration order
+  contigs: a list of ContigInfo protos, used to define the iteration order
     over contigs (i.e., by contig.pos_in_fasta).  If this dict is not
     provided, the iteration order will be determined by the alphabetical
     order of the contig names.
 Raises:
-
-`ValueError`: if any range's reference_name does not correspond to any
+  ValueError: if any range's reference_name does not correspond to any
     contig in `contigs`.
+```
 
-
-####<a name="<_ast.FunctionDef object at 0x55f78d1bad50>"></a> exclude_regions(self, other)
+#### `exclude_regions(self, other)`<a name="exclude_regions"></a>
+```python
 Chops out all of the intervals in other from this this RangeSet.
 
 This is a *MUTATING* operation for performance reasons. Make a copy of self
 if you want to avoid modifying the RangeSet.
 
-**Args**:
-
-`other`: A RangeSet object whose intervals will be removed from this
+Args:
+  other: A RangeSet object whose intervals will be removed from this
     RangeSet.
+```
 
-
-####<a name="<_ast.FunctionDef object at 0x55f78d1b9290>"></a> from_bed(cls, source, contigs=None)
+#### `from_bed(cls, source, contigs=None)`<a name="from_bed"></a>
+```python
 Creates a RangeSet containing the intervals from source.
 
-**Args**:
-
-`source`: A path to a BED (or equivalent) file of intervals.
-
-`contigs`: An optional list of ContigInfo proto, used by RangeSet
+Args:
+  source: A path to a BED (or equivalent) file of intervals.
+  contigs: An optional list of ContigInfo proto, used by RangeSet
     constructor.
 
-
-**Returns**:
-
+Returns:
   A RangeSet.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d0f19d0>"></a> from_contigs(cls, contigs)
+#### `from_contigs(cls, contigs)`<a name="from_contigs"></a>
+```python
 Creates a RangeSet with an interval covering each base of each contig.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d0f1310>"></a> from_regions(cls, regions, contig_map=None)
+#### `from_regions(cls, regions, contig_map=None)`<a name="from_regions"></a>
+```python
 Parses a command-line style literal regions flag into a RangeSet.
 
-**Args**:
-
-`regions`: An iterable or None. If not None, regions will be parsed with
+Args:
+  regions: An iterable or None. If not None, regions will be parsed with
     ranges.from_regions.
-
-`contig_map`: An optional dictionary mapping from contig names to ContigInfo
+  contig_map: An optional dictionary mapping from contig names to ContigInfo
     protobufs. If provided, allows literals of the format "contig_name",
     which will be parsed into a Range with reference_name=contig_name,
     start=0, end=n_bases where n_bases comes from the ContigInfo;
     additionally the sort order of the RangeSet will be determined by
     contig.pos_in_fasta.
 
-
-**Returns**:
-
+Returns:
   A RangeSet object.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d1b9950>"></a> intersection(self, *others)
+#### `intersection(self, *others)`<a name="intersection"></a>
+```python
 Computes the intersection among this RangeSet and *others RangeSets.
 
 This function computes the intersection of all of the intervals in self and
@@ -140,35 +139,32 @@ on chr2 or chr3 are included since the chr2 only occurs in self and the two
 intervals on chr3, despite having some shared bases, don't have an
 overlapping interval in self.
 
-**Args**:
-
-`*others`: A list of RangeSet objects to intersect with the intervals in
+Args:
+  *others: A list of RangeSet objects to intersect with the intervals in
     this RangeSet.
 
-
-**Returns**:
-
+Returns:
   A RangeSet. If *others is empty, this function returns self rather than
   making an unnecessary copy. In all other cases, the returned value will be
   a freshly allocated RangeSet.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d1e25d0>"></a> overlaps(self, chrom, pos)
+#### `overlaps(self, chrom, pos)`<a name="overlaps"></a>
+```python
 Returns True if chr:pos overlaps with any range in this RangeSet.
 
 Uses a fast bisection algorithm to determine the overlap in O(log n) time.
 
-**Args**:
+Args:
+  chrom: The chromosome name as a string.
+  pos: The position (0-based) as an integer.
 
-`chrom`: The chromosome name as a string.
-
-`pos`: The position (0-based) as an integer.
-
-
-**Returns**:
-
+Returns:
   True if chr:pos overlaps with a range.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d1002d0>"></a> partition(self, max_size)
+#### `partition(self, max_size)`<a name="partition"></a>
+```python
 Splits our intervals so that none are larger than max_size.
 
 Slices up the intervals in this RangeSet into a equivalent set of interval (
@@ -181,45 +177,45 @@ Because RangeSet merges adjacent intervals, this function cannot return use
 a RangeSet to represent the partitioned intervals and so instead generates
 these intervals via a yield statement.
 
-**Args**:
-
-`max_size`: A positive integer (> 0) indicating the maximum size of any
+Args:
+  max_size: A positive integer (> 0) indicating the maximum size of any
     interval.
 
-
-**Yields**:
-
+Yields:
   nucleus.genomics.v1.Range protos, in sorted order (see comment about order
   in __iter__).
 
-**Raises**:
+Raises:
+  ValueError: if max_size <= 0.
+```
 
-`ValueError`: if max_size <= 0.
-
-
-####<a name="<_ast.FunctionDef object at 0x55f78d1e2090>"></a> variant_overlaps(self, variant, empty_set_return_value=True)
+#### `variant_overlaps(self, variant, empty_set_return_value=True)`<a name="variant_overlaps"></a>
+```python
 Returns True if the variant's range overlaps with any in this set.
+```
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x55f78d1ef810>"></a> as_tuple(range_)
+### `as_tuple(range_)`<a name="as_tuple"></a>
+```python
 Returns a Python tuple (reference_name, start, end).
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1d5d50>"></a> bed_parser(filename)
+### `bed_parser(filename)`<a name="bed_parser"></a>
+```python
 Parses Range objects from a BED-formatted file object.
 
 See http://bedtools.readthedocs.org/en/latest/content/general-usage.html
 for more information on the BED format.
 
-**Args**:
+Args:
+  filename: file name of a BED-formatted file.
 
-`filename`: file name of a BED-formatted file.
-
-
-**Yields**:
-
+Yields:
   nucleus.genomics.v1.Range protobuf objects.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1d5190>"></a> bedpe_parser(filename)
+### `bedpe_parser(filename)`<a name="bedpe_parser"></a>
+```python
 Parses Range objects from a BEDPE-formatted file object.
 
 See http://bedtools.readthedocs.org/en/latest/content/general-usage.html
@@ -229,31 +225,31 @@ Skips events that span across chromosomes. For example, if the starting
 location is on chr1 and the ending location is on chr2, that record will
 not appear in the output.
 
-**Args**:
+Args:
+  filename: file name of a BEDPE-formatted file.
 
-`filename`: file name of a BEDPE-formatted file.
-
-
-**Yields**:
-
+Yields:
   nucleus.genomics.v1.Range protobuf objects.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1d0a50>"></a> contigs_dict(contigs)
+### `contigs_dict(contigs)`<a name="contigs_dict"></a>
+```python
 Creates a dictionary for contigs.
 
-**Args**:
+Args:
+  contigs: Iterable of ContigInfo protos.
 
-`contigs`: Iterable of ContigInfo protos.
-
-
-**Returns**:
-
+Returns:
   A dictionary mapping contig.name: contig for each contig in contigs.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1d06d0>"></a> contigs_n_bases(contigs)
+### `contigs_n_bases(contigs)`<a name="contigs_n_bases"></a>
+```python
 Returns the sum of all n_bases of contigs.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1f4f50>"></a> expand(region, n_bp, contig_map=None)
+### `expand(region, n_bp, contig_map=None)`<a name="expand"></a>
+```python
 Expands region by n_bp in both directions.
 
 Takes a Range(chrom, start, stop) and returns a new
@@ -263,49 +259,41 @@ Range(chrom, new_start, new_stop), where:
 -- new_stop is stop + n_bp if contig_map is None, or min(stop + n_bp, max_bp)
    where max_bp is contig_map[chrom].n_bp.
 
-**Args**:
-
-`region`: A nucleus.genomics.v1.Range proto.
-
-`n_bp`: int >= 0; how many basepairs to increase region by.
-
-`contig_map`: None, or dict[string, ContigInfo]. If not None, used to get the
+Args:
+  region: A nucleus.genomics.v1.Range proto.
+  n_bp: int >= 0; how many basepairs to increase region by.
+  contig_map: None, or dict[string, ContigInfo]. If not None, used to get the
     maximum extent to increase stop by. Must have region.reference_name as a
     key.
 
-
-**Returns**:
-
+Returns:
   nucleus.genomics.v1.Range proto.
 
-**Raises**:
+Raises:
+  ValueError: if n_bp is invalid.
+  KeyError: contig_map is not None and region.reference_name isn't a key.
+```
 
-`ValueError`: if n_bp is invalid.
-
-`KeyError`: contig_map is not None and region.reference_name isn't a key.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1f4350>"></a> find_max_overlapping(query_range, search_ranges)
+### `find_max_overlapping(query_range, search_ranges)`<a name="find_max_overlapping"></a>
+```python
 Gets the index of the element in search_ranges with max overlap with query.
 
 In case of ties, selects the lowest index range in search_ranges.
 
-**Args**:
-
-`query_range`: learning.genomics.genomics.core.Range, read genomic range.
-
-`search_ranges`: list[learning.genomics.genomics.core.Read]. Cannot be an
+Args:
+  query_range: learning.genomics.genomics.core.Range, read genomic range.
+  search_ranges: list[learning.genomics.genomics.core.Read]. Cannot be an
     iterable as we loop over the search_ranges multiple times. The list of
     regions we want to search for the maximal overlap with query_range.
 
-
-**Returns**:
-
+Returns:
   int, the search_ranges index with the maximum read overlap. Returns None
   when read has no overlap with any of the search_ranges or search_ranges is
   empty.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1db410>"></a> from_regions(regions, contig_map=None)
+### `from_regions(regions, contig_map=None)`<a name="from_regions"></a>
+```python
 Parses each region of `regions` into a Range proto.
 
 This function provides a super high-level interface for
@@ -321,59 +309,56 @@ Range(s) protos. The following types of `region` strings are supported:
   * Otherwise we parse region as a region literal (`chr20:1-10`) and return
     the Range proto.
 
-**Args**:
-
-`regions`: iterable[str]. Converts each element of this iterable into
+Args:
+  regions: iterable[str]. Converts each element of this iterable into
     region(s).
-
-`contig_map`: An optional dictionary mapping from contig names to ContigInfo
+  contig_map: An optional dictionary mapping from contig names to ContigInfo
     protobufs. If provided, allows literals of the format "contig_name",
     which will be parsed into a Range with reference_name=contig_name,
     start=0, end=n_bases where n_bases comes from the ContigInfo.
 
-
-**Yields**:
-
+Yields:
   A Range proto.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d200fd0>"></a> length(region)
+### `length(region)`<a name="length"></a>
+```python
 Returns the length in basepairs of region.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d100dd0>"></a> make_position(chrom, position, reverse_strand=False)
+### `make_position(chrom, position, reverse_strand=False)`<a name="make_position"></a>
+```python
 Makes a nucleus.genomics.v1.Position.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1df290>"></a> make_range(chrom, start, end)
+### `make_range(chrom, start, end)`<a name="make_range"></a>
+```python
 Creates a genomics.Range object chr:start-end.
 
-**Args**:
+Args:
+  chrom: The chromosome name as a string.
+  start: The start position (0-based, inclusive, integer) of this range.
+  end: The end position (0-based, exclusive, integer) of this range.
 
-`chrom`: The chromosome name as a string.
-
-`start`: The start position (0-based, inclusive, integer) of this range.
-
-`end`: The end position (0-based, exclusive, integer) of this range.
-
-
-**Returns**:
-
+Returns:
   A nucleus.genomics.v1.Range.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1efb50>"></a> overlap_len(range1, range2)
+### `overlap_len(range1, range2)`<a name="overlap_len"></a>
+```python
 Computes the number of overlapping bases of range1 and range2.
 
-**Args**:
+Args:
+  range1: learning.genomics.genomics.Range.
+  range2: learning.genomics.genomics.Range.
 
-`range1`: learning.genomics.genomics.Range.
-
-`range2`: learning.genomics.genomics.Range.
-
-
-**Returns**:
-
+Returns:
   int. The number of basepairs in common. 0 if the ranges are not on the same
   contig.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1d1a90>"></a> parse_literal(region_literal, contig_map=None)
+### `parse_literal(region_literal, contig_map=None)`<a name="parse_literal"></a>
+```python
 Parses a Range from a string representation like chr:start-end.
 
 The region literal must conform to the following pattern:
@@ -391,98 +376,85 @@ position - 1 and ending at position.
 Inspired by the samtools region specification:
 http://www.htslib.org/doc/samtools.html
 
-**Args**:
-
-`region_literal`: string literal to parse.
-
-`contig_map`: An optional dictionary mapping from contig names to ContigInfo
+Args:
+  region_literal: string literal to parse.
+  contig_map: An optional dictionary mapping from contig names to ContigInfo
     protobufs. If provided, allows literals of the format "contig_name", which
     will be parsed into a Range with reference_name=contig_name, start=0,
     end=n_bases where n_bases comes from the ContigInfo.
 
-
-**Returns**:
-
+Returns:
   nucleus.genomics.v1.Range.
 
-**Raises**:
+Raises:
+  ValueError: if region_literal cannot be parsed.
+```
 
-`ValueError`: if region_literal cannot be parsed.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1d02d0>"></a> parse_literals(region_literals, contig_map=None)
+### `parse_literals(region_literals, contig_map=None)`<a name="parse_literals"></a>
+```python
 Parses each literal of region_literals in order.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1df6d0>"></a> position_overlaps(chrom, pos, interval)
+### `position_overlaps(chrom, pos, interval)`<a name="position_overlaps"></a>
+```python
 Does interval overlap the position chr:pos?
 
-**Args**:
+Args:
+  chrom: The chromosome name as a string.
+  pos: The position (0-based, integer).
+  interval: nucleus.genomics.v1.Range object.
 
-`chrom`: The chromosome name as a string.
-
-`pos`: The position (0-based, integer).
-
-`interval`: nucleus.genomics.v1.Range object.
-
-
-**Returns**:
-
+Returns:
   True if interval overlaps chr:pos.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1dfb90>"></a> ranges_overlap(i1, i2)
+### `ranges_overlap(i1, i2)`<a name="ranges_overlap"></a>
+```python
 Checks whether ranges i1 and i2 overlap.
 
-**Args**:
+Args:
+  i1: nucleus.genomics.v1.Range object.
+  i2: nucleus.genomics.v1.Range object.
 
-`i1`: nucleus.genomics.v1.Range object.
-
-`i2`: nucleus.genomics.v1.Range object.
-
-
-**Returns**:
-
+Returns:
   True if i1 and i2 overlap.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1d0d90>"></a> sorted_ranges(ranges, contigs=None)
+### `sorted_ranges(ranges, contigs=None)`<a name="sorted_ranges"></a>
+```python
 Sorts ranges by reference_name, start, and end.
 
-**Args**:
-
-`ranges`: A sequence of google.v1.genomics.Range protos that we want to sort.
-
-`contigs`: None or an iterable of ConfigInfo protos. If not None, we will use
+Args:
+  ranges: A sequence of google.v1.genomics.Range protos that we want to sort.
+  contigs: None or an iterable of ConfigInfo protos. If not None, we will use
     the order of the contigs (as defined by their pos_in_fasta field values)
     to sort the Ranges on different contigs with respect to each other.
 
-
-**Returns**:
-
+Returns:
   A newly allocated list of google.v1.genomics.Range protos.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1fbd90>"></a> span(regions)
+### `span(regions)`<a name="span"></a>
+```python
 Returns a region that spans all of the bases in regions.
 
 This function returns a Range(chrom, start, stop), where start is the min
 of the starts in regions, and stop is the max end in regions. It may not be
 freshly allocated.
 
-**Args**:
+Args:
+  regions: list[Range]: an list of Range protos.
 
-`regions`: list[Range]: an list of Range protos.
-
-
-**Returns**:
-
+Returns:
   Range proto.
 
-**Raises**:
+Raises:
+  ValueError: if not all regions have the same reference_name.
+  ValueError: if regions is empty.
+```
 
-`ValueError`: if not all regions have the same reference_name.
-
-`ValueError`: if regions is empty.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1d1650>"></a> to_literal(range_pb)
+### `to_literal(range_pb)`<a name="to_literal"></a>
+```python
 Converts Range protobuf into string literal form.
 
 The string literal form looks like:
@@ -492,12 +464,10 @@ The string literal form looks like:
 since start and end are zero-based inclusive (start) and exclusive (end),
 while the literal form is one-based inclusive on both ends.
 
-**Args**:
+Args:
+  range_pb: A nucleus.genomics.v1.Range object.
 
-`range_pb`: A nucleus.genomics.v1.Range object.
-
-
-**Returns**:
-
+Returns:
   A string.
+```
 

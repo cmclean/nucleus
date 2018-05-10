@@ -17,13 +17,18 @@ Name | Description
 
 ## Classes
 ### CommandLineError
+```python
 Exception class related to invalid command-line flags.
+```
 
 ### Error
+```python
 Base class for core error types.
+```
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x55f78d1b9a50>"></a> clean_commandline_error_exit(allowed_exceptions=(Error, CommandLineError), exit_value=errno.ENOENT)
+### `clean_commandline_error_exit(allowed_exceptions=(Error, CommandLineError), exit_value=errno.ENOENT)`<a name="clean_commandline_error_exit"></a>
+```python
 Wraps commands to capture certain exceptions and exit without stacktraces.
 
 This function is intended to wrap all code within main() of Python binaries
@@ -33,32 +38,26 @@ in `allowed_exceptions` will be caught and the program will quietly exit with
 `exit_value`. Other exceptions are propagated normally. It should only be used
 as a context manager and its usage should be limited to main().
 
-**Args**:
-
-`allowed_exceptions`: [`tuple of Exception`]. A tuple of Exception classes
+Args:
+  allowed_exceptions: [`tuple of Exception`]. A tuple of Exception classes
       that should not be raised, but instead quietly caused to exit the
       program.
+  exit_value: [`int`]. The value to return upon program exit.
 
-`exit_value`: [`int`]. The value to return upon program exit.
-
-
-**Yields**:
-
+Yields:
   The yield in this function is used to allow the block nested in the with
   statement to be executed.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b9810>"></a> log_and_raise(msg, exception_class=Error)
+### `log_and_raise(msg, exception_class=Error)`<a name="log_and_raise"></a>
+```python
 Logs the given message at ERROR level and raises exception.
 
-**Args**:
+Args:
+  msg: [`string`]. The message to log and use in the raised exception.
+  exception_class: [`Exception`]. The class of exception to raise.
 
-`msg`: [`string`]. The message to log and use in the raised exception.
-
-`exception_class`: [`Exception`]. The class of exception to raise.
-
-
-**Raises**:
-
-`Error`: An exception of the type specified by the input exception_class.
-
+Raises:
+  Error: An exception of the type specified by the input exception_class.
+```
 

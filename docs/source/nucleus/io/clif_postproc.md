@@ -15,13 +15,17 @@ Name | Description
 
 ## Classes
 ### WrappedCppIterable
+```python
 This class gives Python iteration semantics on top of a C++ 'Iterable'.
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d0d6e90>"></a> __init__(self, cc_iterable)
+#### `__init__(self, cc_iterable)`<a name="__init__"></a>
 
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x55f78d0d9a50>"></a> ValueErrorOnFalse(ok, *args)
+### `ValueErrorOnFalse(ok, *args)`<a name="ValueErrorOnFalse"></a>
+```python
 Returns None / arg / (args,...) if ok.
+```
 

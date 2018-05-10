@@ -29,6 +29,7 @@ Name | Description
 
 ## Classes
 ### InMemoryVcfReader
+```python
 Class for "reading" Variant protos from an in-memory cache of variants.
 
 API:
@@ -62,92 +63,90 @@ Implementation note:
   Neither of these optimizations are worth it if len(variants) is small, but
   it may be worth considering if we want to use this functionality with a
   large number of variants.
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d0f3f50>"></a> __init__(self, variants, header=None)
+#### `__init__(self, variants, header=None)`<a name="__init__"></a>
+```python
 Creates a VCFReader backed by a collection of variants.
 
-**Args**:
-
-`variants`: list of nucleus.genomics.v1.Variant protos we will "read"
+Args:
+  variants: list of nucleus.genomics.v1.Variant protos we will "read"
     from.
-
-`header`: a VCFHeader object to provide as a result to calls to self.header,
+  header: a VCFHeader object to provide as a result to calls to self.header,
     or None, indicating that we don't have a header associated with this
     reader.
+```
+
+#### `iterate(self)`<a name="iterate"></a>
 
 
-####<a name="<_ast.FunctionDef object at 0x55f78d1ba5d0>"></a> iterate(self)
-
-
-####<a name="<_ast.FunctionDef object at 0x55f78d1ba7d0>"></a> query(self, region)
+#### `query(self, region)`<a name="query"></a>
 
 
 ### NativeVcfReader
+```python
 Class for reading from native VCF files.
 
 Most users will want to use VcfReader instead, because it dynamically
 dispatches between reading native VCF files and TFRecord files based
 on the filename's extensions.
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d0d99d0>"></a> __init__(self, input_path, use_index=True, excluded_info_fields=None, excluded_format_fields=None)
+#### `__init__(self, input_path, use_index=True, excluded_info_fields=None, excluded_format_fields=None)`<a name="__init__"></a>
+```python
 Initializer for NativeVcfReader.
 
-**Args**:
-
-`input_path`: str. The path to the VCF file to read.
-
-`use_index`: bool. If True, the input is assumed to be bgzipped and tabix
+Args:
+  input_path: str. The path to the VCF file to read.
+  use_index: bool. If True, the input is assumed to be bgzipped and tabix
     indexed, and the `query` functionality is supported.
-
-`excluded_info_fields`: list(str). A list of INFO field IDs that should not
+  excluded_info_fields: list(str). A list of INFO field IDs that should not
     be parsed into the Variants. If None, all INFO fields are included.
-
-`excluded_format_fields`: list(str). A list of FORMAT field IDs that should
+  excluded_format_fields: list(str). A list of FORMAT field IDs that should
     not be parsed into the Variants. If None, all FORMAT fields are
     included.
+```
+
+#### `iterate(self)`<a name="iterate"></a>
 
 
-####<a name="<_ast.FunctionDef object at 0x55f78d1b74d0>"></a> iterate(self)
-
-
-####<a name="<_ast.FunctionDef object at 0x55f78d1b7690>"></a> query(self, region)
+#### `query(self, region)`<a name="query"></a>
 
 
 ### NativeVcfWriter
+```python
 Class for writing to native VCF files.
 
 Most users will want VcfWriter, which will write to either native VCF
 files or TFRecords files, based on the output filename's extensions.
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d0f7350>"></a> __init__(self, output_path, header=None, round_qualities=False, excluded_info_fields=None, excluded_format_fields=None)
+#### `__init__(self, output_path, header=None, round_qualities=False, excluded_info_fields=None, excluded_format_fields=None)`<a name="__init__"></a>
+```python
 Initializer for NativeVcfWriter.
 
-**Args**:
-
-`output_path`: str. A path where we'll write our VCF file.
-
-`header`: nucleus.genomics.v1.VcfHeader. The header that defines all
+Args:
+  output_path: str. A path where we'll write our VCF file.
+  header: nucleus.genomics.v1.VcfHeader. The header that defines all
     information germane to the constituent variants. This includes contigs,
     FILTER fields, INFO fields, FORMAT fields, samples, and all other
     structured and unstructured header lines.
-
-`round_qualities`: bool. If True, the QUAL field is rounded to one point
+  round_qualities: bool. If True, the QUAL field is rounded to one point
     past the decimal.
-
-`excluded_info_fields`: list(str). A list of INFO field IDs that should not
+  excluded_info_fields: list(str). A list of INFO field IDs that should not
     be written to the output. If None, all INFO fields are included.
-
-`excluded_format_fields`: list(str). A list of FORMAT field IDs that should
+  excluded_format_fields: list(str). A list of FORMAT field IDs that should
     not be written to the output. If None, all FORMAT fields are included.
+```
 
-
-####<a name="<_ast.FunctionDef object at 0x55f78d0d9510>"></a> write(self, proto)
+#### `write(self, proto)`<a name="write"></a>
 
 
 ### VcfHeaderCache
+```python
 This class creates a cache of accessors to structured fields in Variants.
 
 The INFO and FORMAT fields within Variant protos are structured and typed,
@@ -159,41 +158,51 @@ defined therein.
 Note: Users should not need to interact with this class at all. It is used
 by the variant_utils.{get,set}_info and variantcall_utils.{get,set}_format
 functions for interacting with the INFO and FORMAT fields in a Variant proto.
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d0ea310>"></a> __init__(self, header)
+#### `__init__(self, header)`<a name="__init__"></a>
+```python
 Constructor.
 
-**Args**:
-
-`header`: nucleus.genomics.v1.VcfHeader proto. Used to define the accessor
+Args:
+  header: nucleus.genomics.v1.VcfHeader proto. Used to define the accessor
     functions needed.
+```
 
-
-####<a name="<_ast.FunctionDef object at 0x55f78d1b9310>"></a> format_field_get_fn(self, field_name)
+#### `format_field_get_fn(self, field_name)`<a name="format_field_get_fn"></a>
+```python
 Returns a callable that gets the given FORMAT field based on its type.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d1b9190>"></a> format_field_set_fn(self, field_name)
+#### `format_field_set_fn(self, field_name)`<a name="format_field_set_fn"></a>
+```python
 Returns a callable that sets the given FORMAT field based on its type.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d1b9c90>"></a> info_field_get_fn(self, field_name)
+#### `info_field_get_fn(self, field_name)`<a name="info_field_get_fn"></a>
+```python
 Returns a callable that extracts the given INFO field based on its type.
 
-**Args**:
+Args:
+  field_name: str. The INFO field name of interest, e.g. 'AA', 'DB', 'AF'.
 
-`field_name`: str. The INFO field name of interest, e.g. 'AA', 'DB', 'AF'.
-
-
-**Returns**:
-
+Returns:
   A callable used to extract the given INFO field from a Variant proto.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d1b9d10>"></a> info_field_set_fn(self, field_name)
+#### `info_field_set_fn(self, field_name)`<a name="info_field_set_fn"></a>
+```python
 Returns a callable that sets the given INFO field based on its type.
+```
 
 ### VcfReader
+```python
 Class for reading Variant protos from VCF or TFRecord files.
+```
 
 ### VcfWriter
+```python
 Class for writing Variant protos to VCF or TFRecord files.
+```
 

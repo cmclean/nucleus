@@ -13,31 +13,30 @@ Name | Description
 [`to_cigar_units`](#to_cigar_units)`(source)` | Converts object to a list of CigarUnit.
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x55f78d1b95d0>"></a> alignment_length(cigar_units)
+### `alignment_length(cigar_units)`<a name="alignment_length"></a>
+```python
 Computes the span in basepairs of the cigar units.
 
-**Args**:
+Args:
+  cigar_units: iterable[CigarUnit] whose alignment length we want to compute.
 
-`cigar_units`: iterable[CigarUnit] whose alignment length we want to compute.
-
-
-**Returns**:
-
+Returns:
   The number of basepairs spanned by the cigar_units.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b7a50>"></a> format_cigar_units(cigar_units)
+### `format_cigar_units(cigar_units)`<a name="format_cigar_units"></a>
+```python
 Returns the string version of an iterable of CigarUnit protos.
 
-**Args**:
+Args:
+  cigar_units: iterable[CigarUnit] protos.
 
-`cigar_units`: iterable[CigarUnit] protos.
-
-
-**Returns**:
-
+Returns:
   A nucleus.genomics.v1.Range for read.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b7fd0>"></a> parse_cigar_string(cigar_str)
+### `parse_cigar_string(cigar_str)`<a name="parse_cigar_string"></a>
+```python
 Parse a cigar string into a list of cigar units.
 
 For example, if cigar_str is 150M2S, this function will return:
@@ -47,21 +46,18 @@ For example, if cigar_str is 150M2S, this function will return:
   CigarUnit(operation=SOFT_CLIP, operation_length=2)
 ]
 
-**Args**:
+Args:
+  cigar_str: str containing a valid cigar.
 
-`cigar_str`: str containing a valid cigar.
-
-
-**Returns**:
-
+Returns:
   list[cigar_pb2.CigarUnit].
 
-**Raises**:
+Raises:
+  ValueError: If cigar_str isn't a well-formed CIGAR.
+```
 
-`ValueError`: If cigar_str isn't a well-formed CIGAR.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1b9f90>"></a> to_cigar_unit(source)
+### `to_cigar_unit(source)`<a name="to_cigar_unit"></a>
+```python
 Creates a cigar_pb2 CigarUnit from source.
 
 This function attempts to convert source into a CigarUnit protobuf. If
@@ -71,23 +67,20 @@ source is a string, it must be a single CIGAR string specification like
 be >= 1. opstr should be a single character CIGAR specification (e.g., 'M').
 If source is already a CigarUnit, it is just passed through unmodified.
 
-**Args**:
-
-`source`: many types allowed. The object we want to convert to a CigarUnit
+Args:
+  source: many types allowed. The object we want to convert to a CigarUnit
     proto.
 
-
-**Returns**:
-
+Returns:
   CigarUnit proto with operation_length and operation set to values from
     source.
 
-**Raises**:
+Raises:
+  ValueError: if source cannot be converted or is malformed.
+```
 
-`ValueError`: if source cannot be converted or is malformed.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d0d63d0>"></a> to_cigar_units(source)
+### `to_cigar_units(source)`<a name="to_cigar_units"></a>
+```python
 Converts object to a list of CigarUnit.
 
 This function attempts to convert source into a list of CigarUnit protos.
@@ -96,12 +89,10 @@ parse_cigar_string on it, returning the result. It not, we assume it's an
 iterable containing element to be converted with to_cigar_unit(). The
 resulting list of converted elements is returned.
 
-**Args**:
+Args:
+  source: str or iterable to convert to CigarUnit protos.
 
-`source`: str or iterable to convert to CigarUnit protos.
-
-
-**Returns**:
-
+Returns:
   list[CigarUnit].
+```
 

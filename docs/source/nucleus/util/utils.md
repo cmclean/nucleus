@@ -10,19 +10,19 @@ Name | Description
 [`reservoir_sample`](#reservoir_sample)`(iterable, k, random=None)` | Samples k elements with uniform probability from an iterable.
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x55f78d1b9190>"></a> read_range(read)
+### `read_range(read)`<a name="read_range"></a>
+```python
 Creates a Range proto from the alignment of Read.
 
-**Args**:
+Args:
+  read: the read to calculate range
 
-`read`: the read to calculate range
-
-
-**Returns**:
-
+Returns:
   A nucleus.genomics.v1.Range for read.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b9a10>"></a> reservoir_sample(iterable, k, random=None)
+### `reservoir_sample(iterable, k, random=None)`<a name="reservoir_sample"></a>
+```python
 Samples k elements with uniform probability from an iterable.
 
 Selects a subset of k elements from n input elements with uniform probability
@@ -43,17 +43,13 @@ called Algorithm R) can be found on wikipedia:
 
 https://en.wikipedia.org/wiki/Reservoir_sampling#Algorithm_R
 
-**Args**:
-
-`iterable`: Python iterable. The iterable to sample from.
-
-`k`: int. The number of elements to sample.
-
-`random`: A random number generator or None.
+Args:
+  iterable: Python iterable. The iterable to sample from.
+  k: int. The number of elements to sample.
+  random: A random number generator or None.
 Returns:
   A list containing the k sampled elements.
 Raises:
-
-`ValueError`: If k is negative.
-
+  ValueError: If k is negative.
+```
 

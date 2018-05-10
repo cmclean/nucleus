@@ -22,54 +22,62 @@ Name | Description
 
 ## Classes
 ### BedReader
+```python
 Class for reading BedRecord protos from BED or TFRecord files.
+```
 
 ### BedWriter
+```python
 Class for writing BedRecord protos to BED or TFRecord files.
+```
 
 ### NativeBedReader
+```python
 Class for reading from native BED files.
 
 Most users will want to use BedReader instead, because it dynamically
 dispatches between reading native BED files and TFRecord files based on the
 filename's extension.
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d0f1210>"></a> __init__(self, input_path, num_fields=0)
+#### `__init__(self, input_path, num_fields=0)`<a name="__init__"></a>
+```python
 Initializes a NativeBedReader.
 
-**Args**:
-
-`input_path`: string. A path to a resource containing BED records.
-
-`num_fields`: int. The number of fields to read in the BED. If unset or set
+Args:
+  input_path: string. A path to a resource containing BED records.
+  num_fields: int. The number of fields to read in the BED. If unset or set
     to zero, all fields in the input are read.
+```
 
-
-####<a name="<_ast.FunctionDef object at 0x55f78d0d9850>"></a> iterate(self)
+#### `iterate(self)`<a name="iterate"></a>
+```python
 Returns an iterable of BedRecord protos in the file.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d0d9410>"></a> query(self)
+#### `query(self)`<a name="query"></a>
 
 
 ### NativeBedWriter
+```python
 Class for writing to native BED files.
 
 Most users will want BedWriter, which will write to either native BED
 files or TFRecord files, based on the output filename's extension.
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d0d6f90>"></a> __init__(self, output_path, header=None)
+#### `__init__(self, output_path, header=None)`<a name="__init__"></a>
+```python
 Initializer for NativeBedWriter.
 
-**Args**:
-
-`output_path`: str. The path to which to write the BED file.
-
-`header`: nucleus.genomics.v1.BedHeader. The header that defines all
+Args:
+  output_path: str. The path to which to write the BED file.
+  header: nucleus.genomics.v1.BedHeader. The header that defines all
     information germane to the constituent BED records.
+```
 
-
-####<a name="<_ast.FunctionDef object at 0x55f78d0eaad0>"></a> write(self, proto)
+#### `write(self, proto)`<a name="write"></a>
 
 

@@ -18,23 +18,22 @@ Name | Description
 [`test_tmpfile`](#test_tmpfile)`(name, contents=None)` | Returns a path to a tempfile named name in the test_tmpdir.
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x55f78d0fbf10>"></a> assert_called_once_workaround(mock)
+### `assert_called_once_workaround(mock)`<a name="assert_called_once_workaround"></a>
+```python
 Asserts that a mock has been called exactly once.
 
 See assert_not_called_workaround for the backstory on why this function
 exists.
 
-**Args**:
+Args:
+  mock: The mock that should have been called exactly once.
 
-`mock`: The mock that should have been called exactly once.
+Raises:
+  AssertionError: mock wasn't called exactly once.
+```
 
-
-**Raises**:
-
-`AssertionError`: mock wasn't called exactly once.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d0fba10>"></a> assert_not_called_workaround(mock)
+### `assert_not_called_workaround(mock)`<a name="assert_not_called_workaround"></a>
+```python
 Asserts that a mock has not been called.
 
 There's a bug in mock where some of the assert functions on a mock are being
@@ -57,124 +56,111 @@ This is an open issue on the mock github repo:
 And they claim that it'll be a few months (as of April 2017) before it is
 incorporated into the backport.
 
-**Args**:
+Args:
+  mock: The mock to assert hasn't been called.
 
-`mock`: The mock to assert hasn't been called.
+Raises:
+  AssertionError: mock has been called.
+```
 
-
-**Raises**:
-
-`AssertionError`: mock has been called.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d0fb050>"></a> cc_iterable_len(cc_iterable)
+### `cc_iterable_len(cc_iterable)`<a name="cc_iterable_len"></a>
+```python
 Count the number of elements in an Iterable object.
 
-**Args**:
+Args:
+  cc_iterable: a CLIF-wrap of a subclass of the C++ Iterable class.
 
-`cc_iterable`: a CLIF-wrap of a subclass of the C++ Iterable class.
-
-
-**Returns**:
-
+Returns:
   integer count
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b90d0>"></a> genomics_core_testdata(filename)
+### `genomics_core_testdata(filename)`<a name="genomics_core_testdata"></a>
+```python
 Gets the path to a testdata named filename in util/testdata.
 
-**Args**:
-
-`filename`: The name of a testdata file in the core genomics testdata
+Args:
+  filename: The name of a testdata file in the core genomics testdata
     directory. For example, if you have a test file in
     "third_party/nucleus/util/testdata/foo.txt", filename should be
     "foo.txt" to get a path to it.
 
-
-**Returns**:
-
+Returns:
   The absolute path to a testdata file.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d0ea190>"></a> genomics_testdata(path, datadir=DATADIR)
+### `genomics_testdata(path, datadir=DATADIR)`<a name="genomics_testdata"></a>
+```python
 Gets the path to a testdata file in genomics at relative path.
 
-**Args**:
-
-`path`: A path to a testdata file *relative* to the genomics root
+Args:
+  path: A path to a testdata file *relative* to the genomics root
     directory. For example, if you have a test file in
     "datadir/nucleus/testdata/foo.txt", path should be
     "nucleus/testdata/foo.txt" to get a path to it.
-
-`datadir`: The path of the genomics root directory *relative* to
+  datadir: The path of the genomics root directory *relative* to
     the testing source directory.
 
-
-**Returns**:
-
+Returns:
   The absolute path to a testdata file.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d0fb6d0>"></a> iterable_len(iterable)
+### `iterable_len(iterable)`<a name="iterable_len"></a>
+```python
 Returns the length of a Python iterable, by advancing it.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1ba990>"></a> make_read(bases, quals=None, cigar=None, mapq=50, chrom='chr1', start=1, name=None)
+### `make_read(bases, quals=None, cigar=None, mapq=50, chrom='chr1', start=1, name=None)`<a name="make_read"></a>
+```python
 Makes a nucleus.genomics.v1.Read for testing.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b7990>"></a> make_variant(chrom='chr1', start=10, alleles=None, end=None, filters=None, qual=None, gt=None, gq=None, sample_name=None, gls=None)
+### `make_variant(chrom='chr1', start=10, alleles=None, end=None, filters=None, qual=None, gt=None, gq=None, sample_name=None, gls=None)`<a name="make_variant"></a>
+```python
 Creates a new Variant proto from args.
 
-**Args**:
-
-`chrom`: str. The reference_name for this variant. Defaults to 'chr1'.
-
-`start`: int. The starting position of this variant. Defaults to 10.
-
-`alleles`: list of str with at least one element. alleles[0] is the reference
+Args:
+  chrom: str. The reference_name for this variant. Defaults to 'chr1'.
+  start: int. The starting position of this variant. Defaults to 10.
+  alleles: list of str with at least one element. alleles[0] is the reference
     bases and alleles[1:] will be set to alternate_bases of variant. If None,
     defaults to ['A', 'C'].
-
-`end`: int or None. If not None, the variant's end will be set to this value.
+  end: int or None. If not None, the variant's end will be set to this value.
     If None, will be set to the start + len(reference_bases).
-
-`filters`: str, list of str, or None. Sets the filters field of the variant to
+  filters: str, list of str, or None. Sets the filters field of the variant to
     this value if not None. If filters is a string `value`, this is equivalent
     to an argument [`value`]. If None, no value will be assigned to the
     filters field.
-
-`qual`: int or None. The quality score for this variant. If None, no quality
+  qual: int or None. The quality score for this variant. If None, no quality
     score will be written in the Variant.
-
-`gt`: A list of ints, or None. If present, creates a VariantCall in Variant
+  gt: A list of ints, or None. If present, creates a VariantCall in Variant
     with genotype field set to this value. The special 'DEFAULT' value, if
     provided, will set the genotype to [0, 1]. This is the default behavior.
-
-`gq`: int or None. If not None and gt is not None, we will add an this GQ
+  gq: int or None. If not None and gt is not None, we will add an this GQ
     value to our VariantCall.
-
-`sample_name`: str or None. If not None and gt is not None, sets the
+  sample_name: str or None. If not None and gt is not None, sets the
     call_set_name of our VariantCall to this value.
-
-`gls`: array-list of float, or None. If not None and gt is not None, sets the
+  gls: array-list of float, or None. If not None and gt is not None, sets the
     genotype_likelihoods of our VariantCall to this value.
 
-
-**Returns**:
-
+Returns:
   nucleus.genomics.v1.Variant proto.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d0d9210>"></a> set_list_values(list_value, values)
+### `set_list_values(list_value, values)`<a name="set_list_values"></a>
+```python
 Sets a ListValue to have the values in values.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b9710>"></a> test_tmpfile(name, contents=None)
+### `test_tmpfile(name, contents=None)`<a name="test_tmpfile"></a>
+```python
 Returns a path to a tempfile named name in the test_tmpdir.
 
-**Args**:
-
-`name`: str; the name of the file, should not contain any slashes.
-
-`contents`: bytes, or None. If not None, tmpfile's contents will be set to
+Args:
+  name: str; the name of the file, should not contain any slashes.
+  contents: bytes, or None. If not None, tmpfile's contents will be set to
     contents before returning the path.
 
-
-**Returns**:
-
+Returns:
   str path to a tmpfile with filename name in our test tmpfile directory.
+```
 

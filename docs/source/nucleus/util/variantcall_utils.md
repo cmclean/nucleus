@@ -22,86 +22,89 @@ Name | Description
 [`set_min_dp`](#set_min_dp)`(variant_call, min_dp)` | Sets the 'MIN_DP' field of the VariantCall.
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x55f78d1b7e90>"></a> get_ad(variant_call)
+### `get_ad(variant_call)`<a name="get_ad"></a>
+```python
 Gets the allele depth of the VariantCall.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1ba9d0>"></a> get_format(variant_call, field_name, vcf_object=None)
+### `get_format(variant_call, field_name, vcf_object=None)`<a name="get_format"></a>
+```python
 Returns the value of the `field_name` FORMAT field.
 
 The `vcf_object` is used to determine the type of the resulting value. If it
 is a single value or a Flag, that single value will be returned. Otherwise,
 the list of values is returned.
 
-**Args**:
-
-`variant_call`: VariantCall proto. The VariantCall of interest.
-
-`field_name`: str. The name of the field to retrieve values from.
-
-`vcf_object`: (Optional) A VcfReader or VcfWriter object. If not None, the
+Args:
+  variant_call: VariantCall proto. The VariantCall of interest.
+  field_name: str. The name of the field to retrieve values from.
+  vcf_object: (Optional) A VcfReader or VcfWriter object. If not None, the
     type of the field is inferred from the associated VcfReader or VcfWriter
     based on its name. Otherwise, the type is inferred if it is a reserved
     field.
+```
 
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1b7e10>"></a> get_gl(variant_call)
+### `get_gl(variant_call)`<a name="get_gl"></a>
+```python
 Returns the genotype likelihoods of the VariantCall.
 
-**Args**:
+Args:
+  variant_call: VariantCall proto. The VariantCall for which to return GLs.
 
-`variant_call`: VariantCall proto. The VariantCall for which to return GLs.
-
-
-**Returns**:
-
+Returns:
   A list of floats representing the genotype likelihoods of this call.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b95d0>"></a> get_gq(variant_call)
+### `get_gq(variant_call)`<a name="get_gq"></a>
+```python
 Gets the genotype quality of the VariantCall.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b9c50>"></a> get_gt(variant_call)
+### `get_gt(variant_call)`<a name="get_gt"></a>
+```python
 Returns the genotypes of the VariantCall.
 
-**Args**:
+Args:
+  variant_call: VariantCall proto. The VariantCall for which to return GTs.
 
-`variant_call`: VariantCall proto. The VariantCall for which to return GTs.
-
-
-**Returns**:
-
+Returns:
   A list of ints representing the genotype indices of this call.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b9bd0>"></a> get_min_dp(variant_call)
+### `get_min_dp(variant_call)`<a name="get_min_dp"></a>
+```python
 Gets the 'MIN_DP' field of the VariantCall.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1e2290>"></a> has_genotypes(variant_call)
+### `has_genotypes(variant_call)`<a name="has_genotypes"></a>
+```python
 Returns True iff the VariantCall has one or more called genotypes.
 
-**Args**:
+Args:
+  variant_call: VariantCall proto. The VariantCall to evaluate.
 
-`variant_call`: VariantCall proto. The VariantCall to evaluate.
-
-
-**Returns**:
-
+Returns:
   True if the VariantCall has one or more called genotypes, False otherwise.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1e2650>"></a> ploidy(variant_call)
+### `ploidy(variant_call)`<a name="ploidy"></a>
+```python
 Returns the ploidy of the VariantCall.
 
-**Args**:
+Args:
+  variant_call: VariantCall proto. The VariantCall to evaluate.
 
-`variant_call`: VariantCall proto. The VariantCall to evaluate.
-
-
-**Returns**:
-
+Returns:
   The ploidy of the call (a non-negative integer).
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b7690>"></a> set_ad(variant_call, ad)
+### `set_ad(variant_call, ad)`<a name="set_ad"></a>
+```python
 Sets the allele depth of the VariantCall.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b6c50>"></a> set_format(variant_call, field_name, value, vcf_object=None)
+### `set_format(variant_call, field_name, value, vcf_object=None)`<a name="set_format"></a>
+```python
 Sets a field of the info map of the `VariantCall` to the given value(s).
 
 `variant_call.info` is analogous to the FORMAT field of a VCF call.
@@ -115,46 +118,44 @@ with vcf.VcfReader('/path/to/my.vcf') as vcf_reader:
     # Specify the reader explicitly for unknown fields.
     set_format(first_call, 'MYFIELD', 30, vcf_reader)
 
-**Args**:
-
-`variant_call`: VariantCall proto. The VariantCall to modify.
-
-`field_name`: str. The name of the field to set.
-
-`value`: A single value or list of values to update the VariantCall with.
+Args:
+  variant_call: VariantCall proto. The VariantCall to modify.
+  field_name: str. The name of the field to set.
+  value: A single value or list of values to update the VariantCall with.
     The type of the value is determined by the `vcf_object` if one is given,
     otherwise is looked up based on the reserved FORMAT fields in the VCF
     specification.
-
-`vcf_object`: (Optional) A VcfReader or VcfWriter object. If not None, the
+  vcf_object: (Optional) A VcfReader or VcfWriter object. If not None, the
     type of the field is inferred from the associated VcfReader or VcfWriter
     based on its name. Otherwise, the type is inferred if it is a reserved
     field.
+```
 
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1b7ed0>"></a> set_gl(variant_call, gl)
+### `set_gl(variant_call, gl)`<a name="set_gl"></a>
+```python
 Sets the genotype likelihoods of the VariantCall.
 
-**Args**:
+Args:
+  variant_call: VariantCall proto. The VariantCall to modify.
+  gl: list(float). The list of genotype likelihoods for the VariantCall.
+```
 
-`variant_call`: VariantCall proto. The VariantCall to modify.
-
-`gl`: list(float). The list of genotype likelihoods for the VariantCall.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1b9210>"></a> set_gq(variant_call, gq)
+### `set_gq(variant_call, gq)`<a name="set_gq"></a>
+```python
 Sets the genotype quality of the VariantCall.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b7710>"></a> set_gt(variant_call, gt)
+### `set_gt(variant_call, gt)`<a name="set_gt"></a>
+```python
 Sets the genotypes of the VariantCall.
 
-**Args**:
+Args:
+  variant_call: VariantCall proto. The VariantCall to modify.
+  gt: list(int). The list of genotypes for the VariantCall.
+```
 
-`variant_call`: VariantCall proto. The VariantCall to modify.
-
-`gt`: list(int). The list of genotypes for the VariantCall.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1b9e50>"></a> set_min_dp(variant_call, min_dp)
+### `set_min_dp(variant_call, min_dp)`<a name="set_min_dp"></a>
+```python
 Sets the 'MIN_DP' field of the VariantCall.
+```
 

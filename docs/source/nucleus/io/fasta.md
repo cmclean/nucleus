@@ -18,6 +18,7 @@ Name | Description
 
 ## Classes
 ### InMemoryRefReader
+```python
 A RefFastaReader getting its bases in a in-memory data structure.
 
 An InMemoryRefReader provides the same API as RefFastaReader but doesn't fetch
@@ -32,66 +33,82 @@ record ('1', 10, 'ACGT') implies that query(ranges.make_range('1', 11, 12))
 will return the base 'C', as the 'A' base is at position 10. This makes it
 straightforward to cache a small region of a full chromosome without having to
 store the entire chromosome sequence in memory (potentially big!).
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d0f10d0>"></a> __init__(self, chromosomes)
+#### `__init__(self, chromosomes)`<a name="__init__"></a>
+```python
 Initializes an InMemoryRefReader using data from chromosomes.
 
-**Args**:
-
-`chromosomes`: List[tuple]. The chromosomes we are caching in memory as a
+Args:
+  chromosomes: List[tuple]. The chromosomes we are caching in memory as a
     list of tuples. Each tuple must be exactly three string elements in
     length, containing (chromosome name, start, bases).
 
+Raises:
+  ValueError: If any of the InMemoryChromosome are invalid.
+```
 
-**Raises**:
-
-`ValueError`: If any of the InMemoryChromosome are invalid.
-
-
-####<a name="<_ast.FunctionDef object at 0x55f78d0fd690>"></a> c_reader(self)
+#### `c_reader(self)`<a name="c_reader"></a>
+```python
 Returns the underlying C++ reader.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d0fd390>"></a> contig(self, contig_name)
+#### `contig(self, contig_name)`<a name="contig"></a>
+```python
 Returns a ContigInfo proto for contig_name.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d0fd090>"></a> is_valid(self, region)
+#### `is_valid(self, region)`<a name="is_valid"></a>
+```python
 Returns whether the region is contained in this FASTA file.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d0fab90>"></a> iterate(self)
+#### `iterate(self)`<a name="iterate"></a>
 
 
-####<a name="<_ast.FunctionDef object at 0x55f78d0fad50>"></a> query(self, region)
+#### `query(self, region)`<a name="query"></a>
+```python
 Returns the base pairs (as a string) in the given region.
+```
 
 ### RefFastaReader
+```python
 Class for reading from FASTA files containing a reference genome.
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d0d9390>"></a> __init__(self, input_path, cache_size=None)
+#### `__init__(self, input_path, cache_size=None)`<a name="__init__"></a>
+```python
 Initializes a RefFastaReader.
 
-**Args**:
-
-`input_path`: string. A path to a resource containing FASTA/BAM records.
+Args:
+  input_path: string. A path to a resource containing FASTA/BAM records.
     Currently supports FASTA text format and BAM binary format.
-
-`cache_size`: integer. Number of bases to cache from previous queries.
+  cache_size: integer. Number of bases to cache from previous queries.
     Defaults to 64K.  The cache can be disabled using cache_size=0.
+```
 
-
-####<a name="<_ast.FunctionDef object at 0x55f78d0ea350>"></a> c_reader(self)
+#### `c_reader(self)`<a name="c_reader"></a>
+```python
 Returns the underlying C++ reader.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d0eae90>"></a> contig(self, contig_name)
+#### `contig(self, contig_name)`<a name="contig"></a>
+```python
 Returns a ContigInfo proto for contig_name.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d0eaa10>"></a> is_valid(self, region)
+#### `is_valid(self, region)`<a name="is_valid"></a>
+```python
 Returns whether the region is contained in this FASTA file.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d0ea590>"></a> iterate(self)
+#### `iterate(self)`<a name="iterate"></a>
 
 
-####<a name="<_ast.FunctionDef object at 0x55f78d0ea690>"></a> query(self, region)
+#### `query(self, region)`<a name="query"></a>
+```python
 Returns the base pairs (as a string) in the given region.
+```
 

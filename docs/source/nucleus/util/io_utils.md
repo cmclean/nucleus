@@ -33,6 +33,7 @@ Name | Description
 
 ## Classes
 ### RawProtoWriterAdaptor
+```python
 Adaptor class wrapping a low-level bytes writer with a write(proto) method.
 
 This class provides a simple wrapper around low-level writers that accept
@@ -44,9 +45,11 @@ to write properly (e.g., VCF writer) this allows us to provide a uniform API
 to clients who call write(proto) and either have that write call go directly
 to a type-specific writer or to a low-level writer via this
 RawProtoWriterAdaptor.
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d1dca10>"></a> __init__(self, raw_writer, take_ownership=True)
+#### `__init__(self, raw_writer, take_ownership=True)`<a name="__init__"></a>
+```python
 Creates a new RawProtoWriterAdaptor.
 
 Arguments:
@@ -56,121 +59,118 @@ Arguments:
   take_ownership: bool. If True, we will all __enter__ and __exit__ on the
     raw_writer if/when this object's __enter__ and __exit__ are called. If
     False, no calls to these methods will be invoked on raw_writer.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d1e25d0>"></a> write(self, proto)
+#### `write(self, proto)`<a name="write"></a>
+```python
 Writes `proto.SerializeToString` to raw_writer.
+```
 
 ### ShardError
+```python
 An IO error.
+```
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x55f78d1b70d0>"></a> GenerateShardedFilePattern(basename, num_shards, suffix)
+### `GenerateShardedFilePattern(basename, num_shards, suffix)`<a name="GenerateShardedFilePattern"></a>
+```python
 Generate a sharded file pattern.
 
-**Args**:
-
-`basename`: str; The basename for the files.
-
-`num_shards`: int; The number of shards.
-
-`suffix`: str; The suffix if there is one or ''.
+Args:
+  basename: str; The basename for the files.
+  num_shards: int; The number of shards.
+  suffix: str; The suffix if there is one or ''.
 Returns:
+  pattern:
+```
 
-`pattern`:
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d0d9590>"></a> GenerateShardedFilenames(spec)
+### `GenerateShardedFilenames(spec)`<a name="GenerateShardedFilenames"></a>
+```python
 Generate the list of filenames corresponding to the sharding path.
 
-**Args**:
+Args:
+  spec: Sharding specification.
 
-`spec`: Sharding specification.
-
-
-**Returns**:
-
+Returns:
   List of filenames.
 
-**Raises**:
+Raises:
+  ShardError: If spec is not a valid sharded file specification.
+```
 
-`ShardError`: If spec is not a valid sharded file specification.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1bac50>"></a> IsShardedFileSpec(spec)
+### `IsShardedFileSpec(spec)`<a name="IsShardedFileSpec"></a>
+```python
 Returns true if spec is a sharded file specification.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b7290>"></a> NormalizeToShardedFilePattern(spec_or_pattern)
+### `NormalizeToShardedFilePattern(spec_or_pattern)`<a name="NormalizeToShardedFilePattern"></a>
+```python
 Take a sharding spec or sharding file pattern and return a sharded pattern.
 
 The input can be a sharding spec(e.g '/some/file@10') or a sharded file
 pattern (e.g. '/some/file-?????-of-00010)
 
-**Args**:
+Args:
+  spec_or_pattern: A sharded file specification or sharded file pattern.
 
-`spec_or_pattern`: A sharded file specification or sharded file pattern.
-
-
-**Returns**:
-
+Returns:
   sharded file pattern.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d0f1d90>"></a> ParseShardedFileSpec(spec)
+### `ParseShardedFileSpec(spec)`<a name="ParseShardedFileSpec"></a>
+```python
 Parse a sharded file specification.
 
-**Args**:
-
-`spec`: The sharded file specification. A sharded file spec is one like
+Args:
+  spec: The sharded file specification. A sharded file spec is one like
      gs://some/file@200.txt. In this case @200 specifies the number of shards.
 
-
-**Returns**:
-
+Returns:
   basename: The basename for the files.
   num_shards: The number of shards.
   suffix: The suffix if there is one, or '' if not.
 Raises:
   ShardError: If the spec is not a valid sharded specification.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1dc2d0>"></a> make_proto_writer(outfile)
+### `make_proto_writer(outfile)`<a name="make_proto_writer"></a>
+```python
 Creates a write to outfile writing general Protos.
 
-**Args**:
+Args:
+  outfile: A path to a file where we want to write protos.
 
-`outfile`: A path to a file where we want to write protos.
-
-
-**Returns**:
-
+Returns:
   An writer object and a write_fn accepting a proto that writes to writer.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1cfc50>"></a> make_tfrecord_options(filenames)
+### `make_tfrecord_options(filenames)`<a name="make_tfrecord_options"></a>
+```python
 Creates a python_io.TFRecordOptions for the specified filename.
 
-**Args**:
-
-`filenames`: str or list[str]. A path or a list of paths where we'll
+Args:
+  filenames: str or list[str]. A path or a list of paths where we'll
     read/write our TFRecord.
 Returns:
   A python_io.TFRecordOptions object.
 Raises:
+  ValueError: If the filenames contain inconsistent file types.
+```
 
-`ValueError`: If the filenames contain inconsistent file types.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1d7d50>"></a> make_tfrecord_writer(outfile, options=None)
+### `make_tfrecord_writer(outfile, options=None)`<a name="make_tfrecord_writer"></a>
+```python
 Creates a python_io.TFRecordWriter for the specified outfile.
 
-**Args**:
-
-`outfile`: str. A path where we'll write our TFRecords.
-
-`options`: python_io.TFRecordOptions or None. If None, one
+Args:
+  outfile: str. A path where we'll write our TFRecords.
+  options: python_io.TFRecordOptions or None. If None, one
     will be inferred from the filename.
 Returns:
   A python_io.TFRecordWriter object.
+```
 
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1b68d0>"></a> maybe_generate_sharded_filenames(filespec)
+### `maybe_generate_sharded_filenames(filespec)`<a name="maybe_generate_sharded_filenames"></a>
+```python
 Potentially expands sharded filespec into a list of paths.
 
 This function takes in a potentially sharded filespec and expands it into a
@@ -179,21 +179,18 @@ the input filespec is not sharded then a list containing just that file path
 is returned. This function is useful, for example, when the input to a binary
 can either be sharded or not.
 
-**Args**:
+Args:
+  filespec: String. A potentially sharded filespec to expand.
 
-`filespec`: String. A potentially sharded filespec to expand.
-
-
-**Returns**:
-
+Returns:
   A list of file paths.
 
-**Raises**:
+Raises:
+  TypeError: if filespec is not in valid string_types.
+```
 
-`TypeError`: if filespec is not in valid string_types.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d104d50>"></a> read_shard_sorted_tfrecords(path, key, proto=None, max_records=None, options=None)
+### `read_shard_sorted_tfrecords(path, key, proto=None, max_records=None, options=None)`<a name="read_shard_sorted_tfrecords"></a>
+```python
 Yields the parsed records in TFRecord-formatted file path in sorted order.
 
 The input TFRecord file must have each shard already in sorted order when
@@ -201,51 +198,42 @@ using the key function for comparison (but elements can be interleaved across
 shards). Under those constraints, the elements will be yielded in a global
 sorted order.
 
-**Args**:
-
-`path`: String. A path to a TFRecord-formatted file containing protos.
-
-`key`: Callable. A function that takes as input a single instance of the proto
+Args:
+  path: String. A path to a TFRecord-formatted file containing protos.
+  key: Callable. A function that takes as input a single instance of the proto
     class and returns a value on which the comparison for sorted ordering is
     performed.
-
-`proto`: A proto class. proto.FromString() will be called on each serialized
+  proto: A proto class. proto.FromString() will be called on each serialized
     record in path to parse it.
-
-`max_records`: int >= 0 or None. Maximum number of records to read from path.
+  max_records: int >= 0 or None. Maximum number of records to read from path.
     If None, the default, all records will be read.
+  options: A python_io.TFRecordOptions object for the reader.
 
-`options`: A python_io.TFRecordOptions object for the reader.
-
-
-**Yields**:
-
+Yields:
   proto.FromString() values on each record in path in sorted order.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1b63d0>"></a> read_tfrecords(path, proto=None, max_records=None, options=None)
+### `read_tfrecords(path, proto=None, max_records=None, options=None)`<a name="read_tfrecords"></a>
+```python
 Yields the parsed records in tfrecord formatted file path.
 
 Note that path can be sharded filespec (path@N) in which case this function
 will read each shard in order.
 
-**Args**:
-
-`path`: String. A path to a tfrecord formatted file containing protos.
-
-`proto`: A proto class. proto.FromString() will be called on each serialized
+Args:
+  path: String. A path to a tfrecord formatted file containing protos.
+  proto: A proto class. proto.FromString() will be called on each serialized
     record in path to parse it.
-
-`max_records`: int >= 0 or None. Maximum number of records to read from path.
+  max_records: int >= 0 or None. Maximum number of records to read from path.
     If None, the default, all records will be read.
+  options: A python_io.TFRecordOptions object for the reader.
 
-`options`: A python_io.TFRecordOptions object for the reader.
-
-
-**Yields**:
-
+Yields:
   proto.FromString() values on each record in path in order.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1ba610>"></a> resolve_filespecs(shard, *filespecs)
+### `resolve_filespecs(shard, *filespecs)`<a name="resolve_filespecs"></a>
+```python
 Transforms potentially sharded filespecs into their paths for single shard.
 
 This function takes a shard number and a varargs potentially sharded
@@ -262,28 +250,26 @@ must be @10).
 Note that filespecs (except the master) may be None or any other False value,
 which are returned as is in the output list.
 
-**Args**:
-
-`shard`: int >= 0. Our shard number.
-
-`*filespecs`: list[str]. Contains all of the filespecs we want to resolve into
+Args:
+  shard: int >= 0. Our shard number.
+  *filespecs: list[str]. Contains all of the filespecs we want to resolve into
     shard-specific file paths.
 
-
-**Returns**:
-
+Returns:
   A list. The first element is the number of shards, followed by the
   shard-specific paths for each filespec, in order.
 
-**Raises**:
+Raises:
+  ValueError: if any filespecs are consistent.
+```
 
-`ValueError`: if any filespecs are consistent.
-
-
-###<a name="<_ast.FunctionDef object at 0x55f78d1ba090>"></a> sharded_filename(spec, i)
+### `sharded_filename(spec, i)`<a name="sharded_filename"></a>
+```python
 Gets a path appropriate for writing the ith file of a sharded spec.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d1d1690>"></a> write_tfrecords(protos, output_path, options=None)
+### `write_tfrecords(protos, output_path, options=None)`<a name="write_tfrecords"></a>
+```python
 Writes protos to output_path.
 
 This function writes serialized strings of each proto in protos to output_path
@@ -293,12 +279,9 @@ individual componented of the sharded spec (e.g., foo-00000-of-00002 and
 foo-00001-of-00002). Note that the order of records in the sharded files may
 differ from the order in protos due to the striping.
 
-**Args**:
-
-`protos`: An iterable of protobufs. The objects we want to write out.
-
-`output_path`: str. The filepath where we want to write protos.
-
-`options`: A python_io.TFRecordOptions object for the writer.
-
+Args:
+  protos: An iterable of protobufs. The objects we want to write out.
+  output_path: str. The filepath where we want to write protos.
+  options: A python_io.TFRecordOptions object for the writer.
+```
 

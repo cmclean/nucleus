@@ -17,6 +17,7 @@ Name | Description
 
 ## Classes
 ### DispatchingGenomicsReader
+```python
 A GenomicsReader that dispatches based on the file extension.
 
 If '.tfrecord' is present in the filename, a TFRecordReader is used,
@@ -25,43 +26,50 @@ otherwise a native reader is.
 Sub-classes of DispatchingGenomicsReader must define the following methods:
   * _native_reader()
   * _record_proto()
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d0d91d0>"></a> __init__(self, input_path, **kwargs)
+#### `__init__(self, input_path, **kwargs)`<a name="__init__"></a>
 
 
-####<a name="<_ast.FunctionDef object at 0x55f78d0fd8d0>"></a> iterate(self)
+#### `iterate(self)`<a name="iterate"></a>
 
 
-####<a name="<_ast.FunctionDef object at 0x55f78d0fdb10>"></a> query(self, region)
+#### `query(self, region)`<a name="query"></a>
 
 
 ### GenomicsReader
+```python
 Abstract base class for reading genomics data.
 
 In addition to the abstractmethods defined below, sub-classes should
 also set a .header member variable in their objects.
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d0f10d0>"></a> __init__(self)
+#### `__init__(self)`<a name="__init__"></a>
+```python
 Allows users to use the object as an iterator.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d0ea5d0>"></a> iterate(self)
+#### `iterate(self)`<a name="iterate"></a>
+```python
 Returns an iterator for going through the file's records.
+```
 
-####<a name="<_ast.FunctionDef object at 0x55f78d0ea890>"></a> query(self, region)
+#### `query(self, region)`<a name="query"></a>
+```python
 Returns an iterator for going through the records in the region.
 
-**Args**:
+Args:
+  region:  A nucleus.genomics.v1.Range.
 
-`region`:  A nucleus.genomics.v1.Range.
-
-
-**Returns**:
-
+Returns:
   An iterator.
+```
 
 ### TFRecordReader
+```python
 A GenomicsReader that reads from a TFRecord file.
 
 Example usage:
@@ -72,26 +80,25 @@ Example usage:
 
 Note that TFRecord files do not have headers, and do not need
 to be wrapped in a "with" block.
+```
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x55f78d0f1310>"></a> __init__(self, input_path, proto, tf_options=None)
+#### `__init__(self, input_path, proto, tf_options=None)`<a name="__init__"></a>
+```python
 Initializes the TFRecordReader.
 
-**Args**:
-
-`input_path`:  The filename of the file to read.
-
-`proto`:  The protocol buffer type the TFRecord file is expected to
+Args:
+  input_path:  The filename of the file to read.
+  proto:  The protocol buffer type the TFRecord file is expected to
     contain.  For example, variants_pb2.Variant or reads_pb2.Read.
-
-`tf_options`:  A python_io.TFRecordOptions object.  If not set,
+  tf_options:  A python_io.TFRecordOptions object.  If not set,
     __init__ will create one with the compression type based on
     whether input_path ends in '.gz' or not.
+```
+
+#### `iterate(self)`<a name="iterate"></a>
 
 
-####<a name="<_ast.FunctionDef object at 0x55f78d1b9c50>"></a> iterate(self)
-
-
-####<a name="<_ast.FunctionDef object at 0x55f78d0d9190>"></a> query(self, region)
+#### `query(self, region)`<a name="query"></a>
 
 

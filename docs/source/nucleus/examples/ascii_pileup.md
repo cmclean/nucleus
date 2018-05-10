@@ -10,9 +10,9 @@ Name | Description
 [`print_read`](#print_read)`(left_pos, start, highlight_position, seq)` | 
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x55f78d0f1c50>"></a> main(argv)
+### `main(argv)`<a name="main"></a>
 
 
-###<a name="<_ast.FunctionDef object at 0x55f78d0d6dd0>"></a> print_read(left_pos, start, highlight_position, seq)
+### `print_read(left_pos, start, highlight_position, seq)`<a name="print_read"></a>
 
 

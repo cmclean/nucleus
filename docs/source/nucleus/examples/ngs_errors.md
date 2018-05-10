@@ -88,38 +88,32 @@ Name | Description
 [`make_ngs_error_examples`](#make_ngs_error_examples)`(ref_path, vcf_path, bam_path, examples_out_path, max_reads=None)` | Driver program for ngs_errors.
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x55f78d0f1a10>"></a> is_usable_training_example(read, variants, ref_bases)
+### `is_usable_training_example(read, variants, ref_bases)`<a name="is_usable_training_example"></a>
+```python
 Returns True if we can use read to make a training example.
 
-**Args**:
+Args:
+  read: nucleus.Read proto.
+  variants: list[nucleus.Variant] protos. A list of variants overlapping read.
+  ref_bases: str. The reference bases for read.
 
-`read`: nucleus.Read proto.
-
-`variants`: list[nucleus.Variant] protos. A list of variants overlapping read.
-
-`ref_bases`: str. The reference bases for read.
-
-
-**Returns**:
-
+Returns:
   True if read can be used to construct a high-quality training example, False
   otherwise.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d104610>"></a> main(argv)
+### `main(argv)`<a name="main"></a>
 
 
-###<a name="<_ast.FunctionDef object at 0x55f78d0ea310>"></a> make_example(read, ref_bases)
+### `make_example(read, ref_bases)`<a name="make_example"></a>
+```python
 Create a tf.Example for read and ref_bases.
 
-**Args**:
+Args:
+  read: nucleus.Read proto with cigar, fragment_name, and aligned_sequence.
+  ref_bases: str. The reference bases for read.
 
-`read`: nucleus.Read proto with cigar, fragment_name, and aligned_sequence.
-
-`ref_bases`: str. The reference bases for read.
-
-
-**Returns**:
-
+Returns:
   A tf.Example protobuf with the following features:
     read_name - for debugging convenience
     cigar - the cigar string of the read
@@ -128,23 +122,20 @@ Create a tf.Example for read and ref_bases.
                      phred-scaled integer values.
     true_sequence - the "true" bases that should have been observed for this
                     read, as extracted from the reference genome.
+```
 
-###<a name="<_ast.FunctionDef object at 0x55f78d0f6ad0>"></a> make_ngs_error_examples(ref_path, vcf_path, bam_path, examples_out_path, max_reads=None)
+### `make_ngs_error_examples(ref_path, vcf_path, bam_path, examples_out_path, max_reads=None)`<a name="make_ngs_error_examples"></a>
+```python
 Driver program for ngs_errors.
 
 See module description for details.
 
-**Args**:
-
-`ref_path`: str. A path to an indexed fasta file.
-
-`vcf_path`: str. A path to an indexed VCF file.
-
-`bam_path`: str. A path to an SAM/BAM file.
-
-`examples_out_path`: str. A path where we will write out examples.
-
-`max_reads`: int or None. If not None, we will emit at most max_reads examples
+Args:
+  ref_path: str. A path to an indexed fasta file.
+  vcf_path: str. A path to an indexed VCF file.
+  bam_path: str. A path to an SAM/BAM file.
+  examples_out_path: str. A path where we will write out examples.
+  max_reads: int or None. If not None, we will emit at most max_reads examples
     to examples_out_path.
-
+```
 
