@@ -27,13 +27,13 @@ Sub-classes of DispatchingGenomicsReader must define the following methods:
   * _record_proto()
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x555808fce110>"></a> __init__(self, input_path, **kwargs)
+####<a name="<_ast.FunctionDef object at 0x55f78d0d91d0>"></a> __init__(self, input_path, **kwargs)
 
 
-####<a name="<_ast.FunctionDef object at 0x555808ff3890>"></a> iterate(self)
+####<a name="<_ast.FunctionDef object at 0x55f78d0fd8d0>"></a> iterate(self)
 
 
-####<a name="<_ast.FunctionDef object at 0x555808ff3a90>"></a> query(self, region)
+####<a name="<_ast.FunctionDef object at 0x55f78d0fdb10>"></a> query(self, region)
 
 
 ### GenomicsReader
@@ -43,13 +43,13 @@ In addition to the abstractmethods defined below, sub-classes should
 also set a .header member variable in their objects.
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x555808fcdf90>"></a> __init__(self)
+####<a name="<_ast.FunctionDef object at 0x55f78d0f10d0>"></a> __init__(self)
 Allows users to use the object as an iterator.
 
-####<a name="<_ast.FunctionDef object at 0x555808fcd990>"></a> iterate(self)
+####<a name="<_ast.FunctionDef object at 0x55f78d0ea5d0>"></a> iterate(self)
 Returns an iterator for going through the file's records.
 
-####<a name="<_ast.FunctionDef object at 0x555808fcdd10>"></a> query(self, region)
+####<a name="<_ast.FunctionDef object at 0x55f78d0ea890>"></a> query(self, region)
 Returns an iterator for going through the records in the region.
 
 **Args**:
@@ -74,7 +74,7 @@ Note that TFRecord files do not have headers, and do not need
 to be wrapped in a "with" block.
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x5558090ada50>"></a> __init__(self, input_path, proto, tf_options=None)
+####<a name="<_ast.FunctionDef object at 0x55f78d0f1310>"></a> __init__(self, input_path, proto, tf_options=None)
 Initializes the TFRecordReader.
 
 **Args**:
@@ -89,9 +89,9 @@ Initializes the TFRecordReader.
     whether input_path ends in '.gz' or not.
 
 
-####<a name="<_ast.FunctionDef object at 0x555808fd49d0>"></a> iterate(self)
+####<a name="<_ast.FunctionDef object at 0x55f78d1b9c50>"></a> iterate(self)
 
 
-####<a name="<_ast.FunctionDef object at 0x555808fd4c10>"></a> query(self, region)
+####<a name="<_ast.FunctionDef object at 0x55f78d0d9190>"></a> query(self, region)
 
 

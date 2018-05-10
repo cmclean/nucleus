@@ -45,7 +45,7 @@ This class is immutable. No methods should be added that directly modify the
 ranges held by the class.
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x5558090bcd50>"></a> __init__(self, ranges=None, contigs=None)
+####<a name="<_ast.FunctionDef object at 0x55f78d1b73d0>"></a> __init__(self, ranges=None, contigs=None)
 Creates an RangeSet backed by ranges.
 
 Note that the Range objects in ranges are *not* stored directly here, so
@@ -68,7 +68,7 @@ Raises:
     contig in `contigs`.
 
 
-####<a name="<_ast.FunctionDef object at 0x5558090a8ed0>"></a> exclude_regions(self, other)
+####<a name="<_ast.FunctionDef object at 0x55f78d1bad50>"></a> exclude_regions(self, other)
 Chops out all of the intervals in other from this this RangeSet.
 
 This is a *MUTATING* operation for performance reasons. Make a copy of self
@@ -80,7 +80,7 @@ if you want to avoid modifying the RangeSet.
     RangeSet.
 
 
-####<a name="<_ast.FunctionDef object at 0x555808fcd8d0>"></a> from_bed(cls, source, contigs=None)
+####<a name="<_ast.FunctionDef object at 0x55f78d1b9290>"></a> from_bed(cls, source, contigs=None)
 Creates a RangeSet containing the intervals from source.
 
 **Args**:
@@ -95,10 +95,10 @@ Creates a RangeSet containing the intervals from source.
 
   A RangeSet.
 
-####<a name="<_ast.FunctionDef object at 0x5558090b1ed0>"></a> from_contigs(cls, contigs)
+####<a name="<_ast.FunctionDef object at 0x55f78d0f19d0>"></a> from_contigs(cls, contigs)
 Creates a RangeSet with an interval covering each base of each contig.
 
-####<a name="<_ast.FunctionDef object at 0x5558090b18d0>"></a> from_regions(cls, regions, contig_map=None)
+####<a name="<_ast.FunctionDef object at 0x55f78d0f1310>"></a> from_regions(cls, regions, contig_map=None)
 Parses a command-line style literal regions flag into a RangeSet.
 
 **Args**:
@@ -118,7 +118,7 @@ Parses a command-line style literal regions flag into a RangeSet.
 
   A RangeSet object.
 
-####<a name="<_ast.FunctionDef object at 0x555808fcd950>"></a> intersection(self, *others)
+####<a name="<_ast.FunctionDef object at 0x55f78d1b9950>"></a> intersection(self, *others)
 Computes the intersection among this RangeSet and *others RangeSets.
 
 This function computes the intersection of all of the intervals in self and
@@ -152,7 +152,7 @@ overlapping interval in self.
   making an unnecessary copy. In all other cases, the returned value will be
   a freshly allocated RangeSet.
 
-####<a name="<_ast.FunctionDef object at 0x555808ff3690>"></a> overlaps(self, chrom, pos)
+####<a name="<_ast.FunctionDef object at 0x55f78d1e25d0>"></a> overlaps(self, chrom, pos)
 Returns True if chr:pos overlaps with any range in this RangeSet.
 
 Uses a fast bisection algorithm to determine the overlap in O(log n) time.
@@ -168,7 +168,7 @@ Uses a fast bisection algorithm to determine the overlap in O(log n) time.
 
   True if chr:pos overlaps with a range.
 
-####<a name="<_ast.FunctionDef object at 0x5558090d6c50>"></a> partition(self, max_size)
+####<a name="<_ast.FunctionDef object at 0x55f78d1002d0>"></a> partition(self, max_size)
 Splits our intervals so that none are larger than max_size.
 
 Slices up the intervals in this RangeSet into a equivalent set of interval (
@@ -197,14 +197,14 @@ these intervals via a yield statement.
 `ValueError`: if max_size <= 0.
 
 
-####<a name="<_ast.FunctionDef object at 0x555808ff3c50>"></a> variant_overlaps(self, variant, empty_set_return_value=True)
+####<a name="<_ast.FunctionDef object at 0x55f78d1e2090>"></a> variant_overlaps(self, variant, empty_set_return_value=True)
 Returns True if the variant's range overlaps with any in this set.
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x5558090e2810>"></a> as_tuple(range_)
+###<a name="<_ast.FunctionDef object at 0x55f78d1ef810>"></a> as_tuple(range_)
 Returns a Python tuple (reference_name, start, end).
 
-###<a name="<_ast.FunctionDef object at 0x5558090cad50>"></a> bed_parser(filename)
+###<a name="<_ast.FunctionDef object at 0x55f78d1d5d50>"></a> bed_parser(filename)
 Parses Range objects from a BED-formatted file object.
 
 See http://bedtools.readthedocs.org/en/latest/content/general-usage.html
@@ -219,7 +219,7 @@ for more information on the BED format.
 
   nucleus.genomics.v1.Range protobuf objects.
 
-###<a name="<_ast.FunctionDef object at 0x5558090ca190>"></a> bedpe_parser(filename)
+###<a name="<_ast.FunctionDef object at 0x55f78d1d5190>"></a> bedpe_parser(filename)
 Parses Range objects from a BEDPE-formatted file object.
 
 See http://bedtools.readthedocs.org/en/latest/content/general-usage.html
@@ -238,7 +238,7 @@ not appear in the output.
 
   nucleus.genomics.v1.Range protobuf objects.
 
-###<a name="<_ast.FunctionDef object at 0x5558090c8a50>"></a> contigs_dict(contigs)
+###<a name="<_ast.FunctionDef object at 0x55f78d1d0a50>"></a> contigs_dict(contigs)
 Creates a dictionary for contigs.
 
 **Args**:
@@ -250,10 +250,10 @@ Creates a dictionary for contigs.
 
   A dictionary mapping contig.name: contig for each contig in contigs.
 
-###<a name="<_ast.FunctionDef object at 0x5558090c86d0>"></a> contigs_n_bases(contigs)
+###<a name="<_ast.FunctionDef object at 0x55f78d1d06d0>"></a> contigs_n_bases(contigs)
 Returns the sum of all n_bases of contigs.
 
-###<a name="<_ast.FunctionDef object at 0x5558090e8f50>"></a> expand(region, n_bp, contig_map=None)
+###<a name="<_ast.FunctionDef object at 0x55f78d1f4f50>"></a> expand(region, n_bp, contig_map=None)
 Expands region by n_bp in both directions.
 
 Takes a Range(chrom, start, stop) and returns a new
@@ -285,7 +285,7 @@ Range(chrom, new_start, new_stop), where:
 `KeyError`: contig_map is not None and region.reference_name isn't a key.
 
 
-###<a name="<_ast.FunctionDef object at 0x5558090e8350>"></a> find_max_overlapping(query_range, search_ranges)
+###<a name="<_ast.FunctionDef object at 0x55f78d1f4350>"></a> find_max_overlapping(query_range, search_ranges)
 Gets the index of the element in search_ranges with max overlap with query.
 
 In case of ties, selects the lowest index range in search_ranges.
@@ -305,7 +305,7 @@ In case of ties, selects the lowest index range in search_ranges.
   when read has no overlap with any of the search_ranges or search_ranges is
   empty.
 
-###<a name="<_ast.FunctionDef object at 0x5558090b9410>"></a> from_regions(regions, contig_map=None)
+###<a name="<_ast.FunctionDef object at 0x55f78d1db410>"></a> from_regions(regions, contig_map=None)
 Parses each region of `regions` into a Range proto.
 
 This function provides a super high-level interface for
@@ -336,13 +336,13 @@ Range(s) protos. The following types of `region` strings are supported:
 
   A Range proto.
 
-###<a name="<_ast.FunctionDef object at 0x5558090f4fd0>"></a> length(region)
+###<a name="<_ast.FunctionDef object at 0x55f78d200fd0>"></a> length(region)
 Returns the length in basepairs of region.
 
-###<a name="<_ast.FunctionDef object at 0x5558090d6910>"></a> make_position(chrom, position, reverse_strand=False)
+###<a name="<_ast.FunctionDef object at 0x55f78d100dd0>"></a> make_position(chrom, position, reverse_strand=False)
 Makes a nucleus.genomics.v1.Position.
 
-###<a name="<_ast.FunctionDef object at 0x5558090d2290>"></a> make_range(chrom, start, end)
+###<a name="<_ast.FunctionDef object at 0x55f78d1df290>"></a> make_range(chrom, start, end)
 Creates a genomics.Range object chr:start-end.
 
 **Args**:
@@ -358,7 +358,7 @@ Creates a genomics.Range object chr:start-end.
 
   A nucleus.genomics.v1.Range.
 
-###<a name="<_ast.FunctionDef object at 0x5558090e2b50>"></a> overlap_len(range1, range2)
+###<a name="<_ast.FunctionDef object at 0x55f78d1efb50>"></a> overlap_len(range1, range2)
 Computes the number of overlapping bases of range1 and range2.
 
 **Args**:
@@ -373,7 +373,7 @@ Computes the number of overlapping bases of range1 and range2.
   int. The number of basepairs in common. 0 if the ranges are not on the same
   contig.
 
-###<a name="<_ast.FunctionDef object at 0x5558090b6a90>"></a> parse_literal(region_literal, contig_map=None)
+###<a name="<_ast.FunctionDef object at 0x55f78d1d1a90>"></a> parse_literal(region_literal, contig_map=None)
 Parses a Range from a string representation like chr:start-end.
 
 The region literal must conform to the following pattern:
@@ -410,10 +410,10 @@ http://www.htslib.org/doc/samtools.html
 `ValueError`: if region_literal cannot be parsed.
 
 
-###<a name="<_ast.FunctionDef object at 0x5558090c82d0>"></a> parse_literals(region_literals, contig_map=None)
+###<a name="<_ast.FunctionDef object at 0x55f78d1d02d0>"></a> parse_literals(region_literals, contig_map=None)
 Parses each literal of region_literals in order.
 
-###<a name="<_ast.FunctionDef object at 0x5558090d26d0>"></a> position_overlaps(chrom, pos, interval)
+###<a name="<_ast.FunctionDef object at 0x55f78d1df6d0>"></a> position_overlaps(chrom, pos, interval)
 Does interval overlap the position chr:pos?
 
 **Args**:
@@ -429,7 +429,7 @@ Does interval overlap the position chr:pos?
 
   True if interval overlaps chr:pos.
 
-###<a name="<_ast.FunctionDef object at 0x5558090d2b90>"></a> ranges_overlap(i1, i2)
+###<a name="<_ast.FunctionDef object at 0x55f78d1dfb90>"></a> ranges_overlap(i1, i2)
 Checks whether ranges i1 and i2 overlap.
 
 **Args**:
@@ -443,7 +443,7 @@ Checks whether ranges i1 and i2 overlap.
 
   True if i1 and i2 overlap.
 
-###<a name="<_ast.FunctionDef object at 0x5558090c8d90>"></a> sorted_ranges(ranges, contigs=None)
+###<a name="<_ast.FunctionDef object at 0x55f78d1d0d90>"></a> sorted_ranges(ranges, contigs=None)
 Sorts ranges by reference_name, start, and end.
 
 **Args**:
@@ -459,7 +459,7 @@ Sorts ranges by reference_name, start, and end.
 
   A newly allocated list of google.v1.genomics.Range protos.
 
-###<a name="<_ast.FunctionDef object at 0x5558090efd90>"></a> span(regions)
+###<a name="<_ast.FunctionDef object at 0x55f78d1fbd90>"></a> span(regions)
 Returns a region that spans all of the bases in regions.
 
 This function returns a Range(chrom, start, stop), where start is the min
@@ -482,7 +482,7 @@ freshly allocated.
 `ValueError`: if regions is empty.
 
 
-###<a name="<_ast.FunctionDef object at 0x5558090b6650>"></a> to_literal(range_pb)
+###<a name="<_ast.FunctionDef object at 0x55f78d1d1650>"></a> to_literal(range_pb)
 Converts Range protobuf into string literal form.
 
 The string literal form looks like:

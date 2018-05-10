@@ -18,7 +18,7 @@ Name | Description
 
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x5558090b19d0>"></a> reverse_complement(sequence, complement_dict=None)
+###<a name="<_ast.FunctionDef object at 0x55f78d1b9950>"></a> reverse_complement(sequence, complement_dict=None)
 Returns the reverse complement of a DNA sequence.
 
 By default this will successfully reverse complement sequences comprised

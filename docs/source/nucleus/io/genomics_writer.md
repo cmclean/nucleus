@@ -26,10 +26,10 @@ Sub-classes of DispatchingGenomicsWriter must define a _native_writer()
 method.
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x555808fd4690>"></a> __init__(self, output_path, **kwargs)
+####<a name="<_ast.FunctionDef object at 0x55f78d0f1190>"></a> __init__(self, output_path, **kwargs)
 
 
-####<a name="<_ast.FunctionDef object at 0x555808fcea10>"></a> write(self, proto)
+####<a name="<_ast.FunctionDef object at 0x55f78d1b9dd0>"></a> write(self, proto)
 
 
 ### GenomicsWriter
@@ -39,7 +39,7 @@ A GenomicsWriter only has one method, write, which writes a single
 protocol buffer to a file.
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x555808ff3710>"></a> write(self, proto)
+####<a name="<_ast.FunctionDef object at 0x55f78d0fd0d0>"></a> write(self, proto)
 Writes proto to the file.
 
 **Args**:
@@ -51,9 +51,9 @@ Writes proto to the file.
 A GenomicsWriter that writes to a TFRecord file.
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x555808fcd890>"></a> __init__(self, output_path, header=None)
+####<a name="<_ast.FunctionDef object at 0x55f78d0fd8d0>"></a> __init__(self, output_path, header=None)
 
 
-####<a name="<_ast.FunctionDef object at 0x555808fcd910>"></a> write(self, proto)
+####<a name="<_ast.FunctionDef object at 0x55f78d0f1550>"></a> write(self, proto)
 
 

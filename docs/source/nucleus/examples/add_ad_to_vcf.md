@@ -14,9 +14,9 @@ Name | Description
 [`main`](#main)`(argv)` | 
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x555808fcaf50>"></a> get_variant_ad(variant)
+###<a name="<_ast.FunctionDef object at 0x55f78d0d6f50>"></a> get_variant_ad(variant)
 Returns the allele depth for the Variant, calculated across its calls.
 
-###<a name="<_ast.FunctionDef object at 0x555808fe4a10>"></a> main(argv)
+###<a name="<_ast.FunctionDef object at 0x55f78d0efa10>"></a> main(argv)
 
 

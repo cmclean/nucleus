@@ -34,7 +34,7 @@ straightforward to cache a small region of a full chromosome without having to
 store the entire chromosome sequence in memory (potentially big!).
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x555808fd4610>"></a> __init__(self, chromosomes)
+####<a name="<_ast.FunctionDef object at 0x55f78d0f10d0>"></a> __init__(self, chromosomes)
 Initializes an InMemoryRefReader using data from chromosomes.
 
 **Args**:
@@ -49,26 +49,26 @@ Initializes an InMemoryRefReader using data from chromosomes.
 `ValueError`: If any of the InMemoryChromosome are invalid.
 
 
-####<a name="<_ast.FunctionDef object at 0x555808ff3690>"></a> c_reader(self)
+####<a name="<_ast.FunctionDef object at 0x55f78d0fd690>"></a> c_reader(self)
 Returns the underlying C++ reader.
 
-####<a name="<_ast.FunctionDef object at 0x555808ff3390>"></a> contig(self, contig_name)
+####<a name="<_ast.FunctionDef object at 0x55f78d0fd390>"></a> contig(self, contig_name)
 Returns a ContigInfo proto for contig_name.
 
-####<a name="<_ast.FunctionDef object at 0x555808ff3090>"></a> is_valid(self, region)
+####<a name="<_ast.FunctionDef object at 0x55f78d0fd090>"></a> is_valid(self, region)
 Returns whether the region is contained in this FASTA file.
 
-####<a name="<_ast.FunctionDef object at 0x555808fefb90>"></a> iterate(self)
+####<a name="<_ast.FunctionDef object at 0x55f78d0fab90>"></a> iterate(self)
 
 
-####<a name="<_ast.FunctionDef object at 0x555808fefd50>"></a> query(self, region)
+####<a name="<_ast.FunctionDef object at 0x55f78d0fad50>"></a> query(self, region)
 Returns the base pairs (as a string) in the given region.
 
 ### RefFastaReader
 Class for reading from FASTA files containing a reference genome.
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x555808fce110>"></a> __init__(self, input_path, cache_size=None)
+####<a name="<_ast.FunctionDef object at 0x55f78d0d9390>"></a> __init__(self, input_path, cache_size=None)
 Initializes a RefFastaReader.
 
 **Args**:
@@ -80,18 +80,18 @@ Initializes a RefFastaReader.
     Defaults to 64K.  The cache can be disabled using cache_size=0.
 
 
-####<a name="<_ast.FunctionDef object at 0x555808fcdcd0>"></a> c_reader(self)
+####<a name="<_ast.FunctionDef object at 0x55f78d0ea350>"></a> c_reader(self)
 Returns the underlying C++ reader.
 
-####<a name="<_ast.FunctionDef object at 0x555808fcdfd0>"></a> contig(self, contig_name)
+####<a name="<_ast.FunctionDef object at 0x55f78d0eae90>"></a> contig(self, contig_name)
 Returns a ContigInfo proto for contig_name.
 
-####<a name="<_ast.FunctionDef object at 0x555808fcd790>"></a> is_valid(self, region)
+####<a name="<_ast.FunctionDef object at 0x55f78d0eaa10>"></a> is_valid(self, region)
 Returns whether the region is contained in this FASTA file.
 
-####<a name="<_ast.FunctionDef object at 0x555808fcd590>"></a> iterate(self)
+####<a name="<_ast.FunctionDef object at 0x55f78d0ea590>"></a> iterate(self)
 
 
-####<a name="<_ast.FunctionDef object at 0x555808fcd390>"></a> query(self, region)
+####<a name="<_ast.FunctionDef object at 0x55f78d0ea690>"></a> query(self, region)
 Returns the base pairs (as a string) in the given region.
 

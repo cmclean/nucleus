@@ -52,7 +52,7 @@ Name | Description
 [`ptrue_to_bounded_phred`](#ptrue_to_bounded_phred)`(ptrue, max_prob=_MAX_CONFIDENCE)` | Computes the phred scaled confidence from the given ptrue probability.
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x5558090ad150>"></a> log10_binomial(k, n, p)
+###<a name="<_ast.FunctionDef object at 0x55f78d0f1e10>"></a> log10_binomial(k, n, p)
 Calculates numerically-stable value of log10(binomial(k, n, p)).
 
 Returns the log10 of the binomial density for k successes in n trials where
@@ -85,7 +85,7 @@ for more details on the binomial.
 
   log10 probability of seeing k successes in n trials with p.
 
-###<a name="<_ast.FunctionDef object at 0x5558090ad850>"></a> log10sumexp(log10_probs)
+###<a name="<_ast.FunctionDef object at 0x55f78d1b7c90>"></a> log10sumexp(log10_probs)
 Returns log10(sum(10^log10_probs)) computed in a numerically-stable way.
 
 **Args**:
@@ -97,7 +97,7 @@ Returns log10(sum(10^log10_probs)) computed in a numerically-stable way.
 
   Float.
 
-###<a name="<_ast.FunctionDef object at 0x5558090adc90>"></a> normalize_log10_probs(log10_probs)
+###<a name="<_ast.FunctionDef object at 0x55f78d1b71d0>"></a> normalize_log10_probs(log10_probs)
 Approximately normalizes log10 probabilities.
 
 This function normalizes log10 probabilities. What this means is that we
@@ -155,7 +155,7 @@ equal to 1 but rather just close.
 `ValueError`: if any log10_probs > 0.0
 
 
-###<a name="<_ast.FunctionDef object at 0x555808fd4550>"></a> perror_to_bounded_log10_perror(perror, min_prob=1.0 - _MAX_CONFIDENCE)
+###<a name="<_ast.FunctionDef object at 0x55f78d0d9450>"></a> perror_to_bounded_log10_perror(perror, min_prob=1.0 - _MAX_CONFIDENCE)
 Computes log10(p) for the given probability.
 
 The log10 probability is capped by -_MAX_CONFIDENCE.
@@ -176,7 +176,7 @@ The log10 probability is capped by -_MAX_CONFIDENCE.
 `ValueError`: If probability is outside of [0.0, 1.0].
 
 
-###<a name="<_ast.FunctionDef object at 0x555808fd4090>"></a> ptrue_to_bounded_phred(ptrue, max_prob=_MAX_CONFIDENCE)
+###<a name="<_ast.FunctionDef object at 0x55f78d0f1090>"></a> ptrue_to_bounded_phred(ptrue, max_prob=_MAX_CONFIDENCE)
 Computes the phred scaled confidence from the given ptrue probability.
 
 See https://en.wikipedia.org/wiki/Phred_quality_score for more information.

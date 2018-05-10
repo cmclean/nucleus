@@ -46,7 +46,7 @@ to a type-specific writer or to a low-level writer via this
 RawProtoWriterAdaptor.
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x5558090d0a10>"></a> __init__(self, raw_writer, take_ownership=True)
+####<a name="<_ast.FunctionDef object at 0x55f78d1dca10>"></a> __init__(self, raw_writer, take_ownership=True)
 Creates a new RawProtoWriterAdaptor.
 
 Arguments:
@@ -57,14 +57,14 @@ Arguments:
     raw_writer if/when this object's __enter__ and __exit__ are called. If
     False, no calls to these methods will be invoked on raw_writer.
 
-####<a name="<_ast.FunctionDef object at 0x5558090d65d0>"></a> write(self, proto)
+####<a name="<_ast.FunctionDef object at 0x55f78d1e25d0>"></a> write(self, proto)
 Writes `proto.SerializeToString` to raw_writer.
 
 ### ShardError
 An IO error.
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x555808fd4610>"></a> GenerateShardedFilePattern(basename, num_shards, suffix)
+###<a name="<_ast.FunctionDef object at 0x55f78d1b70d0>"></a> GenerateShardedFilePattern(basename, num_shards, suffix)
 Generate a sharded file pattern.
 
 **Args**:
@@ -79,7 +79,7 @@ Returns:
 `pattern`:
 
 
-###<a name="<_ast.FunctionDef object at 0x5558090a87d0>"></a> GenerateShardedFilenames(spec)
+###<a name="<_ast.FunctionDef object at 0x55f78d0d9590>"></a> GenerateShardedFilenames(spec)
 Generate the list of filenames corresponding to the sharding path.
 
 **Args**:
@@ -96,10 +96,10 @@ Generate the list of filenames corresponding to the sharding path.
 `ShardError`: If spec is not a valid sharded file specification.
 
 
-###<a name="<_ast.FunctionDef object at 0x555808ff34d0>"></a> IsShardedFileSpec(spec)
+###<a name="<_ast.FunctionDef object at 0x55f78d1bac50>"></a> IsShardedFileSpec(spec)
 Returns true if spec is a sharded file specification.
 
-###<a name="<_ast.FunctionDef object at 0x555808ff3c50>"></a> NormalizeToShardedFilePattern(spec_or_pattern)
+###<a name="<_ast.FunctionDef object at 0x55f78d1b7290>"></a> NormalizeToShardedFilePattern(spec_or_pattern)
 Take a sharding spec or sharding file pattern and return a sharded pattern.
 
 The input can be a sharding spec(e.g '/some/file@10') or a sharded file
@@ -114,7 +114,7 @@ pattern (e.g. '/some/file-?????-of-00010)
 
   sharded file pattern.
 
-###<a name="<_ast.FunctionDef object at 0x5558090ad390>"></a> ParseShardedFileSpec(spec)
+###<a name="<_ast.FunctionDef object at 0x55f78d0f1d90>"></a> ParseShardedFileSpec(spec)
 Parse a sharded file specification.
 
 **Args**:
@@ -131,7 +131,7 @@ Parse a sharded file specification.
 Raises:
   ShardError: If the spec is not a valid sharded specification.
 
-###<a name="<_ast.FunctionDef object at 0x5558090d02d0>"></a> make_proto_writer(outfile)
+###<a name="<_ast.FunctionDef object at 0x55f78d1dc2d0>"></a> make_proto_writer(outfile)
 Creates a write to outfile writing general Protos.
 
 **Args**:
@@ -143,7 +143,7 @@ Creates a write to outfile writing general Protos.
 
   An writer object and a write_fn accepting a proto that writes to writer.
 
-###<a name="<_ast.FunctionDef object at 0x5558090c4c50>"></a> make_tfrecord_options(filenames)
+###<a name="<_ast.FunctionDef object at 0x55f78d1cfc50>"></a> make_tfrecord_options(filenames)
 Creates a python_io.TFRecordOptions for the specified filename.
 
 **Args**:
@@ -157,7 +157,7 @@ Raises:
 `ValueError`: If the filenames contain inconsistent file types.
 
 
-###<a name="<_ast.FunctionDef object at 0x5558090cbd50>"></a> make_tfrecord_writer(outfile, options=None)
+###<a name="<_ast.FunctionDef object at 0x55f78d1d7d50>"></a> make_tfrecord_writer(outfile, options=None)
 Creates a python_io.TFRecordWriter for the specified outfile.
 
 **Args**:
@@ -170,7 +170,7 @@ Returns:
   A python_io.TFRecordWriter object.
 
 
-###<a name="<_ast.FunctionDef object at 0x5558090b12d0>"></a> maybe_generate_sharded_filenames(filespec)
+###<a name="<_ast.FunctionDef object at 0x55f78d1b68d0>"></a> maybe_generate_sharded_filenames(filespec)
 Potentially expands sharded filespec into a list of paths.
 
 This function takes in a potentially sharded filespec and expands it into a
@@ -193,7 +193,7 @@ can either be sharded or not.
 `TypeError`: if filespec is not in valid string_types.
 
 
-###<a name="<_ast.FunctionDef object at 0x5558090bcd10>"></a> read_shard_sorted_tfrecords(path, key, proto=None, max_records=None, options=None)
+###<a name="<_ast.FunctionDef object at 0x55f78d104d50>"></a> read_shard_sorted_tfrecords(path, key, proto=None, max_records=None, options=None)
 Yields the parsed records in TFRecord-formatted file path in sorted order.
 
 The input TFRecord file must have each shard already in sorted order when
@@ -222,7 +222,7 @@ sorted order.
 
   proto.FromString() values on each record in path in sorted order.
 
-###<a name="<_ast.FunctionDef object at 0x5558090b1a10>"></a> read_tfrecords(path, proto=None, max_records=None, options=None)
+###<a name="<_ast.FunctionDef object at 0x55f78d1b63d0>"></a> read_tfrecords(path, proto=None, max_records=None, options=None)
 Yields the parsed records in tfrecord formatted file path.
 
 Note that path can be sharded filespec (path@N) in which case this function
@@ -245,7 +245,7 @@ will read each shard in order.
 
   proto.FromString() values on each record in path in order.
 
-###<a name="<_ast.FunctionDef object at 0x555808fcd910>"></a> resolve_filespecs(shard, *filespecs)
+###<a name="<_ast.FunctionDef object at 0x55f78d1ba610>"></a> resolve_filespecs(shard, *filespecs)
 Transforms potentially sharded filespecs into their paths for single shard.
 
 This function takes a shard number and a varargs potentially sharded
@@ -280,10 +280,10 @@ which are returned as is in the output list.
 `ValueError`: if any filespecs are consistent.
 
 
-###<a name="<_ast.FunctionDef object at 0x555808ff3dd0>"></a> sharded_filename(spec, i)
+###<a name="<_ast.FunctionDef object at 0x55f78d1ba090>"></a> sharded_filename(spec, i)
 Gets a path appropriate for writing the ith file of a sharded spec.
 
-###<a name="<_ast.FunctionDef object at 0x5558090c7690>"></a> write_tfrecords(protos, output_path, options=None)
+###<a name="<_ast.FunctionDef object at 0x55f78d1d1690>"></a> write_tfrecords(protos, output_path, options=None)
 Writes protos to output_path.
 
 This function writes serialized strings of each proto in protos to output_path

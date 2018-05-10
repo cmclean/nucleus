@@ -18,10 +18,10 @@ Name | Description
 This class gives Python iteration semantics on top of a C++ 'Iterable'.
 
 #### Methods:
-####<a name="<_ast.FunctionDef object at 0x555808fcee90>"></a> __init__(self, cc_iterable)
+####<a name="<_ast.FunctionDef object at 0x55f78d0d6e90>"></a> __init__(self, cc_iterable)
 
 
 ## Functions
-###<a name="<_ast.FunctionDef object at 0x555808fcad90>"></a> ValueErrorOnFalse(ok, *args)
+###<a name="<_ast.FunctionDef object at 0x55f78d0d9a50>"></a> ValueErrorOnFalse(ok, *args)
 Returns None / arg / (args,...) if ok.
 
