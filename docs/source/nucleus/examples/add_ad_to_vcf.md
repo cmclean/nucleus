@@ -11,9 +11,7 @@ Sample usage: $ add_ad_to_vcf input.vcf.gz output.vcf.gz
 
 | Name                                           | Description                 |
 | ---------------------------------------------- | --------------------------- |
-| [`get_variant_ad`](#get_variant_ad)`(variant)` | Returns the allele depth    |
-:                                                : for the Variant, calculated :
-:                                                : across its calls.           :
+| [`get_variant_ad`](#get_variant_ad)`(variant)` | Returns the allele depth for the Variant, calculated across its calls. |
 | [`main`](#main)`(argv)`                        |                             |
 
 ## Functions
