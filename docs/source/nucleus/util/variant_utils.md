@@ -391,8 +391,7 @@ Does variant have an insertion?
   True if the alleles in variant indicate an insertion event
   occurs at this site.
 
-### is_biallelic
-`is_biallelic(variant)`
+### `is_biallelic(variant)`<a name="is_biallelic"></a>
 
 Returns True if variant has exactly one alternate allele.
 
