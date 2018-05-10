@@ -19,7 +19,7 @@ Name | Description
 
 ## Functions
 ### `assert_called_once_workaround(mock)`<a name="assert_called_once_workaround"></a>
-```python
+```
 Asserts that a mock has been called exactly once.
 
 See assert_not_called_workaround for the backstory on why this function
@@ -33,7 +33,7 @@ Raises:
 ```
 
 ### `assert_not_called_workaround(mock)`<a name="assert_not_called_workaround"></a>
-```python
+```
 Asserts that a mock has not been called.
 
 There's a bug in mock where some of the assert functions on a mock are being
@@ -64,7 +64,7 @@ Raises:
 ```
 
 ### `cc_iterable_len(cc_iterable)`<a name="cc_iterable_len"></a>
-```python
+```
 Count the number of elements in an Iterable object.
 
 Args:
@@ -75,7 +75,7 @@ Returns:
 ```
 
 ### `genomics_core_testdata(filename)`<a name="genomics_core_testdata"></a>
-```python
+```
 Gets the path to a testdata named filename in util/testdata.
 
 Args:
@@ -89,7 +89,7 @@ Returns:
 ```
 
 ### `genomics_testdata(path, datadir=DATADIR)`<a name="genomics_testdata"></a>
-```python
+```
 Gets the path to a testdata file in genomics at relative path.
 
 Args:
@@ -105,17 +105,17 @@ Returns:
 ```
 
 ### `iterable_len(iterable)`<a name="iterable_len"></a>
-```python
+```
 Returns the length of a Python iterable, by advancing it.
 ```
 
 ### `make_read(bases, quals=None, cigar=None, mapq=50, chrom='chr1', start=1, name=None)`<a name="make_read"></a>
-```python
+```
 Makes a nucleus.genomics.v1.Read for testing.
 ```
 
 ### `make_variant(chrom='chr1', start=10, alleles=None, end=None, filters=None, qual=None, gt=None, gq=None, sample_name=None, gls=None)`<a name="make_variant"></a>
-```python
+```
 Creates a new Variant proto from args.
 
 Args:
@@ -147,12 +147,12 @@ Returns:
 ```
 
 ### `set_list_values(list_value, values)`<a name="set_list_values"></a>
-```python
+```
 Sets a ListValue to have the values in values.
 ```
 
 ### `test_tmpfile(name, contents=None)`<a name="test_tmpfile"></a>
-```python
+```
 Returns a path to a tempfile named name in the test_tmpdir.
 
 Args:

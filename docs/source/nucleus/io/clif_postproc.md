@@ -15,7 +15,7 @@ Name | Description
 
 ## Classes
 ### WrappedCppIterable
-```python
+```
 This class gives Python iteration semantics on top of a C++ 'Iterable'.
 ```
 
@@ -25,7 +25,7 @@ This class gives Python iteration semantics on top of a C++ 'Iterable'.
 
 ## Functions
 ### `ValueErrorOnFalse(ok, *args)`<a name="ValueErrorOnFalse"></a>
-```python
+```
 Returns None / arg / (args,...) if ok.
 ```
 

@@ -29,7 +29,7 @@ Name | Description
 
 ## Classes
 ### InMemorySamReader
-```python
+```
 Python interface class for in-memory sam reader.
 
 Attributes:
@@ -42,7 +42,7 @@ Attributes:
 
 
 #### `iterate(self)`<a name="iterate"></a>
-```python
+```
 Iterate over all records in the reads.
 
 Returns:
@@ -50,7 +50,7 @@ Returns:
 ```
 
 #### `query(self, region)`<a name="query"></a>
-```python
+```
 Iterate over records overlapping a query region.
 
 Args:
@@ -61,12 +61,12 @@ Returns:
 ```
 
 #### `replace_reads(self, reads, is_sorted=False)`<a name="replace_reads"></a>
-```python
+```
 Replace the reads stored by this reader.
 ```
 
 ### NativeSamReader
-```python
+```
 Class for reading from native SAM files.
 
 Most users will want to use SamReader instead, because it dynamically
@@ -76,7 +76,7 @@ on the filename's extensions.
 
 #### Methods:
 #### `__init__(self, input_path, use_index=True, read_requirements=None, parse_aux_fields=False, hts_block_size=None, downsample_fraction=None, random_seed=None)`<a name="__init__"></a>
-```python
+```
 Initializes a NativeSamReader.
 
 Args:
@@ -118,7 +118,7 @@ Raises:
 
 
 ### NativeSamWriter
-```python
+```
 Class for writing to native SAM files.
 
 Most users will want SamWriter, which will write to either native SAM
@@ -127,7 +127,7 @@ files or TFRecords files, based on the output filename's extensions.
 
 #### Methods:
 #### `__init__(self, output_path, header)`<a name="__init__"></a>
-```python
+```
 Initializer for NativeSamWriter.
 
 Args:
@@ -141,12 +141,12 @@ Args:
 
 
 ### SamReader
-```python
+```
 Class for reading Read protos from SAM or TFRecord files.
 ```
 
 ### SamWriter
-```python
+```
 Class for writing Variant protos to SAM or TFRecord files.
 ```
 

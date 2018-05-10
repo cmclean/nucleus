@@ -23,7 +23,7 @@ Name | Description
 
 ## Functions
 ### `add_bool_field(field_map, field_name, value)`<a name="add_bool_field"></a>
-```python
+```
 Appends the given boolean value(s) to field_map[field_name].
 
 Args:
@@ -34,7 +34,7 @@ Args:
 ```
 
 ### `add_int_field(field_map, field_name, value)`<a name="add_int_field"></a>
-```python
+```
 Appends the given int value(s) to field_map[field_name].
 
 Args:
@@ -45,7 +45,7 @@ Args:
 ```
 
 ### `add_number_field(field_map, field_name, value)`<a name="add_number_field"></a>
-```python
+```
 Appends the given number value(s) to field_map[field_name].
 
 Args:
@@ -56,7 +56,7 @@ Args:
 ```
 
 ### `add_string_field(field_map, field_name, value)`<a name="add_string_field"></a>
-```python
+```
 Appends the given string value(s) to field_map[field_name].
 
 Args:
@@ -67,7 +67,7 @@ Args:
 ```
 
 ### `get_bool_field(field_map, field_name, is_single_field=False)`<a name="get_bool_field"></a>
-```python
+```
 Returns the bool value(s) stored in `field_map[field_name]`.
 
 If the field_name is not present in field_map, the empty list is returned.
@@ -84,7 +84,7 @@ Returns:
 ```
 
 ### `get_int_field(field_map, field_name, is_single_field=False)`<a name="get_int_field"></a>
-```python
+```
 Returns the int value(s) stored in `field_map[field_name]`.
 
 If the field_name is not present in field_map, the empty list is returned.
@@ -101,7 +101,7 @@ Returns:
 ```
 
 ### `get_number_field(field_map, field_name, is_single_field=False)`<a name="get_number_field"></a>
-```python
+```
 Returns the number value(s) stored in `field_map[field_name]`.
 
 If the field_name is not present in field_map, the empty list is returned.
@@ -118,7 +118,7 @@ Returns:
 ```
 
 ### `get_string_field(field_map, field_name, is_single_field=False)`<a name="get_string_field"></a>
-```python
+```
 Returns the string value(s) stored in `field_map[field_name]`.
 
 If the field_name is not present in field_map, the empty list is returned.
@@ -135,7 +135,7 @@ Returns:
 ```
 
 ### `set_bool_field(field_map, field_name, value)`<a name="set_bool_field"></a>
-```python
+```
 Sets field_map[field_name] with the given boolean value(s).
 
 Args:
@@ -146,7 +146,7 @@ Args:
 ```
 
 ### `set_int_field(field_map, field_name, value)`<a name="set_int_field"></a>
-```python
+```
 Sets field_map[field_name] with the given int value(s).
 
 Args:
@@ -157,7 +157,7 @@ Args:
 ```
 
 ### `set_number_field(field_map, field_name, value)`<a name="set_number_field"></a>
-```python
+```
 Sets field_map[field_name] with the given number value(s).
 
 Args:
@@ -168,7 +168,7 @@ Args:
 ```
 
 ### `set_string_field(field_map, field_name, value)`<a name="set_string_field"></a>
-```python
+```
 Sets field_map[field_name] with the given string value(s).
 
 Args:

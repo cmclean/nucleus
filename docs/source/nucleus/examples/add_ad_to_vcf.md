@@ -15,7 +15,7 @@ Name | Description
 
 ## Functions
 ### `get_variant_ad(variant)`<a name="get_variant_ad"></a>
-```python
+```
 Returns the allele depth for the Variant, calculated across its calls.
 ```
 

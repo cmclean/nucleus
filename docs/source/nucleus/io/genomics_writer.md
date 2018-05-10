@@ -17,7 +17,7 @@ Name | Description
 
 ## Classes
 ### DispatchingGenomicsWriter
-```python
+```
 A GenomicsWriter that dispatches based on the file extension.
 
 If '.tfrecord' is present in the filename, a TFRecordWriter is used.
@@ -35,7 +35,7 @@ method.
 
 
 ### GenomicsWriter
-```python
+```
 Abstract base class for writing genomics data.
 
 A GenomicsWriter only has one method, write, which writes a single
@@ -44,7 +44,7 @@ protocol buffer to a file.
 
 #### Methods:
 #### `write(self, proto)`<a name="write"></a>
-```python
+```
 Writes proto to the file.
 
 Args:
@@ -52,7 +52,7 @@ Args:
 ```
 
 ### TFRecordWriter
-```python
+```
 A GenomicsWriter that writes to a TFRecord file.
 ```
 

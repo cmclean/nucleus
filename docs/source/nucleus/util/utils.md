@@ -11,7 +11,7 @@ Name | Description
 
 ## Functions
 ### `read_range(read)`<a name="read_range"></a>
-```python
+```
 Creates a Range proto from the alignment of Read.
 
 Args:
@@ -22,7 +22,7 @@ Returns:
 ```
 
 ### `reservoir_sample(iterable, k, random=None)`<a name="reservoir_sample"></a>
-```python
+```
 Samples k elements with uniform probability from an iterable.
 
 Selects a subset of k elements from n input elements with uniform probability

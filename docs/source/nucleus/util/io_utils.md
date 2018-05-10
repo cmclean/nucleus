@@ -33,7 +33,7 @@ Name | Description
 
 ## Classes
 ### RawProtoWriterAdaptor
-```python
+```
 Adaptor class wrapping a low-level bytes writer with a write(proto) method.
 
 This class provides a simple wrapper around low-level writers that accept
@@ -49,7 +49,7 @@ RawProtoWriterAdaptor.
 
 #### Methods:
 #### `__init__(self, raw_writer, take_ownership=True)`<a name="__init__"></a>
-```python
+```
 Creates a new RawProtoWriterAdaptor.
 
 Arguments:
@@ -62,18 +62,18 @@ Arguments:
 ```
 
 #### `write(self, proto)`<a name="write"></a>
-```python
+```
 Writes `proto.SerializeToString` to raw_writer.
 ```
 
 ### ShardError
-```python
+```
 An IO error.
 ```
 
 ## Functions
 ### `GenerateShardedFilePattern(basename, num_shards, suffix)`<a name="GenerateShardedFilePattern"></a>
-```python
+```
 Generate a sharded file pattern.
 
 Args:
@@ -85,7 +85,7 @@ Returns:
 ```
 
 ### `GenerateShardedFilenames(spec)`<a name="GenerateShardedFilenames"></a>
-```python
+```
 Generate the list of filenames corresponding to the sharding path.
 
 Args:
@@ -99,12 +99,12 @@ Raises:
 ```
 
 ### `IsShardedFileSpec(spec)`<a name="IsShardedFileSpec"></a>
-```python
+```
 Returns true if spec is a sharded file specification.
 ```
 
 ### `NormalizeToShardedFilePattern(spec_or_pattern)`<a name="NormalizeToShardedFilePattern"></a>
-```python
+```
 Take a sharding spec or sharding file pattern and return a sharded pattern.
 
 The input can be a sharding spec(e.g '/some/file@10') or a sharded file
@@ -118,7 +118,7 @@ Returns:
 ```
 
 ### `ParseShardedFileSpec(spec)`<a name="ParseShardedFileSpec"></a>
-```python
+```
 Parse a sharded file specification.
 
 Args:
@@ -134,7 +134,7 @@ Raises:
 ```
 
 ### `make_proto_writer(outfile)`<a name="make_proto_writer"></a>
-```python
+```
 Creates a write to outfile writing general Protos.
 
 Args:
@@ -145,7 +145,7 @@ Returns:
 ```
 
 ### `make_tfrecord_options(filenames)`<a name="make_tfrecord_options"></a>
-```python
+```
 Creates a python_io.TFRecordOptions for the specified filename.
 
 Args:
@@ -158,7 +158,7 @@ Raises:
 ```
 
 ### `make_tfrecord_writer(outfile, options=None)`<a name="make_tfrecord_writer"></a>
-```python
+```
 Creates a python_io.TFRecordWriter for the specified outfile.
 
 Args:
@@ -170,7 +170,7 @@ Returns:
 ```
 
 ### `maybe_generate_sharded_filenames(filespec)`<a name="maybe_generate_sharded_filenames"></a>
-```python
+```
 Potentially expands sharded filespec into a list of paths.
 
 This function takes in a potentially sharded filespec and expands it into a
@@ -190,7 +190,7 @@ Raises:
 ```
 
 ### `read_shard_sorted_tfrecords(path, key, proto=None, max_records=None, options=None)`<a name="read_shard_sorted_tfrecords"></a>
-```python
+```
 Yields the parsed records in TFRecord-formatted file path in sorted order.
 
 The input TFRecord file must have each shard already in sorted order when
@@ -214,7 +214,7 @@ Yields:
 ```
 
 ### `read_tfrecords(path, proto=None, max_records=None, options=None)`<a name="read_tfrecords"></a>
-```python
+```
 Yields the parsed records in tfrecord formatted file path.
 
 Note that path can be sharded filespec (path@N) in which case this function
@@ -233,7 +233,7 @@ Yields:
 ```
 
 ### `resolve_filespecs(shard, *filespecs)`<a name="resolve_filespecs"></a>
-```python
+```
 Transforms potentially sharded filespecs into their paths for single shard.
 
 This function takes a shard number and a varargs potentially sharded
@@ -264,12 +264,12 @@ Raises:
 ```
 
 ### `sharded_filename(spec, i)`<a name="sharded_filename"></a>
-```python
+```
 Gets a path appropriate for writing the ith file of a sharded spec.
 ```
 
 ### `write_tfrecords(protos, output_path, options=None)`<a name="write_tfrecords"></a>
-```python
+```
 Writes protos to output_path.
 
 This function writes serialized strings of each proto in protos to output_path

@@ -18,12 +18,12 @@ Name | Description
 
 
 ### `validate_contigs(ref_contigs, vcf_contigs)`<a name="validate_contigs"></a>
-```python
+```
 Validate that the two lists of ContigInfos have the same set of names.
 ```
 
 ### `validate_variant(ref_reader, variant)`<a name="validate_variant"></a>
-```python
+```
 Validate that variant is covered by the reference and agrees with it.
 ```
 

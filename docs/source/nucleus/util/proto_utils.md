@@ -10,7 +10,7 @@ Name | Description
 
 ## Functions
 ### `uses_fast_cpp_protos_or_die()`<a name="uses_fast_cpp_protos_or_die"></a>
-```python
+```
 Raises an error if a slow protobuf implementation is being used.
 ```
 

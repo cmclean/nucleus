@@ -18,7 +18,7 @@ Name | Description
 
 ## Classes
 ### InMemoryRefReader
-```python
+```
 A RefFastaReader getting its bases in a in-memory data structure.
 
 An InMemoryRefReader provides the same API as RefFastaReader but doesn't fetch
@@ -37,7 +37,7 @@ store the entire chromosome sequence in memory (potentially big!).
 
 #### Methods:
 #### `__init__(self, chromosomes)`<a name="__init__"></a>
-```python
+```
 Initializes an InMemoryRefReader using data from chromosomes.
 
 Args:
@@ -50,17 +50,17 @@ Raises:
 ```
 
 #### `c_reader(self)`<a name="c_reader"></a>
-```python
+```
 Returns the underlying C++ reader.
 ```
 
 #### `contig(self, contig_name)`<a name="contig"></a>
-```python
+```
 Returns a ContigInfo proto for contig_name.
 ```
 
 #### `is_valid(self, region)`<a name="is_valid"></a>
-```python
+```
 Returns whether the region is contained in this FASTA file.
 ```
 
@@ -68,18 +68,18 @@ Returns whether the region is contained in this FASTA file.
 
 
 #### `query(self, region)`<a name="query"></a>
-```python
+```
 Returns the base pairs (as a string) in the given region.
 ```
 
 ### RefFastaReader
-```python
+```
 Class for reading from FASTA files containing a reference genome.
 ```
 
 #### Methods:
 #### `__init__(self, input_path, cache_size=None)`<a name="__init__"></a>
-```python
+```
 Initializes a RefFastaReader.
 
 Args:
@@ -90,17 +90,17 @@ Args:
 ```
 
 #### `c_reader(self)`<a name="c_reader"></a>
-```python
+```
 Returns the underlying C++ reader.
 ```
 
 #### `contig(self, contig_name)`<a name="contig"></a>
-```python
+```
 Returns a ContigInfo proto for contig_name.
 ```
 
 #### `is_valid(self, region)`<a name="is_valid"></a>
-```python
+```
 Returns whether the region is contained in this FASTA file.
 ```
 
@@ -108,7 +108,7 @@ Returns whether the region is contained in this FASTA file.
 
 
 #### `query(self, region)`<a name="query"></a>
-```python
+```
 Returns the base pairs (as a string) in the given region.
 ```
 

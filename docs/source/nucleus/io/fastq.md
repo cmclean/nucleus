@@ -27,17 +27,17 @@ Name | Description
 
 ## Classes
 ### FastqReader
-```python
+```
 Class for reading FastqRecord protos from FASTQ or TFRecord files.
 ```
 
 ### FastqWriter
-```python
+```
 Class for writing FastqRecord protos to FASTQ or TFRecord files.
 ```
 
 ### NativeFastqReader
-```python
+```
 Class for reading from native FASTQ files.
 
 Most users will want to use FastqReader instead, because it dynamically
@@ -47,7 +47,7 @@ filename's extension.
 
 #### Methods:
 #### `__init__(self, input_path)`<a name="__init__"></a>
-```python
+```
 Initializes a NativeFastqReader.
 
 Args:
@@ -55,7 +55,7 @@ Args:
 ```
 
 #### `iterate(self)`<a name="iterate"></a>
-```python
+```
 Returns an iterable of FastqRecord protos in the file.
 ```
 
@@ -63,7 +63,7 @@ Returns an iterable of FastqRecord protos in the file.
 
 
 ### NativeFastqWriter
-```python
+```
 Class for writing to native FASTQ files.
 
 Most users will want FastqWriter, which will write to either native FASTQ
@@ -72,7 +72,7 @@ files or TFRecord files, based on the output filename's extension.
 
 #### Methods:
 #### `__init__(self, output_path)`<a name="__init__"></a>
-```python
+```
 Initializer for NativeFastqWriter.
 
 Args:

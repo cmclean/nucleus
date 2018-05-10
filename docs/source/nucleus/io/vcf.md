@@ -29,7 +29,7 @@ Name | Description
 
 ## Classes
 ### InMemoryVcfReader
-```python
+```
 Class for "reading" Variant protos from an in-memory cache of variants.
 
 API:
@@ -67,7 +67,7 @@ Implementation note:
 
 #### Methods:
 #### `__init__(self, variants, header=None)`<a name="__init__"></a>
-```python
+```
 Creates a VCFReader backed by a collection of variants.
 
 Args:
@@ -85,7 +85,7 @@ Args:
 
 
 ### NativeVcfReader
-```python
+```
 Class for reading from native VCF files.
 
 Most users will want to use VcfReader instead, because it dynamically
@@ -95,7 +95,7 @@ on the filename's extensions.
 
 #### Methods:
 #### `__init__(self, input_path, use_index=True, excluded_info_fields=None, excluded_format_fields=None)`<a name="__init__"></a>
-```python
+```
 Initializer for NativeVcfReader.
 
 Args:
@@ -116,7 +116,7 @@ Args:
 
 
 ### NativeVcfWriter
-```python
+```
 Class for writing to native VCF files.
 
 Most users will want VcfWriter, which will write to either native VCF
@@ -125,7 +125,7 @@ files or TFRecords files, based on the output filename's extensions.
 
 #### Methods:
 #### `__init__(self, output_path, header=None, round_qualities=False, excluded_info_fields=None, excluded_format_fields=None)`<a name="__init__"></a>
-```python
+```
 Initializer for NativeVcfWriter.
 
 Args:
@@ -146,7 +146,7 @@ Args:
 
 
 ### VcfHeaderCache
-```python
+```
 This class creates a cache of accessors to structured fields in Variants.
 
 The INFO and FORMAT fields within Variant protos are structured and typed,
@@ -162,7 +162,7 @@ functions for interacting with the INFO and FORMAT fields in a Variant proto.
 
 #### Methods:
 #### `__init__(self, header)`<a name="__init__"></a>
-```python
+```
 Constructor.
 
 Args:
@@ -171,17 +171,17 @@ Args:
 ```
 
 #### `format_field_get_fn(self, field_name)`<a name="format_field_get_fn"></a>
-```python
+```
 Returns a callable that gets the given FORMAT field based on its type.
 ```
 
 #### `format_field_set_fn(self, field_name)`<a name="format_field_set_fn"></a>
-```python
+```
 Returns a callable that sets the given FORMAT field based on its type.
 ```
 
 #### `info_field_get_fn(self, field_name)`<a name="info_field_get_fn"></a>
-```python
+```
 Returns a callable that extracts the given INFO field based on its type.
 
 Args:
@@ -192,17 +192,17 @@ Returns:
 ```
 
 #### `info_field_set_fn(self, field_name)`<a name="info_field_set_fn"></a>
-```python
+```
 Returns a callable that sets the given INFO field based on its type.
 ```
 
 ### VcfReader
-```python
+```
 Class for reading Variant protos from VCF or TFRecord files.
 ```
 
 ### VcfWriter
-```python
+```
 Class for writing Variant protos to VCF or TFRecord files.
 ```
 

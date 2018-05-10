@@ -17,7 +17,7 @@ Name | Description
 
 ## Classes
 ### DispatchingGenomicsReader
-```python
+```
 A GenomicsReader that dispatches based on the file extension.
 
 If '.tfrecord' is present in the filename, a TFRecordReader is used,
@@ -39,7 +39,7 @@ Sub-classes of DispatchingGenomicsReader must define the following methods:
 
 
 ### GenomicsReader
-```python
+```
 Abstract base class for reading genomics data.
 
 In addition to the abstractmethods defined below, sub-classes should
@@ -48,17 +48,17 @@ also set a .header member variable in their objects.
 
 #### Methods:
 #### `__init__(self)`<a name="__init__"></a>
-```python
+```
 Allows users to use the object as an iterator.
 ```
 
 #### `iterate(self)`<a name="iterate"></a>
-```python
+```
 Returns an iterator for going through the file's records.
 ```
 
 #### `query(self, region)`<a name="query"></a>
-```python
+```
 Returns an iterator for going through the records in the region.
 
 Args:
@@ -69,7 +69,7 @@ Returns:
 ```
 
 ### TFRecordReader
-```python
+```
 A GenomicsReader that reads from a TFRecord file.
 
 Example usage:
@@ -84,7 +84,7 @@ to be wrapped in a "with" block.
 
 #### Methods:
 #### `__init__(self, input_path, proto, tf_options=None)`<a name="__init__"></a>
-```python
+```
 Initializes the TFRecordReader.
 
 Args:

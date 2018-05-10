@@ -22,17 +22,17 @@ Name | Description
 
 ## Classes
 ### BedReader
-```python
+```
 Class for reading BedRecord protos from BED or TFRecord files.
 ```
 
 ### BedWriter
-```python
+```
 Class for writing BedRecord protos to BED or TFRecord files.
 ```
 
 ### NativeBedReader
-```python
+```
 Class for reading from native BED files.
 
 Most users will want to use BedReader instead, because it dynamically
@@ -42,7 +42,7 @@ filename's extension.
 
 #### Methods:
 #### `__init__(self, input_path, num_fields=0)`<a name="__init__"></a>
-```python
+```
 Initializes a NativeBedReader.
 
 Args:
@@ -52,7 +52,7 @@ Args:
 ```
 
 #### `iterate(self)`<a name="iterate"></a>
-```python
+```
 Returns an iterable of BedRecord protos in the file.
 ```
 
@@ -60,7 +60,7 @@ Returns an iterable of BedRecord protos in the file.
 
 
 ### NativeBedWriter
-```python
+```
 Class for writing to native BED files.
 
 Most users will want BedWriter, which will write to either native BED
@@ -69,7 +69,7 @@ files or TFRecord files, based on the output filename's extension.
 
 #### Methods:
 #### `__init__(self, output_path, header=None)`<a name="__init__"></a>
-```python
+```
 Initializer for NativeBedWriter.
 
 Args:
