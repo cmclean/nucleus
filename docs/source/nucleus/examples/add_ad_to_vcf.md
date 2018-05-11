@@ -1,5 +1,7 @@
 # nucleus.examples.add_ad_to_vcf -- This example program adds the AD info field to a VCF file.
 **Source code:** [nucleus/examples/add_ad_to_vcf.py](https://github.com/google/nucleus/tree/master/nucleus/examples/add_ad_to_vcf.py)
+
+[Documentation index](../../doc_index.md)
 ---
 It assumes that the AD field of the individual variant calls is already
 populated.

@@ -1,5 +1,7 @@
 # nucleus.util.struct_utils -- Struct proto utilities.
 **Source code:** [nucleus/util/struct_utils.py](https://github.com/google/nucleus/tree/master/nucleus/util/struct_utils.py)
+
+[Documentation index](../../doc_index.md)
 ---
 This class provides wrappers for conveniently interacting with protos defined
 in struct.proto, mostly ListValue and Value objects. It should primarily be used

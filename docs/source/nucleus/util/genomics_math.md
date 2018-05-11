@@ -1,5 +1,7 @@
 # nucleus.util.genomics_math -- Mathematics functions.
 **Source code:** [nucleus/util/genomics_math.py](https://github.com/google/nucleus/tree/master/nucleus/util/genomics_math.py)
+
+[Documentation index](../../doc_index.md)
 ---
 A quick note on terminology here.
 

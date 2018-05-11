@@ -1,5 +1,7 @@
 # nucleus.util.cigar -- Utility functions for working with alignment cigars.
 **Source code:** [nucleus/util/cigar.py](https://github.com/google/nucleus/tree/master/nucleus/util/cigar.py)
+
+[Documentation index](../../doc_index.md)
 ---
 
 

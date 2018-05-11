@@ -1,5 +1,7 @@
 # nucleus.io.fastq -- Class for reading FASTQ files.
 **Source code:** [nucleus/io/fastq.py](https://github.com/google/nucleus/tree/master/nucleus/io/fastq.py)
+
+[Documentation index](../../doc_index.md)
 ---
 API for reading:
   with FastqReader(input_path) as reader:

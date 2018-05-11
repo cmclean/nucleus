@@ -1,5 +1,7 @@
 # nucleus.util.io_utils -- Generic utilities for IO.
 **Source code:** [nucleus/util/io_utils.py](https://github.com/google/nucleus/tree/master/nucleus/util/io_utils.py)
+
+[Documentation index](../../doc_index.md)
 ---
 Important: Please keep this module free of TensorFlow c++ extensions.
 This makes it easy to build pure python packages for training that work with
