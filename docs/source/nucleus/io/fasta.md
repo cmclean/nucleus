@@ -1,7 +1,8 @@
 # nucleus.io.fasta -- Class for reading FASTA files.
 **Source code:** [nucleus/io/fasta.py](https://github.com/google/nucleus/tree/master/nucleus/io/fasta.py)
 
-[Documentation index](../../doc_index.md)
+**Documentation index:** [doc_index.md](../../doc_index.md)
+
 ---
 API for reading:
   with RefFastaReader(input_path) as reader:

@@ -1,7 +1,8 @@
 # nucleus.io.genomics_writer -- Abstract base class for objects writing genomics data.
 **Source code:** [nucleus/io/genomics_writer.py](https://github.com/google/nucleus/tree/master/nucleus/io/genomics_writer.py)
 
-[Documentation index](../../doc_index.md)
+**Documentation index:** [doc_index.md](../../doc_index.md)
+
 ---
 Most users will want to use a subclass of GenomicsWriter, with code like
 the following:

@@ -1,7 +1,8 @@
 # nucleus.examples.ngs_errors -- Creates tf.Example protos for learning the error process of a sequencer.
 **Source code:** [nucleus/examples/ngs_errors.py](https://github.com/google/nucleus/tree/master/nucleus/examples/ngs_errors.py)
 
-[Documentation index](../../doc_index.md)
+**Documentation index:** [doc_index.md](../../doc_index.md)
+
 ---
 This program reads in aligned NGS reads from --bam and emits TFRecord of
 tf.Examples containing the observed bases and quality scores for each read as

@@ -1,7 +1,8 @@
 # nucleus.util.vcf_constants -- Constants related to the VCF variant specification.
 **Source code:** [nucleus/util/vcf_constants.py](https://github.com/google/nucleus/tree/master/nucleus/util/vcf_constants.py)
 
-[Documentation index](../../doc_index.md)
+**Documentation index:** [doc_index.md](../../doc_index.md)
+
 ---
 See the full specification at https://samtools.github.io/hts-specs/VCFv4.3.pdf
 for details.

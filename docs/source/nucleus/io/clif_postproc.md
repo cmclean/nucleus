@@ -1,7 +1,8 @@
 # nucleus.io.clif_postproc -- CLIF postprocessors.
 **Source code:** [nucleus/io/clif_postproc.py](https://github.com/google/nucleus/tree/master/nucleus/io/clif_postproc.py)
 
-[Documentation index](../../doc_index.md)
+**Documentation index:** [doc_index.md](../../doc_index.md)
+
 ---
 
 

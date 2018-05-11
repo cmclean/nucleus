@@ -1,7 +1,8 @@
 # nucleus.io.vcf -- Classes for reading and writing VCF files.
 **Source code:** [nucleus/io/vcf.py](https://github.com/google/nucleus/tree/master/nucleus/io/vcf.py)
 
-[Documentation index](../../doc_index.md)
+**Documentation index:** [doc_index.md](../../doc_index.md)
+
 ---
 API for reading:
   with VcfReader(input_path) as reader:

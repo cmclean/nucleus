@@ -1,7 +1,8 @@
 # nucleus.io.sam -- Classes for reading and writing SAM and BAM files.
 **Source code:** [nucleus/io/sam.py](https://github.com/google/nucleus/tree/master/nucleus/io/sam.py)
 
-[Documentation index](../../doc_index.md)
+**Documentation index:** [doc_index.md](../../doc_index.md)
+
 ---
 API for reading:
   with SamReader(input_path) as reader:

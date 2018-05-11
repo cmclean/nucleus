@@ -1,7 +1,8 @@
 # nucleus.io.genomics_reader -- Abstract base class for objects reading genomics data.
 **Source code:** [nucleus/io/genomics_reader.py](https://github.com/google/nucleus/tree/master/nucleus/io/genomics_reader.py)
 
-[Documentation index](../../doc_index.md)
+**Documentation index:** [doc_index.md](../../doc_index.md)
+
 ---
 Most users will want to use a subclass of GenomicsReader, with code like
 the following:

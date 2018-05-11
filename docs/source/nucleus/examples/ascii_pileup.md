@@ -1,7 +1,8 @@
 # nucleus.examples.ascii_pileup -- Print an ASCII art pileup image.
 **Source code:** [nucleus/examples/ascii_pileup.py](https://github.com/google/nucleus/tree/master/nucleus/examples/ascii_pileup.py)
 
-[Documentation index](../../doc_index.md)
+**Documentation index:** [doc_index.md](../../doc_index.md)
+
 ---
 
 

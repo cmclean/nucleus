@@ -1,7 +1,8 @@
 # nucleus.util.errors -- Library of application-specific errors.
 **Source code:** [nucleus/util/errors.py](https://github.com/google/nucleus/tree/master/nucleus/util/errors.py)
 
-[Documentation index](../../doc_index.md)
+**Documentation index:** [doc_index.md](../../doc_index.md)
+
 ---
 
 

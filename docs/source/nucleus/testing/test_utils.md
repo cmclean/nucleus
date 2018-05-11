@@ -1,7 +1,8 @@
 # nucleus.testing.test_utils -- Utilities to help with testing code.
 **Source code:** [nucleus/testing/test_utils.py](https://github.com/google/nucleus/tree/master/nucleus/testing/test_utils.py)
 
-[Documentation index](../../doc_index.md)
+**Documentation index:** [doc_index.md](../../doc_index.md)
+
 ---
 
 

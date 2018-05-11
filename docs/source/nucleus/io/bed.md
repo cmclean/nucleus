@@ -1,7 +1,8 @@
 # nucleus.io.bed -- Class for reading BED files.
 **Source code:** [nucleus/io/bed.py](https://github.com/google/nucleus/tree/master/nucleus/io/bed.py)
 
-[Documentation index](../../doc_index.md)
+**Documentation index:** [doc_index.md](../../doc_index.md)
+
 ---
 API for reading:
   with BedReader(input_path) as reader:
