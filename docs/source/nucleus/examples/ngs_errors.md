@@ -4,19 +4,19 @@
 **Documentation index:** [doc_index.md](../../doc_index.md)
 
 ---
-This program reads in aligned NGS reads from --bam and emits TFRecord of
+This program reads in aligned NGS reads from `--bam` and emits a TFRecord of
 tf.Examples containing the observed bases and quality scores for each read as
 well as the true genome sequence for that read, which are determined from the
-reference genome (--ref) and the known variants for the sample sequenced in the
-BAM (--vcf). For example, suppose we have a read in --bam:
+reference genome (`--ref`) and the known variants for the sample sequenced in
+the BAM (`--vcf`). For example, suppose we have a read in --bam:
 
-  sequence: ACGT
-  aligned at: chr20:10-15
-  cigar: 4M
+    sequence: ACGT
+    aligned at: chr20:10-15
+    cigar: 4M
 
 And that the reference genome at chr20:10-15 is ACCT. This program first checks
-that --vcf file doesn't have any genetic variants in the region chr20:10-15. If
-there's no variants there, the program emits a tf.Example containing:
+that `--vcf` file doesn't have any genetic variants in the region chr20:10-15.
+If there are no variants there, the program emits a tf.Example containing:
 
     read_sequence - the bases of the read ('ACGT')
     true_sequence - the reference genome bases ('ACCT')
@@ -24,7 +24,7 @@ there's no variants there, the program emits a tf.Example containing:
 
 When run over a BAM file, we generate one tf.Example for each read that
 satisfies our read requirements (e.g., aligned, not a duplicate), that spans a
-region of the genome without genetic variants in --vcf, and spans reference
+region of the genome without genetic variants in `--vcf`, and spans reference
 bases containing only A, C, G, or T bases.
 
 The emitted examples are suitable (but not ideal, see below) for training a
@@ -49,38 +49,38 @@ user.
 ## Prerequisites
 
 a) Grab a slice of the BAM file via samtools. We don't need to index it because
-   we are only iterating over the records, and don't need the query()
+   we are only iterating over the records, and don't need the `query()`
    functionality.
 
-samtools view -h \
-  ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/NA12878/NIST_NA12878_HG001_HiSeq_300x/RMNISTHS_30xdownsample.bam \
-  20:10,000,000-10,100,000 \
-  -o /tmp/NA12878_sliced.bam
+    samtools view -h \
+      ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/NA12878/NIST_NA12878_HG001_HiSeq_300x/RMNISTHS_30xdownsample.bam \
+      20:10,000,000-10,100,000 \
+      -o /tmp/NA12878_sliced.bam
 
 b) Get the Genome in a Bottle truth set for NA12878 and index it with tabix.
 
-wget \
-  ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/release/NA12878_HG001/latest/GRCh37/HG001_GRCh37_GIAB_highconf_CG-IllFB-IllGATKHC-Ion-10X-SOLID_CHROM1-X_v.3.3.2_highconf_PGandRTGphasetransfer.vcf.gz \
-  -O /tmp/NA12878_calls.vcf.gz
+    wget \
+      ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/release/NA12878_HG001/latest/GRCh37/HG001_GRCh37_GIAB_highconf_CG-IllFB-IllGATKHC-Ion-10X-SOLID_CHROM1-X_v.3.3.2_highconf_PGandRTGphasetransfer.vcf.gz \
+      -O /tmp/NA12878_calls.vcf.gz
 
-tabix /tmp/NA12878_calls.vcf.gz
+    tabix /tmp/NA12878_calls.vcf.gz
 
 c) Get the reference genome FASTA file from the DeepVariant testdata GCP bucket
    and index it with samtools.
 
-gsutil cp gs://deepvariant/case-study-testdata/hs37d5.fa.gz /tmp/hs37d5.fa.gz
-samtools faidx /tmp/hs37d5.fa.gz
+    gsutil cp gs://deepvariant/case-study-testdata/hs37d5.fa.gz /tmp/hs37d5.fa.gz
+    samtools faidx /tmp/hs37d5.fa.gz
 
 ## Build and run
 
-bazel build -c opt $COPT_FLAGS nucleus/examples:ngs_errors
+    bazel build -c opt $COPT_FLAGS nucleus/examples:ngs_errors
 
-bazel-bin/nucleus/examples/ngs_errors \
-  --alsologtostderr \
-  --ref /tmp/hs37d5.fa.gz \
-  --vcf /tmp/NA12878_calls.vcf.gz \
-  --bam /tmp/NA12878_sliced.bam \
-  --examples_out /tmp/examples.tfrecord
+    bazel-bin/nucleus/examples/ngs_errors \
+      --alsologtostderr \
+      --ref /tmp/hs37d5.fa.gz \
+      --vcf /tmp/NA12878_calls.vcf.gz \
+      --bam /tmp/NA12878_sliced.bam \
+      --examples_out /tmp/examples.tfrecord
 
 ## Functions overview
 Name | Description
@@ -97,8 +97,9 @@ Name | Description
 Returns True if we can use read to make a training example.
 
 Args:
-  read: nucleus.Read proto.
-  variants: list[nucleus.Variant] protos. A list of variants overlapping read.
+  read: nucleus.genomics.v1.Read proto.
+  variants: list[nucleus.genomics.v1.Variant] protos. A list of variants
+    overlapping read.
   ref_bases: str. The reference bases for read.
 
 Returns:
@@ -116,7 +117,8 @@ Returns:
 Create a tf.Example for read and ref_bases.
 
 Args:
-  read: nucleus.Read proto with cigar, fragment_name, and aligned_sequence.
+  read: nucleus.genomics.v1.Read proto with cigar, fragment_name, and
+    aligned_sequence.
   ref_bases: str. The reference bases for read.
 
 Returns:

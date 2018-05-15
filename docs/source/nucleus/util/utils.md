@@ -19,7 +19,7 @@ Name | Description
 Creates a Range proto from the alignment of Read.
 
 Args:
-  read: the read to calculate range
+  read: nucleus.genomics.v1.Read. The read to calculate the range for.
 
 Returns:
   A nucleus.genomics.v1.Range for read.
@@ -52,8 +52,10 @@ Args:
   iterable: Python iterable. The iterable to sample from.
   k: int. The number of elements to sample.
   random: A random number generator or None.
+
 Returns:
   A list containing the k sampled elements.
+
 Raises:
   ValueError: If k is negative.
 ```

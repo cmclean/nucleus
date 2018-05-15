@@ -1,19 +1,49 @@
-# nucleus.io.bed -- Class for reading BED files.
+# nucleus.io.bed -- Classes for reading and writing BED files.
 **Source code:** [nucleus/io/bed.py](https://github.com/google/nucleus/tree/master/nucleus/io/bed.py)
 
 **Documentation index:** [doc_index.md](../../doc_index.md)
 
 ---
+The BED format is described at
+https://genome.ucsc.edu/FAQ/FAQformat.html#format1
+
 API for reading:
-  with BedReader(input_path) as reader:
-    for record in reader:
-      print(record)
 
-where `record` is a nucleus.genomics.v1.BedRecord protocol buffer.
+```python
+from nucleus.io import bed
 
-If the path contains '.tfrecord' as an extension, a TFRecord file is
-assumed. Otherwise, it is treated as a true BED file. In either case,
-an extension of '.gz' will cause the file to be treated as compressed.
+# Iterate through all records.
+with bed.BedReader(input_path) as reader:
+  for record in reader:
+    print(record)
+```
+
+where `record` is a `nucleus.genomics.v1.BedRecord` protocol buffer.
+
+API for writing:
+
+```python
+from nucleus.io import bed
+from nucleus.protos import bed_pb2
+
+# records is an iterable of nucleus.genomics.v1.BedRecord protocol buffers.
+records = ...
+
+# header defines how many fields to write out.
+header = bed_pb2.BedHeader(num_fields=5)
+
+# Write all records to the desired output path.
+with bed.BedWriter(output_path, header) as writer:
+  for record in records:
+    writer.write(record)
+```
+
+For both reading and writing, if the path provided to the constructor contains
+'.tfrecord' as an extension, a `TFRecord` file is assumed and attempted to be
+read or written. Otherwise, the filename is treated as a true BED file.
+
+Files that end in a '.gz' suffix cause the file to be treated as compressed
+(with BGZF if it is a true BED file, and with gzip if it is a TFRecord file).
 
 ## Classes overview
 Name | Description
@@ -63,7 +93,12 @@ Returns an iterable of BedRecord protos in the file.
 
 <a name="query"></a>
 ##### `query(self)`
+```
+Returns an iterator for going through the records in the region.
 
+NOTE: This function is not currently implemented by NativeBedReader though
+it could be implemented for sorted, tabix-indexed BED files.
+```
 
 ### NativeBedWriter
 ```

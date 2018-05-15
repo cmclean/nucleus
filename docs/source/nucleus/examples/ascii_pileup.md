@@ -10,7 +10,7 @@
 Name | Description
 -----|------------
 [`main`](#main)`(argv)` | 
-[`print_read`](#print_read)`(left_pos, start, highlight_position, seq)` | 
+[`print_read`](#print_read)`(left_pos, start, highlight_position, seq)` | Prints an ASCII representation of a sequence to stdout.
 
 ## Functions
 <a name="main"></a>
@@ -19,5 +19,7 @@ Name | Description
 
 <a name="print_read"></a>
 ### `print_read(left_pos, start, highlight_position, seq)`
-
+```
+Prints an ASCII representation of a sequence to stdout.
+```
 

@@ -1,4 +1,4 @@
-# nucleus.util.genomics_math -- Mathematics functions.
+# nucleus.util.genomics_math -- Mathematics functions for working with genomics data.
 **Source code:** [nucleus/util/genomics_math.py](https://github.com/google/nucleus/tree/master/nucleus/util/genomics_math.py)
 
 **Documentation index:** [doc_index.md](../../doc_index.md)
@@ -28,17 +28,17 @@ semi-equivalent spaces:
    represented as log10(p). How the p == 0 case is handled is often function
    dependent, which may accept/return -Inf or not handle the case entirely.
 -- Phred-scaled: See https://en.wikipedia.org/wiki/Phred_quality_score for
-   more information. But briefly, the Phred-scale maintains resolution in the
-   lower parts of the probability space using integer quality scores (though
-   using ints is optional, really). The phred-scale is defined as
+   more information. Briefly, the Phred-scale maintains resolution in the lower
+   parts of the probability space using integer quality scores (though using
+   ints is optional, really). The phred-scale is defined as
 
      `phred(p) = -10 * log10(p)`
 
    where p is a real-space probability.
 
-The code in math.h dealing with probabilities is very explicit about what
-kind probability and representation is expects and returns, as unfortunately
-these are all represented commonly as doubles in C++. Though tempting to
+The functions in math.h dealing with probabilities are very explicit about what
+kinds of probability and representation they expect and return, as unfortunately
+these are all commonly represented as doubles in C++. Though it is tempting to
 address this issue with classic software engineering practices like creating
 a Probability class, in practice this is extremely difficult to do as this
 code is often performance critical and the low-level mathematical operations
@@ -52,7 +52,7 @@ Name | Description
 [`log10sumexp`](#log10sumexp)`(log10_probs)` | Returns log10(sum(10^log10_probs)) computed in a numerically-stable way.
 [`normalize_log10_probs`](#normalize_log10_probs)`(log10_probs)` | Approximately normalizes log10 probabilities.
 [`perror_to_bounded_log10_perror`](#perror_to_bounded_log10_perror)`(perror, min_prob=1.0 - _MAX_CONFIDENCE)` | Computes log10(p) for the given probability.
-[`ptrue_to_bounded_phred`](#ptrue_to_bounded_phred)`(ptrue, max_prob=_MAX_CONFIDENCE)` | Computes the phred scaled confidence from the given ptrue probability.
+[`ptrue_to_bounded_phred`](#ptrue_to_bounded_phred)`(ptrue, max_prob=_MAX_CONFIDENCE)` | Computes the Phred-scaled confidence from the given ptrue probability.
 
 ## Functions
 <a name="log10_binomial"></a>
@@ -79,7 +79,7 @@ for more details on the binomial.
 
 Args:
   k: int >= 0. Number of successes.
-  n: int >= 0. Number of trials.
+  n: int >= k. Number of trials.
   p: 0.0 <= float <= 1.0. Probability of success.
 
 Returns:
@@ -162,8 +162,8 @@ Computes log10(p) for the given probability.
 The log10 probability is capped by -_MAX_CONFIDENCE.
 
 Args:
-  perror: the probability to log10
-  min_prob: minimum allowed probability
+  perror: float. The probability to log10.
+  min_prob: float. The minimum allowed probability.
 
 Returns:
   log10(p).
@@ -175,17 +175,17 @@ Raises:
 <a name="ptrue_to_bounded_phred"></a>
 ### `ptrue_to_bounded_phred(ptrue, max_prob=_MAX_CONFIDENCE)`
 ```
-Computes the phred scaled confidence from the given ptrue probability.
+Computes the Phred-scaled confidence from the given ptrue probability.
 
 See https://en.wikipedia.org/wiki/Phred_quality_score for more information.
 The quality score is capped by _MAX_CONFIDENCE.
 
 Args:
-  ptrue: the ptrue probability to phred scale.
-  max_prob: maximum allowed probability
+  ptrue: float. The ptrue probability to Phred scale.
+  max_prob: float. The maximum allowed probability.
 
 Returns:
-  Phred scaled version of the 1 - ptrue.
+  Phred-scaled version of 1 - ptrue.
 
 Raises:
   ValueError: If ptrue is outside of [0.0, 1.0].

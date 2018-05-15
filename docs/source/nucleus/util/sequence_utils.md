@@ -9,7 +9,7 @@
 ## Classes overview
 Name | Description
 -----|------------
-[`Error`](#error) | 
+[`Error`](#error) | Base error class.
 
 ## Functions overview
 Name | Description
@@ -18,7 +18,9 @@ Name | Description
 
 ## Classes
 ### Error
-
+```
+Base error class.
+```
 
 ## Functions
 <a name="reverse_complement"></a>
@@ -31,8 +33,9 @@ solely of A, C, G, and T letters. Other complement dictionaries can be
 passed in for more permissive matching.
 
 Args:
-  sequence: The input sequence to reverse complement.
-  complement_dict: The lookup dictionary holding the complement base pairs.
+  sequence: str. The input sequence to reverse complement.
+  complement_dict: dict[str, str]. The lookup dictionary holding the
+    complement base pairs.
 
 Returns:
   The reverse complement DNA sequence.

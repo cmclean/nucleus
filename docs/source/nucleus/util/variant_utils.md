@@ -21,7 +21,7 @@ Name | Description
 [`allele_mismatches`](#allele_mismatches)`(evalv, truev)` | Determines the set of allele mismatch discordances between evalv and truev.
 [`decode_variants`](#decode_variants)`(encoded_iter)` | Yields a genomics.Variant from encoded_iter.
 [`format_alleles`](#format_alleles)`(variant)` | Gets a string representation of the variant's alleles.
-[`format_filters`](#format_filters)`(variant)` | Gets a human-readable string showing the filters applied to variant.
+[`format_filters`](#format_filters)`(variant)` | Returns a human-readable string showing the filters applied to variant.
 [`format_position`](#format_position)`(variant)` | Gets a string representation of the variant's position.
 [`genotype_as_alleles`](#genotype_as_alleles)`(variant, call_ix=0)` | Gets genotype of the sample in variant as a list of actual alleles.
 [`genotype_likelihood`](#genotype_likelihood)`(variant_call, allele_indices)` | Returns the genotype likelihood for the given allele indices.
@@ -176,7 +176,7 @@ Returns:
 <a name="format_filters"></a>
 ### `format_filters(variant)`
 ```
-Gets a human-readable string showing the filters applied to variant.
+Returns a human-readable string showing the filters applied to variant.
 
 Returns a string with the filter field values of variant separated by commas.
 If the filter field isn't set, returns vcf_constants.MISSING_FIELD ('.').
@@ -441,7 +441,7 @@ Returns:
 Returns true if variant is a reference record.
 
 Variant protos can encode sites that aren't actually mutations in the
-sample.  For example, the record ref='A', alt='.' indicates that there is
+sample. For example, the record ref='A', alt='.' indicates that there is
 no mutation present (i.e., alt is the missing value).
 
 Args:
@@ -493,7 +493,7 @@ in the same.
 Note that this code allows a variant without a calls field to be variant,
 but one with a genotype call must have a non-reference genotype to be
 considered variant (if require_non_ref_genotype is True, the default). If
-False, a variant that passes all fo the site-level requirements for being
+False, a variant that passes all of the site-level requirements for being
 a variant_call will return a True value, regardless of the genotypes, which
 means that we'll consider a site with a sample with a hom-ref or no-call site
 a variant call.

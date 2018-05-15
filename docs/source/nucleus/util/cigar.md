@@ -1,10 +1,14 @@
-# nucleus.util.cigar -- Utility functions for working with alignment cigars.
+# nucleus.util.cigar -- Utility functions for working with alignment CIGAR operations.
 **Source code:** [nucleus/util/cigar.py](https://github.com/google/nucleus/tree/master/nucleus/util/cigar.py)
 
 **Documentation index:** [doc_index.md](../../doc_index.md)
 
 ---
+The CIGAR format is defined within the SAM spec, available at
+https://samtools.github.io/hts-specs/SAMv1.pdf
 
+This module provides utility functions for interacting with the parsed
+representations of CIGAR strings.
 
 ## Functions overview
 Name | Description
@@ -37,7 +41,8 @@ Args:
   cigar_units: iterable[CigarUnit] protos.
 
 Returns:
-  A nucleus.genomics.v1.Range for read.
+  A string representation of the CigarUnit protos that conforms to the
+  CIGAR string specification.
 ```
 
 <a name="parse_cigar_string"></a>

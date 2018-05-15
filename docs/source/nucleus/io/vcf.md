@@ -4,21 +4,38 @@
 **Documentation index:** [doc_index.md](../../doc_index.md)
 
 ---
+The VCF format is described at
+https://samtools.github.io/hts-specs/VCFv4.3.pdf
+
 API for reading:
-  with VcfReader(input_path) as reader:
-    for variant in reader:
-      process(reader.header, variant)
+
+```python
+from nucleus.io import vcf
+
+with vcf.VcfReader(input_path) as reader:
+  for variant in reader:
+    print(variant)
+```
 
 API for writing:
-  with VcfWriter(output_path, header) as writer:
-    for variant in variants:
-      writer.write(variant)
 
-where variant is a nucleus.genomics.v1.Variant protocol buffer.
+```python
+from nucleus.io import vcf
 
-If the path contains '.tfrecord', then a TFRecord file is assumed.
-Otherwise, it is treated as a true VCF file.  In either case, an
-extension of '.gz' will cause the file to be treated as compressed.
+# variants is an iterable of nucleus.genomics.v1.Variant protocol buffers.
+variants = ...
+
+with vcf.VcfWriter(output_path, header) as writer:
+  for variant in variants:
+    writer.write(variant)
+```
+
+For both reading and writing, if the path provided to the constructor contains
+'.tfrecord' as an extension, a `TFRecord` file is assumed and attempted to be
+read or written. Otherwise, the filename is treated as a true VCF file.
+
+Files that end in a '.gz' suffix cause the file to be treated as compressed
+(with BGZF if it is a true VCF file, and with gzip if it is a TFRecord file).
 
 ## Classes overview
 Name | Description
@@ -35,12 +52,17 @@ Name | Description
 ```
 Class for "reading" Variant protos from an in-memory cache of variants.
 
-API:
-  variants = [... Variant protos ...]
-  header = variants_pb2.VcfHeader()
-  with InMemoryVcfReader(variants, header) as reader:
-    for variant in reader:
-      process(reader.header, variant)
+```python
+from nucleus.io import vcf
+from nucleus.protos import variants_pb2
+
+variants = [... Variant protos ...]
+header = variants_pb2.VcfHeader()
+
+with vcf.InMemoryVcfReader(variants, header) as reader:
+  for variant in reader:
+    print(variant)
+```
 
 This class accepts a collection of variants and optionally a header and
 provides all of the standard API functions of VcfReader but instead of
@@ -49,11 +71,11 @@ of variant protos.
 
 Note that the input variants provided to this class aren't checked in any way,
 and their ordering determines the order of variants emitted by this class for
-iterate and query operation. This is intentional, to make this class easy to
-use for testing where you often want to use less-than-perfectly formed inputs.
-In order to fully meet the contract of a standard VcfReader, variants should
-be sorted by their contig ordering and then by their start and finally by
-their ends.
+the iterate() and query() operations. This is intentional, to make this class
+easy to use for testing where you often want to use less-than-perfectly formed
+inputs. In order to fully meet the contract of a standard VcfReader, variants
+should be sorted by their contig ordering and then by their start and finally
+by their ends.
 
 Implementation note:
   The current implementation will be very slow for query() if the provided
@@ -118,11 +140,15 @@ Args:
 
 <a name="iterate"></a>
 ##### `iterate(self)`
-
+```
+Returns an iterable of Variant protos in the file.
+```
 
 <a name="query"></a>
 ##### `query(self, region)`
-
+```
+Returns an iterator for going through variants in the region.
+```
 
 ### NativeVcfWriter
 ```
@@ -139,7 +165,7 @@ files or TFRecords files, based on the output filename's extensions.
 Initializer for NativeVcfWriter.
 
 Args:
-  output_path: str. A path where we'll write our VCF file.
+  output_path: str. The path to which to write the VCF file.
   header: nucleus.genomics.v1.VcfHeader. The header that defines all
     information germane to the constituent variants. This includes contigs,
     FILTER fields, INFO fields, FORMAT fields, samples, and all other
@@ -166,7 +192,7 @@ provides {info,format}_field_{get,set}_fn functions that can be used to
 extract information from the structured Variant protos based on the types
 defined therein.
 
-Note: Users should not need to interact with this class at all. It is used
+NOTE: Users should not need to interact with this class at all. It is used
 by the variant_utils.{get,set}_info and variantcall_utils.{get,set}_format
 functions for interacting with the INFO and FORMAT fields in a Variant proto.
 ```
@@ -175,7 +201,7 @@ functions for interacting with the INFO and FORMAT fields in a Variant proto.
 <a name="__init__"></a>
 ##### `__init__(self, header)`
 ```
-Constructor.
+Initializer.
 
 Args:
   header: nucleus.genomics.v1.VcfHeader proto. Used to define the accessor
